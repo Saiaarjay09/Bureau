@@ -25,10 +25,20 @@ export { ApiError }
 
 export const api = {
   authStatus: () => request<{ credentials_configured: boolean }>('/api/auth/status'),
+  signup: (username: string, password: string) =>
+    request<{ username: string; recovery_phrase: string }>('/api/auth/signup', {
+      method: 'POST',
+      body: JSON.stringify({ username, password }),
+    }),
   login: (username: string, password: string) =>
     request<{ username: string }>('/api/auth/login', {
       method: 'POST',
       body: JSON.stringify({ username, password }),
+    }),
+  recover: (recovery_phrase: string, new_password: string) =>
+    request<{ ok: boolean }>('/api/auth/recover', {
+      method: 'POST',
+      body: JSON.stringify({ recovery_phrase, new_password }),
     }),
   logout: () => request('/api/auth/logout', { method: 'POST' }),
   me: () => request<{ username: string }>('/api/auth/me'),

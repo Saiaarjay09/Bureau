@@ -67,7 +67,6 @@ python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
 cp .env.example .env        # edit in FIRECRAWL_API_KEY etc. if you have them
-python3 scripts/set_password.py   # sets your login — prompts for username/password
 
 cd ../frontend
 npm install
@@ -82,7 +81,13 @@ python3 scripts/seed_mock_data.py   # optional: sample leads to look at immediat
 uvicorn app.main:app --host 127.0.0.1 --port 8910
 ```
 
-Open `http://127.0.0.1:8910` and sign in. The three keyless job sources
+Open `http://127.0.0.1:8910`. The first time, you'll see a **Create
+account** screen instead of a login form — pick a username and password
+(8+ characters), and you'll immediately be shown a **12-word recovery
+phrase**, once, in a boxed layout with a "save this now" warning. Write
+it down; it's the only way back in if you forget your password, and
+Bureau never shows it again. Checking "I've saved this phrase" and
+clicking Continue logs you straight in. The three keyless job sources
 ingest automatically on startup and every 6 hours after.
 
 To iterate on the frontend with hot reload instead of rebuilding each
@@ -91,7 +96,15 @@ time: `cd frontend && npm run dev` (proxies `/api` to port 8910 — see
 
 ## Credentials
 
-Set or change your login any time:
+**Forgot your password?** Click "Forgot password?" on the sign-in
+screen, paste in your 12-word recovery phrase, and set a new one — no
+CLI needed. The recovery phrase itself doesn't change when you do this.
+
+**Lost the recovery phrase too?** There's no way to recover the account
+through the UI at that point (by design — the recovery phrase is the
+only backup, same as Haven's). Fall back to the CLI escape hatch, which
+force-sets the password directly on the server (only reaches whoever has
+shell access to this Mac):
 
 ```bash
 cd backend && source .venv/bin/activate
@@ -99,6 +112,9 @@ python3 scripts/set_password.py --username you --password 'new-password'
 ```
 
 This writes a bcrypt hash to `backend/data/auth.json` — never plaintext.
+Since it's single-user, signup (and the recovery phrase that comes with
+it) only ever happens once; running this script on an existing account
+just changes the password and leaves the existing recovery phrase valid.
 Changing it invalidates nothing else; existing sessions just check
 against the new hash on their next request.
 

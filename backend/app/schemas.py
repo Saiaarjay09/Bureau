@@ -43,3 +43,13 @@ class LeadsPage(BaseModel):
 class LoginRequest(BaseModel):
     username: str
     password: str
+
+
+class SignupRequest(BaseModel):
+    username: str
+    password: str
+
+
+class RecoverRequest(BaseModel):
+    recovery_phrase: str
+    new_password: str

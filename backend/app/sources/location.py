@@ -83,5 +83,10 @@ def parse_location(raw: str | None) -> tuple[str | None, str | None, str | None]
     if not country:
         return None, None, None
 
+    if city and city.strip().lower() == country.strip().lower():
+        # e.g. raw input was literally "Germany, Germany" — the source only
+        # gave a country, not a city, so don't surface a fake duplicate one.
+        city = None
+
     continent = COUNTRY_TO_CONTINENT.get(country)
     return continent, country, city

@@ -97,19 +97,44 @@ are no migrations, since a schema change just means deleting
 `data/bureau.db` and letting sources repopulate it.
 
 ### `backend/app/auth.py`
-Single-user session auth. `set_credentials()`/`verify_credentials()`
-read and write `data/auth.json` (bcrypt hash only, via `scripts/
-set_password.py` — never plaintext, never hardcoded). `make_session_
-cookie()`/`read_session_cookie()` use `itsdangerous` to sign a cookie
-containing just the username; `require_session()` is the FastAPI
-dependency every protected router pulls in, and raises a 401 if the
-cookie is missing, unsigned, or expired (30-day max age).
+Single-user session auth, now with a Haven-style recovery phrase.
+`create_account()` is the normal path (called from the web signup
+screen): refuses if an account already exists, generates a 12-word
+recovery phrase via `recovery.py`, and stores bcrypt hashes of both the
+password and the (normalized) phrase in `data/auth.json` — the phrase
+itself is returned once, in-memory, for the caller to display, and never
+written anywhere in plaintext. `verify_credentials()` and
+`verify_recovery_phrase()` check a candidate against those two hashes
+independently; `reset_password_with_recovery()` is what "forgot
+password" actually calls — it re-hashes and overwrites only the password,
+leaving the recovery phrase (and its hash) untouched, so the same phrase
+keeps working across future resets. `set_credentials()` is the separate
+CLI-only path `scripts/set_password.py` uses: it force-sets the password
+hash without touching (or requiring) a recovery phrase at all, which is
+the deliberate escape hatch for "I lost both the password and the
+phrase." `make_session_cookie()`/`read_session_cookie()` use
+`itsdangerous` to sign a cookie containing just the username;
+`require_session()` is the FastAPI dependency every protected router
+pulls in — it checks the cookie's signature/expiry *and* cross-checks the
+username against the current account record, so a cookie issued before
+an account was recreated (e.g. after wiping `data/auth.json`) can't
+silently keep authenticating as a no-longer-current account.
+
+### `backend/app/recovery.py`
+Generates and normalizes 12-word recovery phrases from the standard
+2048-word BIP39 English wordlist (`app/data/wordlist.txt`, copied
+directly from Haven's — chosen there for the phrase's human-transcription
+safety, not for BIP39's mnemonic math, which isn't used here either).
+`generate_recovery_phrase()` draws each word from `os.urandom` (not the
+non-cryptographic `random` module — 12 words is 132 bits of entropy).
+`normalize_phrase()` collapses whitespace/case so a phrase typed back in
+during recovery still matches regardless of formatting.
 
 ### `backend/app/schemas.py`
 Pydantic response/request models: `LeadOut` (what a lead looks like over
 the API — note `tags` is reconstituted from the DB's `tags_json` column
 at serialization time, not stored as a real column), `LeadsPage` (a
-paginated list), and `LoginRequest`.
+paginated list), `LoginRequest`, `SignupRequest`, and `RecoverRequest`.
 
 ### `backend/app/regions.py`
 The static continent → country tree that powers the top-level region
@@ -158,10 +183,15 @@ seed_mock_data.py`.
 
 ### `backend/app/routers/auth.py`
 `/api/auth/*`: `GET /status` (has a password ever been set — lets the
-frontend distinguish "not configured" from "wrong password"), `POST
-/login` (verifies against the bcrypt hash and sets the session cookie),
-`POST /logout` (clears it), `GET /me` (the session check the frontend
-runs on every load to decide whether to show the login screen).
+frontend decide whether to render the signup screen or the login
+screen), `POST /signup` (409s if an account already exists; otherwise
+creates one and returns the recovery phrase plus a session cookie — you
+land in the app already signed in), `POST /login` (verifies against the
+bcrypt hash and sets the session cookie), `POST /recover` (verifies the
+recovery phrase and, if it matches, sets a new password — 400 on a
+non-matching phrase), `POST /logout` (clears the cookie), `GET /me` (the
+session check the frontend runs on every load to decide whether to show
+the login screen at all).
 
 ### `backend/app/routers/leads.py`
 `/api/leads*` and `/api/regions*` — everything the results feed and
@@ -270,11 +300,13 @@ manual-only, for the same credit-cost reason as `firecrawl_careers.py`.
 ## `backend/scripts/` — one-off CLI scripts
 
 ### `backend/scripts/set_password.py`
-Sets or changes the login credentials — prompts for username/password
-(or takes them as `--username`/`--password` flags for non-interactive
-use) and writes the bcrypt hash via `auth.set_credentials()`. This is the
-only supported way to manage the password; it is never hardcoded
-anywhere in the codebase.
+The emergency CLI path — force-sets the password via
+`auth.set_credentials()`, bypassing the recovery phrase entirely. Prompts
+for username/password (or takes `--username`/`--password` flags for
+non-interactive use). The normal way to create an account and to reset a
+forgotten password is the web UI (signup screen, and "Forgot password?"
+respectively); this script exists only for "I lost both the password and
+the recovery phrase, but I have shell access to this Mac."
 
 ### `backend/scripts/seed_mock_data.py`
 Inserts the sample leads from `app/mock_data.py` through the normal
@@ -338,10 +370,23 @@ via `bg-[var(--paper)]`-style arbitrary values, rather than Tailwind's
 own default color palette.
 
 ### `frontend/src/components/LoginPage.tsx`
-The masthead login screen: the large italic serif "Bureau" wordmark, a
+The masthead auth screen — the large italic serif "Bureau" wordmark, a
 short accent-colored hairline rule, and a letterspaced uppercase tagline
-above a plain username/password form. Posts to `api.login()` and calls
-`onLoggedIn` on success.
+sit above one of four forms depending on internal `mode` state. On
+mount it calls `/api/auth/status` to decide the starting mode: `signup`
+if no account exists yet, `login` otherwise. `signup` posts to
+`api.signup()` and, on success, switches to `recovery-display` — a
+distinct full screen (not a modal) showing the 12 returned words in a
+numbered 3-column grid with a "shown once" warning; a required
+"I've saved this" checkbox gates the Continue button, which calls
+`onLoggedIn` directly since signup already set the session cookie.
+`login` is the plain username/password form, with a "Forgot password?"
+button that switches to `recover` instead of navigating anywhere.
+`recover` posts a phrase + new password to `api.recover()` and, on
+success, drops back to `login` with a confirmation message rather than
+logging the user in automatically — deliberately a separate step from
+authenticating, so a successful recovery doesn't silently skip straight
+past re-entering credentials.
 
 ### `frontend/src/components/LeadTypeToggle.tsx`
 The Jobs / Business Opportunities switch, styled as underlined tabs
@@ -424,6 +469,11 @@ location.
 ### `backend/app/__init__.py`, `backend/app/routers/__init__.py`, `backend/app/sources/__init__.py`, `backend/app/sources/jobs/__init__.py`, `backend/app/sources/business/__init__.py`
 Empty — they exist only to make each directory an importable Python
 package.
+
+### `backend/app/data/wordlist.txt`
+The 2048-word BIP39 English wordlist, copied verbatim from Haven
+(`haven/data/wordlist.txt`). Loaded once at import time by
+`recovery.py`, which asserts it has exactly 2048 lines.
 
 ### `backend/requirements.txt`
 Pinned backend dependencies: FastAPI, Uvicorn, SQLAlchemy, httpx (job-API

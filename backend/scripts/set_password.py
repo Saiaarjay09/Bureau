@@ -1,5 +1,11 @@
 #!/usr/bin/env python3
-"""Set or change the Bureau login credentials.
+"""Emergency CLI password reset — bypasses the recovery phrase entirely.
+
+For first-time setup, use the web UI's "Create account" screen instead:
+it's what generates your recovery phrase. Use this script only if you've
+lost both your password and your recovery phrase and need CLI/filesystem
+access to get back in; it force-sets the password and leaves any
+existing recovery phrase (if there is one) untouched.
 
 Usage:
     python3 scripts/set_password.py
