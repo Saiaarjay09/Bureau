@@ -2,13 +2,13 @@
   "version": "0.0.1",
   "configurations": [
     {
-      "name": "scout-frontend",
+      "name": "bureau-frontend",
       "runtimeExecutable": "scripts/dev-frontend.sh",
       "runtimeArgs": [],
       "port": 5173
     },
     {
-      "name": "scout-backend",
+      "name": "bureau-backend",
       "runtimeExecutable": "scripts/dev-backend.sh",
       "runtimeArgs": [],
       "port": 8910

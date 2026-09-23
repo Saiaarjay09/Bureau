@@ -8,7 +8,7 @@ import httpx
 from ...enrichment import guess_seniority
 from ..location import parse_location
 
-logger = logging.getLogger("scout.sources.remotive")
+logger = logging.getLogger("bureau.sources.remotive")
 API_URL = "https://remotive.com/api/remote-jobs"
 
 

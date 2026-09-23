@@ -16,9 +16,10 @@ export default function BusinessDiscovery({
 
   if (!firecrawlConfigured) {
     return (
-      <p className="mb-4 rounded-lg border border-amber-200 bg-amber-50 px-3 py-2 text-sm text-amber-800 dark:border-amber-900 dark:bg-amber-950 dark:text-amber-300">
-        Set <code>FIRECRAWL_API_KEY</code> in backend/.env to discover new business leads live. Showing
-        whatever's already in the database (mock data, until then).
+      <p className="mb-4 border border-[var(--hairline)] bg-[var(--accent-soft)] px-3 py-2 text-sm text-[var(--ink-muted)]">
+        Set <code className="font-mono-kicker text-[10px] normal-case tracking-normal">FIRECRAWL_API_KEY</code> in
+        backend/.env to discover new business leads live. Showing whatever's already in the database (mock data,
+        until then).
       </p>
     )
   }
@@ -39,23 +40,23 @@ export default function BusinessDiscovery({
   }
 
   return (
-    <div className="mb-4 flex flex-wrap items-center gap-2 rounded-lg border border-neutral-200 bg-white p-3 dark:border-neutral-800 dark:bg-neutral-900">
-      <span className="text-sm text-neutral-500">Discover businesses in</span>
+    <div className="mb-4 flex flex-wrap items-center gap-2 border border-[var(--hairline)] bg-[var(--surface)] p-3">
+      <span className="text-sm text-[var(--ink-muted)]">Discover businesses in</span>
       <input
         value={industry}
         onChange={(e) => setIndustry(e.target.value)}
         placeholder="an industry, e.g. Fintech"
-        className="w-48 rounded-lg border border-neutral-300 bg-white px-3 py-1.5 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+        className="w-48 border border-[var(--hairline)] bg-transparent px-3 py-1.5 text-sm text-[var(--ink)] outline-none focus:border-[var(--accent)]"
       />
-      <span className="text-sm text-neutral-500">{region ? `within ${region}` : 'globally'}</span>
+      <span className="text-sm text-[var(--ink-muted)]">{region ? `within ${region}` : 'globally'}</span>
       <button
         onClick={run}
         disabled={running || !industry.trim()}
-        className="rounded-lg bg-indigo-600 px-3 py-1.5 text-sm font-medium text-white hover:bg-indigo-700 disabled:opacity-50"
+        className="bg-[var(--accent)] px-3 py-1.5 text-sm font-medium text-[var(--accent-ink)] hover:opacity-90 disabled:opacity-50"
       >
         {running ? 'Searching…' : 'Discover'}
       </button>
-      {message && <span className="text-sm text-neutral-500">{message}</span>}
+      {message && <span className="text-sm text-[var(--ink-muted)]">{message}</span>}
     </div>
   )
 }

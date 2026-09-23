@@ -9,7 +9,7 @@ import httpx
 from ...enrichment import guess_seniority
 from ..location import parse_location
 
-logger = logging.getLogger("scout.sources.arbeitnow")
+logger = logging.getLogger("bureau.sources.arbeitnow")
 API_URL = "https://www.arbeitnow.com/api/job-board-api"
 
 

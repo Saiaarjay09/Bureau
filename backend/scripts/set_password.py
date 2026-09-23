@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Set or change the Scout login credentials.
+"""Set or change the Bureau login credentials.
 
 Usage:
     python3 scripts/set_password.py

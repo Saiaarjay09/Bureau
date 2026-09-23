@@ -9,9 +9,9 @@ import httpx
 from ...enrichment import guess_seniority
 from ..location import parse_location
 
-logger = logging.getLogger("scout.sources.remoteok")
+logger = logging.getLogger("bureau.sources.remoteok")
 API_URL = "https://remoteok.com/api"
-HEADERS = {"User-Agent": "Scout-LeadGen/1.0 (+https://github.com/; personal use)"}
+HEADERS = {"User-Agent": "Bureau-LeadGen/1.0 (+https://github.com/; personal use)"}
 
 
 def fetch() -> list[dict]:

@@ -10,7 +10,7 @@ from sqlalchemy.orm import Session
 
 from .db import Lead
 
-logger = logging.getLogger("scout.ingest")
+logger = logging.getLogger("bureau.ingest")
 
 REQUIRED_FIELDS = {"lead_type", "source", "external_id", "title", "company"}
 

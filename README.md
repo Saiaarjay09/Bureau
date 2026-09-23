@@ -1,4 +1,4 @@
-# Scout
+# Bureau
 
 A single-user, single-page lead-generation tool. It surfaces two kinds of
 leads — **job openings** and **business opportunities** — filterable by
@@ -105,27 +105,27 @@ restarts it if it crashes, the same way Haven's own services do on this
 machine.
 
 ```bash
-mkdir -p ~/Library/Logs/Scout
-launchctl bootstrap gui/$(id -u) ~/Developer/scout/deploy/com.scout.backend.plist
+mkdir -p ~/Library/Logs/Bureau
+launchctl bootstrap gui/$(id -u) ~/Developer/bureau/deploy/com.bureau.backend.plist
 ```
 
 Useful commands:
 
 ```bash
 # Check it's running
-launchctl list | grep com.scout
+launchctl list | grep com.bureau
 
 # Restart after a code change (rebuild the frontend first if you touched it)
-launchctl kickstart -k gui/$(id -u)/com.scout.backend
+launchctl kickstart -k gui/$(id -u)/com.bureau.backend
 
 # Stop it entirely
-launchctl bootout gui/$(id -u) ~/Developer/scout/deploy/com.scout.backend.plist
+launchctl bootout gui/$(id -u) ~/Developer/bureau/deploy/com.bureau.backend.plist
 
 # Logs
-tail -f ~/Library/Logs/Scout/backend.log
+tail -f ~/Library/Logs/Bureau/backend.log
 ```
 
-The plist assumes this repo lives at `~/Developer/scout` — edit the paths
+The plist assumes this repo lives at `~/Developer/bureau` — edit the paths
 inside it first if you move it.
 
 ## Serving over Tailscale
@@ -133,7 +133,7 @@ inside it first if you move it.
 You asked whether this needs Serve or Funnel: **Serve**. Funnel exposes a
 port to the whole public internet (that's what Haven uses, since
 friends outside your tailnet need to reach it); Serve only makes it
-reachable from devices logged into your own tailnet, which is all Scout
+reachable from devices logged into your own tailnet, which is all Bureau
 needs since it's just for you.
 
 This is already set up and running on this machine:
@@ -155,9 +155,9 @@ tear it down: `tailscale serve --https=8930 off`.
 
 Because Funnel and Serve share config per-port on this device, and ports
 443/8443/10000 are already funneled (public) for Haven's other apps,
-Scout deliberately uses its own port (8930) that's never been funneled —
+Bureau deliberately uses its own port (8930) that's never been funneled —
 don't run `tailscale funnel --https=8930 ...` unless you specifically
-want to make Scout public too.
+want to make Bureau public too.
 
 **Visit `https://haven.taila6d3cb.ts.net:8930` from any device signed
 into your tailnet.** It won't resolve from anywhere else.

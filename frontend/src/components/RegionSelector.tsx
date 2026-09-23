@@ -10,6 +10,9 @@ export interface RegionValue {
 
 export const GLOBAL: RegionValue = { continent: '', country: '', city: '' }
 
+const selectClass =
+  'border border-[var(--hairline)] bg-[var(--surface)] px-3 py-2 text-sm text-[var(--ink)] outline-none focus:border-[var(--accent)] disabled:opacity-40'
+
 export default function RegionSelector({
   leadType,
   value,
@@ -50,11 +53,11 @@ export default function RegionSelector({
   const countries = value.continent ? regions?.continents[value.continent] ?? [] : []
 
   return (
-    <div className="flex flex-wrap gap-2">
+    <div className="flex flex-wrap items-center gap-2">
       <select
         value={value.continent}
         onChange={(e) => onChange({ continent: e.target.value, country: '', city: '' })}
-        className="rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+        className={selectClass}
       >
         <option value="">Global</option>
         {regions &&
@@ -69,7 +72,7 @@ export default function RegionSelector({
         value={value.country}
         disabled={!value.continent}
         onChange={(e) => onChange({ ...value, country: e.target.value, city: '' })}
-        className="rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 disabled:opacity-40 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+        className={selectClass}
       >
         <option value="">All countries</option>
         {countries.map((c) => (
@@ -89,7 +92,7 @@ export default function RegionSelector({
           }}
           onFocus={() => setShowSuggestions(true)}
           onBlur={() => setTimeout(() => setShowSuggestions(false), 150)}
-          className="w-40 rounded-lg border border-neutral-300 bg-white px-3 py-2 text-sm text-neutral-900 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+          className="w-40 border border-[var(--hairline)] bg-[var(--surface)] px-3 py-2 text-sm text-[var(--ink)] outline-none focus:border-[var(--accent)]"
         />
         {value.city && (
           <button
@@ -98,13 +101,13 @@ export default function RegionSelector({
               setCityQuery('')
               onChange({ ...value, city: '' })
             }}
-            className="absolute right-2 top-1/2 -translate-y-1/2 text-neutral-400 hover:text-neutral-700"
+            className="absolute right-2 top-1/2 -translate-y-1/2 text-[var(--ink-faint)] hover:text-[var(--ink)]"
           >
             ×
           </button>
         )}
         {showSuggestions && citySuggestions.length > 0 && (
-          <ul className="absolute z-10 mt-1 max-h-56 w-48 overflow-auto rounded-lg border border-neutral-200 bg-white py-1 text-sm shadow-lg dark:border-neutral-700 dark:bg-neutral-800">
+          <ul className="absolute z-10 mt-1 max-h-56 w-48 overflow-auto border border-[var(--hairline)] bg-[var(--surface)] py-1 text-sm shadow-lg">
             {citySuggestions.map((city) => (
               <li key={city}>
                 <button
@@ -114,7 +117,7 @@ export default function RegionSelector({
                     setShowSuggestions(false)
                     onChange({ ...value, city })
                   }}
-                  className="block w-full px-3 py-1.5 text-left hover:bg-neutral-100 dark:hover:bg-neutral-700"
+                  className="block w-full px-3 py-1.5 text-left hover:bg-[var(--accent-soft)]"
                 >
                   {city}
                 </button>
@@ -130,7 +133,7 @@ export default function RegionSelector({
             setCityQuery('')
             onChange(GLOBAL)
           }}
-          className="rounded-lg px-3 py-2 text-sm text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-300"
+          className="font-mono-kicker text-[10px] text-[var(--ink-faint)] hover:text-[var(--accent)]"
         >
           Reset to Global
         </button>

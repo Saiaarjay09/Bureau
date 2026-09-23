@@ -122,7 +122,7 @@ def export_leads(
         return StreamingResponse(
             io.BytesIO(payload.encode()),
             media_type="application/json",
-            headers={"Content-Disposition": f"attachment; filename=scout-{lead_type}-leads.json"},
+            headers={"Content-Disposition": f"attachment; filename=bureau-{lead_type}-leads.json"},
         )
 
     buffer = io.StringIO()
@@ -136,7 +136,7 @@ def export_leads(
     return StreamingResponse(
         io.BytesIO(buffer.getvalue().encode()),
         media_type="text/csv",
-        headers={"Content-Disposition": f"attachment; filename=scout-{lead_type}-leads.csv"},
+        headers={"Content-Disposition": f"attachment; filename=bureau-{lead_type}-leads.csv"},
     )
 
 

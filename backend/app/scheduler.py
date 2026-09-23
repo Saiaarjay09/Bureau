@@ -11,7 +11,7 @@ from .enrichment import apply_growth_signals
 from .ingest import upsert_leads
 from .sources.registry import JOB_FETCHERS
 
-logger = logging.getLogger("scout.scheduler")
+logger = logging.getLogger("bureau.scheduler")
 
 LAST_RUN: dict[str, str] = {}
 

@@ -3,11 +3,11 @@
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>com.scout.backend</string>
+    <string>com.bureau.backend</string>
 
     <key>ProgramArguments</key>
     <array>
-        <string>/Users/saideep/Developer/scout/backend/.venv/bin/uvicorn</string>
+        <string>/Users/saideep/Developer/bureau/backend/.venv/bin/uvicorn</string>
         <string>app.main:app</string>
         <string>--host</string>
         <string>127.0.0.1</string>
@@ -16,7 +16,7 @@
     </array>
 
     <key>WorkingDirectory</key>
-    <string>/Users/saideep/Developer/scout/backend</string>
+    <string>/Users/saideep/Developer/bureau/backend</string>
 
     <key>RunAtLoad</key>
     <true/>
@@ -24,8 +24,8 @@
     <true/>
 
     <key>StandardOutPath</key>
-    <string>/Users/saideep/Library/Logs/Scout/backend.log</string>
+    <string>/Users/saideep/Library/Logs/Bureau/backend.log</string>
     <key>StandardErrorPath</key>
-    <string>/Users/saideep/Library/Logs/Scout/backend.error.log</string>
+    <string>/Users/saideep/Library/Logs/Bureau/backend.error.log</string>
 </dict>
 </plist>

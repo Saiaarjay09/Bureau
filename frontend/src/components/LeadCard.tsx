@@ -9,78 +9,59 @@ function timeAgo(iso: string | null): string {
   return `${Math.floor(days / 30)} mo ago`
 }
 
-const REMOTE_BADGE: Record<string, string> = {
-  remote: 'bg-emerald-100 text-emerald-800 dark:bg-emerald-900/40 dark:text-emerald-300',
-  hybrid: 'bg-amber-100 text-amber-800 dark:bg-amber-900/40 dark:text-amber-300',
-  onsite: 'bg-neutral-100 text-neutral-700 dark:bg-neutral-800 dark:text-neutral-300',
-}
-
 export default function LeadCard({ lead, onToggleStar }: { lead: Lead; onToggleStar: (id: number) => void }) {
   const location = [lead.city, lead.country].filter(Boolean).join(', ') || 'Location unknown'
 
+  const tags = [
+    lead.lead_type === 'job' ? lead.remote_type : null,
+    lead.lead_type === 'job' ? lead.seniority : lead.industry,
+    lead.company_size && `${lead.company_size} employees`,
+    lead.funding_stage,
+  ].filter(Boolean) as string[]
+
   return (
-    <div className="rounded-xl border border-neutral-200 bg-white p-4 transition hover:border-neutral-300 dark:border-neutral-800 dark:bg-neutral-900 dark:hover:border-neutral-700">
+    <div className="flex flex-col border border-[var(--hairline)] bg-[var(--surface)] p-4">
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
           <a
             href={lead.url ?? undefined}
             target="_blank"
             rel="noreferrer"
-            className="block truncate font-medium text-neutral-900 hover:text-indigo-600 dark:text-neutral-100 dark:hover:text-indigo-400"
+            className="block truncate text-[15px] font-medium text-[var(--ink)] hover:text-[var(--accent)]"
           >
             {lead.title}
           </a>
-          <p className="truncate text-sm text-neutral-500">
+          <p className="truncate text-sm text-[var(--ink-muted)]">
             {lead.company} · {location}
           </p>
         </div>
         <button
           onClick={() => onToggleStar(lead.id)}
           aria-label={lead.starred ? 'Unstar' : 'Star'}
-          className={`shrink-0 text-lg ${lead.starred ? 'text-amber-400' : 'text-neutral-300 hover:text-amber-400'}`}
+          className={`shrink-0 text-lg leading-none ${lead.starred ? 'text-[var(--accent)]' : 'text-[var(--hairline-strong)] hover:text-[var(--accent)]'}`}
         >
           {lead.starred ? '★' : '☆'}
         </button>
       </div>
 
-      <div className="mt-3 flex flex-wrap items-center gap-1.5 text-xs">
-        {lead.lead_type === 'job' && lead.remote_type && (
-          <span className={`rounded-full px-2 py-0.5 font-medium ${REMOTE_BADGE[lead.remote_type] ?? REMOTE_BADGE.onsite}`}>
-            {lead.remote_type}
-          </span>
-        )}
-        {lead.lead_type === 'job' && lead.seniority && (
-          <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
-            {lead.seniority}
-          </span>
-        )}
-        {lead.lead_type === 'business' && lead.industry && (
-          <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
-            {lead.industry}
-          </span>
-        )}
-        {lead.company_size && (
-          <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
-            {lead.company_size} employees
-          </span>
-        )}
-        {lead.funding_stage && (
-          <span className="rounded-full bg-neutral-100 px-2 py-0.5 text-neutral-600 dark:bg-neutral-800 dark:text-neutral-300">
-            {lead.funding_stage}
-          </span>
-        )}
-        <span className="ml-auto text-neutral-400">{timeAgo(lead.posted_date)}</span>
-      </div>
+      {tags.length > 0 && (
+        <p className="font-mono-kicker mt-3 text-[10px] text-[var(--ink-faint)]">
+          {tags.join('  ·  ')}
+          <span className="float-right normal-case tracking-normal">{timeAgo(lead.posted_date)}</span>
+        </p>
+      )}
 
       {lead.signal && (
-        <p className="mt-2 text-sm text-indigo-700 dark:text-indigo-400">{lead.signal}</p>
+        <p className="mt-3 border-l-2 border-[var(--accent)] pl-3 font-serif-mast text-[15px] italic leading-snug text-[var(--accent)]">
+          {lead.signal}
+        </p>
       )}
 
       {lead.lead_type === 'business' && lead.contact_path && (
-        <p className="mt-1 truncate text-xs text-neutral-500">Contact: {lead.contact_path}</p>
+        <p className="mt-2 truncate text-xs text-[var(--ink-faint)]">Contact: {lead.contact_path}</p>
       )}
 
-      <p className="mt-2 text-[11px] uppercase tracking-wide text-neutral-400">{lead.source}</p>
+      <p className="font-mono-kicker mt-3 text-[9px] text-[var(--ink-faint)]">{lead.source}</p>
     </div>
   )
 }

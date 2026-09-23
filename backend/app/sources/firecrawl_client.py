@@ -4,7 +4,7 @@ from typing import Optional
 
 from ..config import FIRECRAWL_API_KEY
 
-logger = logging.getLogger("scout.firecrawl")
+logger = logging.getLogger("bureau.firecrawl")
 
 
 @lru_cache(maxsize=1)

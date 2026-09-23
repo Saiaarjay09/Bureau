@@ -12,7 +12,7 @@ from itsdangerous import BadSignature, URLSafeTimedSerializer
 
 from .config import AUTH_PATH, SECRET_KEY, SESSION_COOKIE_NAME, SESSION_MAX_AGE_SECONDS
 
-serializer = URLSafeTimedSerializer(SECRET_KEY, salt="scout-session")
+serializer = URLSafeTimedSerializer(SECRET_KEY, salt="bureau-session")
 
 
 def credentials_configured() -> bool:

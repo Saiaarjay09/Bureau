@@ -18,7 +18,7 @@ from datetime import datetime
 from ..firecrawl_client import get_client
 from ..location import parse_location
 
-logger = logging.getLogger("scout.sources.firecrawl_business")
+logger = logging.getLogger("bureau.sources.firecrawl_business")
 
 COMPANY_SCHEMA = {
     "type": "object",

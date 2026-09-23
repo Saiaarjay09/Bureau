@@ -14,7 +14,7 @@ from ...enrichment import guess_seniority
 from ..firecrawl_client import get_client
 from ..location import parse_location
 
-logger = logging.getLogger("scout.sources.firecrawl_careers")
+logger = logging.getLogger("bureau.sources.firecrawl_careers")
 
 JOB_LISTING_SCHEMA = {
     "type": "object",

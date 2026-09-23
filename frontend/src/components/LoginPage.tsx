@@ -22,39 +22,46 @@ export default function LoginPage({ onLoggedIn }: { onLoggedIn: (username: strin
   }
 
   return (
-    <div className="flex min-h-screen items-center justify-center bg-neutral-50 dark:bg-neutral-950">
+    <div className="flex min-h-screen flex-col items-center justify-center bg-[var(--paper)] px-4 py-12">
+      <div className="mb-10 select-none text-center">
+        <h1 className="font-serif-mast text-6xl italic text-[var(--ink)]" style={{ letterSpacing: '0.01em' }}>
+          Bureau
+        </h1>
+        <div className="mx-auto my-3 h-[2px] w-16 bg-[var(--accent)]" />
+        <p className="font-mono-kicker text-[11px] text-[var(--ink-faint)]">Leads, by region</p>
+      </div>
+
       <form
         onSubmit={submit}
-        className="w-full max-w-sm rounded-xl border border-neutral-200 bg-white p-8 shadow-sm dark:border-neutral-800 dark:bg-neutral-900"
+        className="w-full max-w-sm border border-[var(--hairline)] bg-[var(--surface)] p-8"
       >
-        <h1 className="mb-1 text-2xl font-semibold text-neutral-900 dark:text-neutral-100">Scout</h1>
-        <p className="mb-6 text-sm text-neutral-500">Sign in to see your leads.</p>
+        <p className="mb-6 text-sm text-[var(--ink-muted)]">Sign in to see today's dispatch.</p>
 
         <label className="mb-3 block text-sm">
-          <span className="mb-1 block text-neutral-600 dark:text-neutral-400">Username</span>
+          <span className="mb-1 block font-mono-kicker text-[10px] text-[var(--ink-faint)]">Username</span>
           <input
             autoFocus
             value={username}
             onChange={(e) => setUsername(e.target.value)}
-            className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-neutral-900 outline-none focus:border-indigo-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+            className="w-full border border-[var(--hairline)] bg-transparent px-3 py-2 text-[var(--ink)] outline-none focus:border-[var(--accent)]"
           />
         </label>
-        <label className="mb-4 block text-sm">
-          <span className="mb-1 block text-neutral-600 dark:text-neutral-400">Password</span>
+        <label className="mb-5 block text-sm">
+          <span className="mb-1 block font-mono-kicker text-[10px] text-[var(--ink-faint)]">Password</span>
           <input
             type="password"
             value={password}
             onChange={(e) => setPassword(e.target.value)}
-            className="w-full rounded-lg border border-neutral-300 px-3 py-2 text-neutral-900 outline-none focus:border-indigo-500 dark:border-neutral-700 dark:bg-neutral-800 dark:text-neutral-100"
+            className="w-full border border-[var(--hairline)] bg-transparent px-3 py-2 text-[var(--ink)] outline-none focus:border-[var(--accent)]"
           />
         </label>
 
-        {error && <p className="mb-4 text-sm text-red-600 dark:text-red-400">{error}</p>}
+        {error && <p className="mb-4 text-sm text-[var(--accent)]">{error}</p>}
 
         <button
           type="submit"
           disabled={loading}
-          className="w-full rounded-lg bg-indigo-600 py-2 font-medium text-white transition hover:bg-indigo-700 disabled:opacity-50"
+          className="w-full bg-[var(--accent)] py-2 font-medium text-[var(--accent-ink)] transition hover:opacity-90 disabled:opacity-50"
         >
           {loading ? 'Signing in…' : 'Sign in'}
         </button>

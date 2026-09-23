@@ -8,15 +8,15 @@ export default function LeadTypeToggle({
   onChange: (value: LeadType) => void
 }) {
   return (
-    <div className="inline-flex rounded-lg border border-neutral-300 bg-neutral-100 p-1 dark:border-neutral-700 dark:bg-neutral-800">
+    <div className="flex gap-5 border-b border-[var(--hairline)]">
       {(['job', 'business'] as LeadType[]).map((type) => (
         <button
           key={type}
           onClick={() => onChange(type)}
-          className={`rounded-md px-4 py-1.5 text-sm font-medium transition ${
+          className={`font-mono-kicker -mb-px border-b-2 px-1 pb-2 pt-1 text-[11px] transition ${
             value === type
-              ? 'bg-white text-neutral-900 shadow-sm dark:bg-neutral-950 dark:text-neutral-100'
-              : 'text-neutral-500 hover:text-neutral-800 dark:hover:text-neutral-300'
+              ? 'border-[var(--accent)] text-[var(--ink)]'
+              : 'border-transparent text-[var(--ink-faint)] hover:text-[var(--ink-muted)]'
           }`}
         >
           {type === 'job' ? 'Jobs' : 'Business Opportunities'}

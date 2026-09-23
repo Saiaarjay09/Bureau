@@ -116,7 +116,11 @@ export default function App() {
   }
 
   if (authState === 'checking') {
-    return <div className="flex min-h-screen items-center justify-center text-neutral-400">Loading…</div>
+    return (
+      <div className="flex min-h-screen items-center justify-center bg-[var(--paper)] text-[var(--ink-faint)]">
+        Loading…
+      </div>
+    )
   }
 
   if (authState === 'out') {
@@ -131,33 +135,38 @@ export default function App() {
   }
 
   return (
-    <div className="min-h-screen bg-neutral-50 dark:bg-neutral-950">
-      <header className="border-b border-neutral-200 bg-white dark:border-neutral-800 dark:bg-neutral-900">
-        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-4 px-4 py-4">
-          <h1 className="text-lg font-semibold text-neutral-900 dark:text-neutral-100">Scout</h1>
-          <LeadTypeToggle value={leadType} onChange={setLeadType} />
-          <RegionSelector leadType={leadType} value={region} onChange={setRegion} />
-          <div className="ml-auto flex items-center gap-3 text-sm text-neutral-500">
+    <div className="min-h-screen bg-[var(--paper)] text-[var(--ink)]">
+      <header className="border-b border-[var(--hairline)] bg-[var(--surface)]">
+        <div className="mx-auto flex max-w-7xl items-baseline justify-between gap-4 px-4 pt-4">
+          <div className="select-none">
+            <span className="font-serif-mast text-3xl italic">Bureau</span>
+            <span className="ml-3 hidden font-mono-kicker text-[10px] text-[var(--ink-faint)] sm:inline">
+              Leads, by region
+            </span>
+          </div>
+          <div className="flex items-center gap-4 pb-1 text-sm text-[var(--ink-muted)]">
             <button
               onClick={refreshJobSources}
               disabled={ingesting}
-              className="rounded-lg border border-neutral-300 px-3 py-1.5 hover:bg-neutral-100 disabled:opacity-50 dark:border-neutral-700 dark:hover:bg-neutral-800"
+              className="border border-[var(--hairline)] px-3 py-1 hover:border-[var(--hairline-strong)] disabled:opacity-50"
             >
               {ingesting ? 'Refreshing…' : 'Refresh job sources'}
             </button>
             <span>{username}</span>
-            <button
-              onClick={() => api.logout().then(() => setAuthState('out'))}
-              className="hover:text-neutral-800 dark:hover:text-neutral-300"
-            >
+            <button onClick={() => api.logout().then(() => setAuthState('out'))} className="hover:text-[var(--ink)]">
               Sign out
             </button>
           </div>
         </div>
+        <div className="mx-auto h-[2px] max-w-7xl bg-[var(--accent)]" style={{ width: 64, marginLeft: 16 }} />
+        <div className="mx-auto flex max-w-7xl flex-wrap items-center gap-2 px-4 py-3">
+          <LeadTypeToggle value={leadType} onChange={setLeadType} />
+          <RegionSelector leadType={leadType} value={region} onChange={setRegion} />
+        </div>
       </header>
 
       <main className="mx-auto max-w-7xl px-4 py-6">
-        {ingestMessage && <p className="mb-3 text-sm text-neutral-500">{ingestMessage}</p>}
+        {ingestMessage && <p className="mb-3 text-sm text-[var(--ink-muted)]">{ingestMessage}</p>}
         {leadType === 'business' && (
           <BusinessDiscovery
             firecrawlConfigured={firecrawlConfigured}
