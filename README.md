@@ -6,6 +6,10 @@ region (continent → country → city), with save/star and CSV/JSON export.
 It's meant to run on your own Mac and be reachable only from your own
 Tailscale network, not the public internet.
 
+**Links:** [github.com/Saiaarjay09/Bureau](https://github.com/Saiaarjay09/Bureau)
+(source) · `https://haven.taila6d3cb.ts.net:8930` (the running app, tailnet-only)
+· [ARCHITECTURE.md](ARCHITECTURE.md) (a full code tour, file by file)
+
 ## Architecture
 
 - **Backend**: Python/FastAPI (`backend/`), SQLite for storage/dedup.
@@ -163,6 +167,20 @@ want to make Bureau public too.
 into your tailnet.** It won't resolve from anywhere else.
 
 ## Populating business leads
+
+Live-tested end to end while building this (search → scrape → structured
+extraction → dedupe → visible in the feed) using a one-off Firecrawl call
+outside the app, and the result — a real company pulled correctly out of
+a multi-company funding roundup article, with a company-level contact
+path, not a named person's — is sitting in the database right now on the
+Business Opportunities tab (`source: firecrawl_business`). That confirms
+the pipeline and its extraction schema work; it does not substitute for
+setting your own key. I have Firecrawl access through this coding
+session's own MCP connection, which lets *me* call Firecrawl while we
+talk, but that's not a credential I can extract or hand to your running
+server — the backend needs its **own** `FIRECRAWL_API_KEY` (from your
+own [firecrawl.dev](https://www.firecrawl.dev) account) in `backend/.env`
+before the in-app "Discover" button will work on its own.
 
 The "Discover businesses" bar (Business Opportunities tab) takes an
 industry and searches within whatever region you've currently filtered
