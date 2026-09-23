@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.scout.backend</string>
+
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/saideep/Developer/scout/backend/.venv/bin/uvicorn</string>
+        <string>app.main:app</string>
+        <string>--host</string>
+        <string>127.0.0.1</string>
+        <string>--port</string>
+        <string>8910</string>
+    </array>
+
+    <key>WorkingDirectory</key>
+    <string>/Users/saideep/Developer/scout/backend</string>
+
+    <key>RunAtLoad</key>
+    <true/>
+    <key>KeepAlive</key>
+    <true/>
+
+    <key>StandardOutPath</key>
+    <string>/Users/saideep/Library/Logs/Scout/backend.log</string>
+    <key>StandardErrorPath</key>
+    <string>/Users/saideep/Library/Logs/Scout/backend.error.log</string>
+</dict>
+</plist>

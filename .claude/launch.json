@@ -1,0 +1,17 @@
+{
+  "version": "0.0.1",
+  "configurations": [
+    {
+      "name": "scout-frontend",
+      "runtimeExecutable": "scripts/dev-frontend.sh",
+      "runtimeArgs": [],
+      "port": 5173
+    },
+    {
+      "name": "scout-backend",
+      "runtimeExecutable": "scripts/dev-backend.sh",
+      "runtimeArgs": [],
+      "port": 8910
+    }
+  ]
+}
