@@ -29,16 +29,28 @@ Tailscale network, not the public internet.
 **Job leads (automatic, no signup needed):**
 [Remotive](https://remotive.com), [Arbeitnow](https://www.arbeitnow.com),
 and [RemoteOK](https://remoteok.com)'s public JSON APIs. All three are
-free and keyless. Coverage skews toward remote/tech roles; onsite and
-non-tech roles are underrepresented. Broadening this (e.g.
-[Adzuna](https://developer.adzuna.com) for much wider geographic/industry
-coverage, or [USAJobs](https://developer.usajobs.gov) for US federal
-listings) is a deliberate next step, not done here — both need you to
-sign up for a free API key yourself first.
+free and keyless, but have two structural blind spots: they skew toward
+individual-contributor tech roles (leadership titles like "IT Director"
+essentially never appear — Remotive/RemoteOK/Arbeitnow just aren't where
+those get posted), and their regional coverage is Western/remote-only
+(Remotive/RemoteOK are remote-only, Arbeitnow is Europe-centric — neither
+has any Gulf/Middle East presence). [Adzuna](https://developer.adzuna.com)
+would broaden general coverage (needs a free signup) but doesn't fix the
+Middle East gap either — its country list is AU/AT/BE/BR/CA/FR/DE/IN/IT/
+MX/NL/NZ/PL/SG/ZA/ES/CH/GB/US, no Middle East at all (checked directly
+against Adzuna's own docs).
+[USAJobs](https://developer.usajobs.gov) (US federal listings, also
+needs a signup) is narrower still. Neither is wired up here — see
+"Finding what the automatic sources miss" below for what actually
+closes those two gaps today.
 
 **Job leads (manual, costs Firecrawl credits):** career-page discovery
 for specific companies via `/api/ingest/careers` — maps a company's
-domain, finds its careers page, and extracts current listings.
+domain, finds its careers page, and extracts current listings. Also a
+general role/region job search via `/api/ingest/job_search` — the
+"Discover" bar on the Jobs tab — which is what actually reaches
+leadership titles and regions like the UAE that the three automatic
+sources can't; see below.
 
 **Business-opportunity leads (manual, costs Firecrawl credits):**
 Firecrawl web/news search per industry+region, then scrapes the matched
@@ -181,6 +193,19 @@ want to make Bureau public too.
 
 **Visit `https://haven.taila6d3cb.ts.net:8930` from any device signed
 into your tailnet.** It won't resolve from anywhere else.
+
+## Finding what the automatic sources miss
+
+The "Search the web for [a role]" bar on the Jobs tab exists specifically
+for the two gaps above: leadership titles and non-Western regions.
+Type a role (e.g. "IT Director", "Head of IT") and, if you've set a
+region filter, it searches within that region — e.g. filter to United
+Arab Emirates first, then search "IT Director" — or leave the filter on
+Global to search everywhere. Each search spends Firecrawl credits (a
+handful of search + scrape calls per click), so like the business-leads
+bar, it's manual rather than automatic. Verified live while building
+this: found 47 director/IT-director-titled roles and 19 real UAE
+listings, both zero from the three automatic sources alone.
 
 ## Populating business leads
 

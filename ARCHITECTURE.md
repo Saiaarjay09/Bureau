@@ -150,7 +150,14 @@ present, serializes `tags`/`raw` to JSON columns, and either updates an
 existing row (matched on `source` + `external_id`, never touching its
 `starred` flag) or inserts a new one. Returns `(created, updated)` counts,
 which is what the ingestion endpoints and the background loop report
-back.
+back. Dedupes against a `pending` dict of this batch's own new rows, not
+just the database — a single Firecrawl-search call can legitimately
+return the same job twice (matched by two different query templates,
+scraped off two different search-result pages), and without the in-batch
+check the second occurrence looks "new" to a plain SELECT (SQLAlchemy
+hasn't flushed the first one yet) and crashes the whole batch on
+SQLite's UNIQUE constraint at commit time instead of just updating in
+place (found while live-testing `firecrawl_job_search.py`).
 
 ### `backend/app/enrichment.py`
 Two pieces of enrichment that don't need an external API call:
@@ -214,11 +221,14 @@ The manual-trigger endpoints, all requiring a session: `POST /jobs`
 (re-runs the keyless sources on demand, same function the background
 loop uses), `POST /careers` (Firecrawl career-page discovery for a
 specific list of `{name, domain}` companies), `POST /business`
-(Firecrawl business-lead discovery for one industry/region). The latter
-two both 400 immediately if `FIRECRAWL_API_KEY` isn't set, via
-`sources.firecrawl_client.is_configured()`, rather than attempting a call
-that would fail anyway. `GET /status` reports whether Firecrawl is
-configured and the background loop's last-run timestamps.
+(Firecrawl business-lead discovery for one industry/region), `POST
+/job_search` (Firecrawl-based job search for any role/region combo —
+this is what reaches leadership titles and regions like the Gulf/Middle
+East that the three keyless boards structurally can't). All three
+Firecrawl-backed endpoints 400 immediately if `FIRECRAWL_API_KEY` isn't
+set, via `sources.firecrawl_client.is_configured()`, rather than
+attempting a call that would fail anyway. `GET /status` reports whether
+Firecrawl is configured and the background loop's last-run timestamps.
 
 ## `backend/app/sources/` — one module per lead source
 
@@ -279,6 +289,29 @@ domain looking for a URL containing "career"/"job", then
 (`JOB_LISTING_SCHEMA`) asking for every open listing's title, location,
 department, and URL. Only triggered from `/api/ingest/careers` — never
 on the background schedule, since every call spends Firecrawl credits.
+
+### `backend/app/sources/jobs/firecrawl_job_search.py`
+The general-purpose job source, added specifically because the three
+keyless boards have two structural blind spots: they skew toward
+individual-contributor tech roles (leadership titles like "IT Director"
+or "Head of IT" essentially never appear), and their regional coverage
+is Western/remote-only (Remotive/RemoteOK are remote-only, Arbeitnow is
+Europe-centric — none has meaningful Gulf/Middle East coverage, and
+Adzuna, the other free-tier option, doesn't cover the Middle East
+either — confirmed by checking Adzuna's own country list while building
+this). `_search_urls()` runs `firecrawl.search()` against three query
+templates combining a free-text role and region (e.g. "IT Director" +
+"UAE"); `fetch()` then `firecrawl.scrape()`s each matched URL with
+`JOB_LISTING_SCHEMA` — the same shape as `firecrawl_careers.py`'s, since
+both are extracting a list of job postings from a page rather than one
+company's details. If a listing's own location is empty, it falls back
+to the searched region string itself before running it through
+`parse_location()`, since the search was already scoped there. Verified
+against live data while building this: correctly surfaces roles like
+"Director of IT" and "IT Applications Director," and correctly resolves
+Dubai/Abu Dhabi listings to `country="United Arab Emirates"`. Powers the
+"Discover" bar on the Jobs tab (`/api/ingest/job_search`) — manual-only,
+like the other two Firecrawl sources.
 
 ### `backend/app/sources/business/firecrawl_business.py`
 The business-opportunity pipeline. `_search_urls()` runs `firecrawl.
@@ -428,6 +461,15 @@ Opportunities tab. If `firecrawlConfigured` is false (checked once by
 `FIRECRAWL_API_KEY` instead of the input. Otherwise, submitting calls
 `api.ingestBusiness()` and reports how many leads were created/updated,
 then calls `onDiscovered()` so `App.tsx` re-fetches the feed.
+
+### `frontend/src/components/JobDiscovery.tsx`
+The equivalent search bar for the Jobs tab — a free-text role instead of
+an industry, calling `api.ingestJobSearch()` — this is what a person
+actually uses to pull in a leadership title or a region the three
+automatic sources don't cover. Renders nothing at all (not even a
+Firecrawl-not-configured note) when `firecrawlConfigured` is false,
+unlike `BusinessDiscovery`, since the job feed already has three working
+automatic sources and doesn't need to nag about a fourth, optional one.
 
 ### `frontend/vite.config.ts`
 Registers the React and Tailwind v4 Vite plugins, and proxies `/api` to

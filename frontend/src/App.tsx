@@ -2,6 +2,7 @@ import { useCallback, useEffect, useState } from 'react'
 import { api } from './api'
 import BusinessDiscovery from './components/BusinessDiscovery'
 import FiltersBar, { type Filters } from './components/FiltersBar'
+import JobDiscovery from './components/JobDiscovery'
 import LeadTypeToggle from './components/LeadTypeToggle'
 import LoginPage from './components/LoginPage'
 import RegionSelector, { GLOBAL, type RegionValue } from './components/RegionSelector'
@@ -169,6 +170,16 @@ export default function App() {
         {ingestMessage && <p className="mb-3 text-sm text-[var(--ink-muted)]">{ingestMessage}</p>}
         {leadType === 'business' && (
           <BusinessDiscovery
+            firecrawlConfigured={firecrawlConfigured}
+            region={region.city || region.country || region.continent || ''}
+            onDiscovered={() => {
+              setPage(1)
+              setRefreshTick((t) => t + 1)
+            }}
+          />
+        )}
+        {leadType === 'job' && (
+          <JobDiscovery
             firecrawlConfigured={firecrawlConfigured}
             region={region.city || region.country || region.continent || ''}
             onDiscovered={() => {

@@ -10,7 +10,7 @@ from ..ingest import upsert_leads
 from ..scheduler import LAST_RUN, run_job_sources_once
 from ..sources.business import firecrawl_business
 from ..sources.firecrawl_client import is_configured
-from ..sources.jobs import firecrawl_careers
+from ..sources.jobs import firecrawl_careers, firecrawl_job_search
 
 router = APIRouter(prefix="/api/ingest", tags=["ingest"], dependencies=[Depends(require_session)])
 
@@ -28,6 +28,12 @@ class BusinessRequest(BaseModel):
     industry: str
     region: Optional[str] = ""
     max_companies: int = 15
+
+
+class JobSearchRequest(BaseModel):
+    role: str
+    region: Optional[str] = ""
+    max_pages: int = 10
 
 
 @router.get("/status")
@@ -66,6 +72,23 @@ def ingest_business(body: BusinessRequest):
     db = SessionLocal()
     try:
         created, updated = upsert_leads(db, leads)
+    finally:
+        db.close()
+    return {"created": created, "updated": updated}
+
+
+@router.post("/job_search")
+def ingest_job_search(body: JobSearchRequest):
+    """Firecrawl-based job search for any role/region combo the keyless
+    boards don't cover (leadership titles, non-Western regions). Spends
+    Firecrawl credits."""
+    if not is_configured():
+        raise HTTPException(status_code=400, detail="FIRECRAWL_API_KEY is not set on the server")
+    leads = firecrawl_job_search.fetch(body.role, body.region or "", body.max_pages)
+    db = SessionLocal()
+    try:
+        created, updated = upsert_leads(db, leads)
+        apply_growth_signals(db)
     finally:
         db.close()
     return {"created": created, "updated": updated}

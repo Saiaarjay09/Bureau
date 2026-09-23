@@ -62,6 +62,11 @@ export const api = {
       method: 'POST',
       body: JSON.stringify({ industry, region }),
     }),
+  ingestJobSearch: (role: string, region: string) =>
+    request<{ created: number; updated: number }>('/api/ingest/job_search', {
+      method: 'POST',
+      body: JSON.stringify({ role, region }),
+    }),
 }
 
 function cleanParams(params: Record<string, string | number | boolean | undefined>) {
