@@ -9,7 +9,7 @@ existing recovery phrase (if there is one) untouched.
 
 Usage:
     python3 scripts/set_password.py
-    python3 scripts/set_password.py --username saideep --password 'hunter2'   # non-interactive
+    python3 scripts/set_password.py --username alice --password 'hunter2'   # non-interactive
 
 Password is stored as a bcrypt hash in backend/data/auth.json — never plaintext.
 """

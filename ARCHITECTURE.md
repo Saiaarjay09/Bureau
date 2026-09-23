@@ -481,15 +481,18 @@ backend can run on different ports without a CORS setup.
 ## `deploy/` and `.claude/` — running it
 
 ### `deploy/com.bureau.backend.plist`
-The `launchd` user-agent unit that keeps the backend running: runs
-`.venv/bin/uvicorn app.main:app` from `backend/`, restarts on crash
+The `launchd` user-agent **template** that keeps the backend running:
+runs `.venv/bin/uvicorn app.main:app` from `backend/`, restarts on crash
 (`KeepAlive`) and on login (`RunAtLoad`), and logs to `~/Library/Logs/
-Bureau/`. Installed with `launchctl bootstrap gui/$(id -u) <path to this
-file>` — see `README.md`'s "Running as a persistent background service"
-section for the full command set. Note: a Python venv embeds absolute
-paths in its script shebangs, so if this repo is ever moved to a
-different path, `backend/.venv` has to be deleted and recreated there —
-`mv`-ing it along with the rest of the repo will silently break it.
+Bureau/`. Committed with `/Users/YOURNAME/...` placeholders rather than
+a real path, since this repo is public — the actual, filled-in copy
+lives outside the repo entirely, at `~/Library/LaunchAgents/com.bureau.
+backend.plist`, which is what `launchctl` actually loads (see `README.
+md`'s "Running as a persistent background service" section for the copy
++ fill-in + bootstrap steps). Note: a Python venv embeds absolute paths
+in its script shebangs, so if this repo is ever moved to a different
+path, `backend/.venv` has to be deleted and recreated there — `mv`-ing
+it along with the rest of the repo will silently break it.
 
 ### `.claude/launch.json`
 Not part of the running app — this only tells Claude Code's browser

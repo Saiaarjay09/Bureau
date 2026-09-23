@@ -7,8 +7,9 @@ It's meant to run on your own Mac and be reachable only from your own
 Tailscale network, not the public internet.
 
 **Links:** [github.com/Saiaarjay09/Bureau](https://github.com/Saiaarjay09/Bureau)
-(source) · `https://haven.taila6d3cb.ts.net:8930` (the running app, tailnet-only)
-· [ARCHITECTURE.md](ARCHITECTURE.md) (a full code tour, file by file)
+(source) · [ARCHITECTURE.md](ARCHITECTURE.md) (a full code tour, file by
+file). The running app itself is tailnet-only by design (see "Serving
+over Tailscale" below) — there's no public URL to link.
 
 ## Architecture
 
@@ -134,11 +135,18 @@ against the new hash on their next request.
 
 A `launchd` user-agent keeps the backend running across reboots and
 restarts it if it crashes, the same way Haven's own services do on this
-machine.
+machine. `deploy/com.bureau.backend.plist` in the repo is a **template**
+with `/Users/YOURNAME/...` placeholders — copy it into
+`~/Library/LaunchAgents/`, fill in your actual username/paths, and run
+launchd from that copy, not the repo file directly, so your real paths
+never need to be committed:
 
 ```bash
 mkdir -p ~/Library/Logs/Bureau
-launchctl bootstrap gui/$(id -u) ~/Developer/bureau/deploy/com.bureau.backend.plist
+cp deploy/com.bureau.backend.plist ~/Library/LaunchAgents/
+# then edit ~/Library/LaunchAgents/com.bureau.backend.plist,
+# replacing every /Users/YOURNAME/... with your actual home directory
+launchctl bootstrap gui/$(id -u) ~/Library/LaunchAgents/com.bureau.backend.plist
 ```
 
 Useful commands:
@@ -151,14 +159,11 @@ launchctl list | grep com.bureau
 launchctl kickstart -k gui/$(id -u)/com.bureau.backend
 
 # Stop it entirely
-launchctl bootout gui/$(id -u) ~/Developer/bureau/deploy/com.bureau.backend.plist
+launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.bureau.backend.plist
 
 # Logs
 tail -f ~/Library/Logs/Bureau/backend.log
 ```
-
-The plist assumes this repo lives at `~/Developer/bureau` — edit the paths
-inside it first if you move it.
 
 ## Serving over Tailscale
 
@@ -174,9 +179,10 @@ This is already set up and running on this machine:
 tailscale serve --bg --https=8930 http://127.0.0.1:8910
 ```
 
-That maps `https://haven.taila6d3cb.ts.net:8930` to the backend on
-127.0.0.1:8910 — HTTPS handled entirely by Tailscale, tailnet-only (no
-public exposure). Verify any time with:
+That maps `https://<your-device>.<your-tailnet>.ts.net:8930` to the
+backend on 127.0.0.1:8910 — HTTPS handled entirely by Tailscale,
+tailnet-only (no public exposure). Run `tailscale status` to see your
+own device/tailnet name. Verify any time with:
 
 ```bash
 tailscale serve status
@@ -191,8 +197,8 @@ Bureau deliberately uses its own port (8930) that's never been funneled —
 don't run `tailscale funnel --https=8930 ...` unless you specifically
 want to make Bureau public too.
 
-**Visit `https://haven.taila6d3cb.ts.net:8930` from any device signed
-into your tailnet.** It won't resolve from anywhere else.
+**Visit `https://<your-device>.<your-tailnet>.ts.net:8930` from any
+device signed into your tailnet.** It won't resolve from anywhere else.
 
 ## Finding what the automatic sources miss
 
