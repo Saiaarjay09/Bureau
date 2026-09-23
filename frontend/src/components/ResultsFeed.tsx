@@ -1,5 +1,6 @@
 import type { Lead } from '../types'
 import LeadCard from './LeadCard'
+import Spinner from './Spinner'
 
 export default function ResultsFeed({
   leads,
@@ -22,6 +23,14 @@ export default function ResultsFeed({
     return <p className="py-12 text-center text-sm text-[var(--accent)]">{error}</p>
   }
 
+  if (loading && leads.length === 0) {
+    return (
+      <div className="flex justify-center py-16 text-[var(--ink-faint)]">
+        <Spinner className="h-6 w-6 border-[3px]" />
+      </div>
+    )
+  }
+
   if (!loading && leads.length === 0) {
     return (
       <div className="py-16 text-center text-[var(--ink-muted)]">
@@ -41,7 +50,11 @@ export default function ResultsFeed({
           <LeadCard key={lead.id} lead={lead} onToggleStar={onToggleStar} />
         ))}
       </div>
-      {loading && <p className="py-6 text-center text-sm text-[var(--ink-faint)]">Loading…</p>}
+      {loading && (
+        <p className="flex items-center justify-center gap-2 py-6 text-sm text-[var(--ink-faint)]">
+          <Spinner /> Loading…
+        </p>
+      )}
       {!loading && hasMore && (
         <div className="mt-6 flex justify-center">
           <button

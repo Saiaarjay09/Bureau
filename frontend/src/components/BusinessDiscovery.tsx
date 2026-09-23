@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { api, ApiError } from '../api'
+import Spinner from './Spinner'
 
 export default function BusinessDiscovery({
   firecrawlConfigured,
@@ -52,8 +53,9 @@ export default function BusinessDiscovery({
       <button
         onClick={run}
         disabled={running || !industry.trim()}
-        className="bg-[var(--accent)] px-3 py-1.5 text-sm font-medium text-[var(--accent-ink)] hover:opacity-90 disabled:opacity-50"
+        className="flex items-center gap-2 bg-[var(--accent)] px-3 py-1.5 text-sm font-medium text-[var(--accent-ink)] hover:opacity-90 disabled:opacity-50"
       >
+        {running && <Spinner />}
         {running ? 'Searching…' : 'Discover'}
       </button>
       {message && <span className="text-sm text-[var(--ink-muted)]">{message}</span>}

@@ -15,6 +15,7 @@ import logging
 from datetime import datetime
 
 from ...enrichment import guess_seniority
+from ..concurrency import parallel_map
 from ..firecrawl_client import get_client
 from ..location import parse_location
 
@@ -54,20 +55,74 @@ def _result_url(item) -> str | None:
     return getattr(item, "url", None)
 
 
+def _search_one(client, query: str, limit_per_query: int) -> list[str]:
+    try:
+        result = client.search(query, limit=limit_per_query, sources=["web"])
+    except Exception:
+        logger.exception("Firecrawl search failed for %r", query)
+        return []
+    return [url for item in (getattr(result, "web", None) or []) if (url := _result_url(item))]
+
+
 def _search_urls(client, role: str, region: str, limit_per_query: int = 5) -> list[str]:
-    urls: list[str] = []
-    for template in QUERY_TEMPLATES:
-        query = template.format(role=role, region=region or "").strip()
-        try:
-            result = client.search(query, limit=limit_per_query, sources=["web"])
-        except Exception:
-            logger.exception("Firecrawl search failed for %r", query)
-            continue
-        for item in (getattr(result, "web", None) or []):
-            url = _result_url(item)
-            if url:
-                urls.append(url)
+    queries = [t.format(role=role, region=region or "").strip() for t in QUERY_TEMPLATES]
+    results = parallel_map(lambda q: _search_one(client, q, limit_per_query), queries)
+    urls = [url for batch in results if batch for url in batch]
     return list(dict.fromkeys(urls))  # dedupe, keep first-seen order
+
+
+def _scrape_one(client, role: str, region: str, url: str) -> list[dict]:
+    try:
+        doc = client.scrape(
+            url,
+            formats=[{
+                "type": "json",
+                "prompt": (
+                    f"Extract every current job listing on this page matching "
+                    f"the role '{role}'" + (f" in {region}" if region else "")
+                    + ": title, company, location, whether it's remote/hybrid/"
+                    "onsite if stated, and the direct URL to the listing if present."
+                ),
+                "schema": JOB_LISTING_SCHEMA,
+            }],
+            only_main_content=True,
+        )
+    except Exception:
+        logger.exception("Firecrawl scrape failed for %s", url)
+        return []
+
+    data = getattr(doc, "json", None) or {}
+    jobs = data.get("jobs", []) if isinstance(data, dict) else []
+    out = []
+    for job in jobs:
+        title = (job.get("title") or "").strip()
+        company = (job.get("company") or "").strip()
+        if not title or not company:
+            continue
+        # Fall back to the searched region when a listing doesn't state its
+        # own location — the search itself was already scoped to it.
+        continent, country, city = parse_location(job.get("location") or region)
+        remote_type = (job.get("remote_type") or "").strip().lower() or None
+        if remote_type not in ("remote", "hybrid", "onsite"):
+            remote_type = None
+        out.append({
+            "lead_type": "job",
+            "source": "firecrawl_jobs",
+            "external_id": f"{url}:{title}:{company}".lower().replace(" ", "-")[:200],
+            "title": title,
+            "company": company,
+            "company_domain": None,
+            "url": job.get("url") or url,
+            "continent": continent,
+            "country": country,
+            "city": city,
+            "remote_type": remote_type,
+            "seniority": guess_seniority(title),
+            "tags": [role],
+            "posted_date": datetime.utcnow(),
+            "raw": {},
+        })
+    return out
 
 
 def fetch(role: str, region: str = "", max_pages: int = 10) -> list[dict]:
@@ -76,55 +131,5 @@ def fetch(role: str, region: str = "", max_pages: int = 10) -> list[dict]:
         return []
 
     urls = _search_urls(client, role, region)[:max_pages]
-    out = []
-    for url in urls:
-        try:
-            doc = client.scrape(
-                url,
-                formats=[{
-                    "type": "json",
-                    "prompt": (
-                        f"Extract every current job listing on this page matching "
-                        f"the role '{role}'" + (f" in {region}" if region else "")
-                        + ": title, company, location, whether it's remote/hybrid/"
-                        "onsite if stated, and the direct URL to the listing if present."
-                    ),
-                    "schema": JOB_LISTING_SCHEMA,
-                }],
-                only_main_content=True,
-            )
-        except Exception:
-            logger.exception("Firecrawl scrape failed for %s", url)
-            continue
-
-        data = getattr(doc, "json", None) or {}
-        jobs = data.get("jobs", []) if isinstance(data, dict) else []
-        for job in jobs:
-            title = (job.get("title") or "").strip()
-            company = (job.get("company") or "").strip()
-            if not title or not company:
-                continue
-            # Fall back to the searched region when a listing doesn't state its
-            # own location — the search itself was already scoped to it.
-            continent, country, city = parse_location(job.get("location") or region)
-            remote_type = (job.get("remote_type") or "").strip().lower() or None
-            if remote_type not in ("remote", "hybrid", "onsite"):
-                remote_type = None
-            out.append({
-                "lead_type": "job",
-                "source": "firecrawl_jobs",
-                "external_id": f"{url}:{title}:{company}".lower().replace(" ", "-")[:200],
-                "title": title,
-                "company": company,
-                "company_domain": None,
-                "url": job.get("url") or url,
-                "continent": continent,
-                "country": country,
-                "city": city,
-                "remote_type": remote_type,
-                "seniority": guess_seniority(title),
-                "tags": [role],
-                "posted_date": datetime.utcnow(),
-                "raw": {},
-            })
-    return out
+    results = parallel_map(lambda url: _scrape_one(client, role, region, url), urls)
+    return [job for batch in results if batch for job in batch]

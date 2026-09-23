@@ -11,6 +11,7 @@ import logging
 from datetime import datetime
 
 from ...enrichment import guess_seniority
+from ..concurrency import parallel_map
 from ..firecrawl_client import get_client
 from ..location import parse_location
 
@@ -113,10 +114,8 @@ def fetch_for_company(company_name: str, domain: str) -> list[dict]:
 
 
 def fetch_for_companies(companies: list[dict]) -> list[dict]:
-    """companies: [{"name": ..., "domain": ...}, ...]"""
-    out = []
-    for c in companies:
-        if not c.get("domain") or not c.get("name"):
-            continue
-        out.extend(fetch_for_company(c["name"], c["domain"]))
-    return out
+    """companies: [{"name": ..., "domain": ...}, ...]. Each company's
+    map+scrape is independent of every other's, so they run concurrently."""
+    valid = [c for c in companies if c.get("domain") and c.get("name")]
+    results = parallel_map(lambda c: fetch_for_company(c["name"], c["domain"]), valid)
+    return [job for batch in results if batch for job in batch]

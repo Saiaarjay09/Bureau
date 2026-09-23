@@ -15,6 +15,7 @@ each call spends Firecrawl credits."""
 import logging
 from datetime import datetime
 
+from ..concurrency import parallel_map
 from ..firecrawl_client import get_client
 from ..location import parse_location
 
@@ -60,20 +61,71 @@ def _result_url(item) -> str | None:
     return getattr(item, "url", None)
 
 
+def _search_one(client, query: str, limit_per_query: int) -> list[str]:
+    try:
+        result = client.search(query, limit=limit_per_query, sources=["web", "news"])
+    except Exception:
+        logger.exception("Firecrawl search failed for %r", query)
+        return []
+    return [url for item in (getattr(result, "web", None) or []) if (url := _result_url(item))]
+
+
 def _search_urls(client, industry: str, region: str, limit_per_query: int = 5) -> list[str]:
-    urls: list[str] = []
-    for template in QUERY_TEMPLATES:
-        query = template.format(industry=industry, region=region or "").strip()
-        try:
-            result = client.search(query, limit=limit_per_query, sources=["web", "news"])
-        except Exception:
-            logger.exception("Firecrawl search failed for %r", query)
-            continue
-        for item in (getattr(result, "web", None) or []):
-            url = _result_url(item)
-            if url:
-                urls.append(url)
+    queries = [t.format(industry=industry, region=region or "").strip() for t in QUERY_TEMPLATES]
+    results = parallel_map(lambda q: _search_one(client, q, limit_per_query), queries)
+    urls = [url for batch in results if batch for url in batch]
     return list(dict.fromkeys(urls))  # dedupe, keep first-seen order
+
+
+def _scrape_one(client, industry: str, url: str) -> dict | None:
+    try:
+        doc = client.scrape(
+            url,
+            formats=[{
+                "type": "json",
+                "prompt": (
+                    "This page is about a company. Extract its name, domain, "
+                    "industry, HQ city/country, approximate employee count, "
+                    "funding stage if known, the specific recent signal that "
+                    "makes it a live sales/business opportunity, and a general "
+                    "company contact — never a named individual's personal "
+                    "email or phone."
+                ),
+                "schema": COMPANY_SCHEMA,
+            }],
+            only_main_content=True,
+        )
+    except Exception:
+        logger.exception("Firecrawl scrape failed for %s", url)
+        return None
+
+    data = getattr(doc, "json", None) or {}
+    if not isinstance(data, dict) or not data.get("company_name"):
+        return None
+
+    continent, country, city = parse_location(
+        ", ".join(p for p in [data.get("hq_city"), data.get("hq_country")] if p)
+    )
+    return {
+        "lead_type": "business",
+        "source": "firecrawl_business",
+        "external_id": (data.get("domain") or data["company_name"]).lower().replace(" ", "-"),
+        "title": f"{industry} opportunity: {data['company_name']}",
+        "company": data["company_name"],
+        "company_domain": data.get("domain"),
+        "url": url,
+        "continent": continent,
+        "country": country,
+        "city": city,
+        "industry": data.get("industry") or industry,
+        "contact_path": data.get("contact_path"),
+        "company_size": data.get("company_size"),
+        "funding_stage": data.get("funding_stage"),
+        "signal": data.get("signal"),
+        "tags": [industry],
+        "posted_date": datetime.utcnow(),
+        "raw": {},
+    }
 
 
 def fetch(industry: str, region: str = "", max_companies: int = 15) -> list[dict]:
@@ -82,54 +134,5 @@ def fetch(industry: str, region: str = "", max_companies: int = 15) -> list[dict
         return []
 
     urls = _search_urls(client, industry, region)[:max_companies]
-    out = []
-    for url in urls:
-        try:
-            doc = client.scrape(
-                url,
-                formats=[{
-                    "type": "json",
-                    "prompt": (
-                        "This page is about a company. Extract its name, domain, "
-                        "industry, HQ city/country, approximate employee count, "
-                        "funding stage if known, the specific recent signal that "
-                        "makes it a live sales/business opportunity, and a general "
-                        "company contact — never a named individual's personal "
-                        "email or phone."
-                    ),
-                    "schema": COMPANY_SCHEMA,
-                }],
-                only_main_content=True,
-            )
-        except Exception:
-            logger.exception("Firecrawl scrape failed for %s", url)
-            continue
-
-        data = getattr(doc, "json", None) or {}
-        if not isinstance(data, dict) or not data.get("company_name"):
-            continue
-
-        continent, country, city = parse_location(
-            ", ".join(p for p in [data.get("hq_city"), data.get("hq_country")] if p)
-        )
-        out.append({
-            "lead_type": "business",
-            "source": "firecrawl_business",
-            "external_id": (data.get("domain") or data["company_name"]).lower().replace(" ", "-"),
-            "title": f"{industry} opportunity: {data['company_name']}",
-            "company": data["company_name"],
-            "company_domain": data.get("domain"),
-            "url": url,
-            "continent": continent,
-            "country": country,
-            "city": city,
-            "industry": data.get("industry") or industry,
-            "contact_path": data.get("contact_path"),
-            "company_size": data.get("company_size"),
-            "funding_stage": data.get("funding_stage"),
-            "signal": data.get("signal"),
-            "tags": [industry],
-            "posted_date": datetime.utcnow(),
-            "raw": {},
-        })
-    return out
+    leads = parallel_map(lambda url: _scrape_one(client, industry, url), urls)
+    return [lead for lead in leads if lead]

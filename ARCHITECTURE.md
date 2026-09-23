@@ -297,13 +297,29 @@ onsite roles too). Each is wrapped in a `try/except httpx.HTTPError` that
 logs and returns `[]` rather than taking the whole ingest run down if one
 API is temporarily unreachable.
 
+### `backend/app/sources/concurrency.py`
+`parallel_map(fn, items)` — the thing that makes Discover fast instead of
+taking ~45 seconds. Every Firecrawl source used to run its handful of
+search queries one at a time, then its handful of scrapes one at a
+time; each is a network round trip (a scrape can take several seconds
+on a JS-heavy page), so those added up strictly sequentially. None of
+those calls depend on each other, so a `ThreadPoolExecutor` (default 6
+workers — Firecrawl's Python SDK makes a plain blocking HTTP request per
+call, which releases the GIL while waiting) runs them concurrently
+instead, preserving input order and logging+skipping (returning `None`
+in that slot) rather than aborting the batch if one item raises. Cut a
+representative job search from ~45s to ~20s in testing.
+
 ### `backend/app/sources/jobs/firecrawl_careers.py`
 Given a list of `{name, domain}` companies, `firecrawl.map()`s each
 domain looking for a URL containing "career"/"job", then
 `firecrawl.scrape()`s that page with a JSON-mode extraction schema
 (`JOB_LISTING_SCHEMA`) asking for every open listing's title, location,
-department, and URL. Only triggered from `/api/ingest/careers` — never
-on the background schedule, since every call spends Firecrawl credits.
+department, and URL. `fetch_for_companies()` runs one company's
+map+scrape per `parallel_map()` worker, since different companies are
+fully independent of each other. Only triggered from `/api/ingest/
+careers` — never on the background schedule, since every call spends
+Firecrawl credits.
 
 ### `backend/app/sources/jobs/firecrawl_job_search.py`
 The general-purpose job source, added specifically because the three
@@ -316,24 +332,27 @@ Adzuna, the other free-tier option, doesn't cover the Middle East
 either — confirmed by checking Adzuna's own country list while building
 this). `_search_urls()` runs `firecrawl.search()` against three query
 templates combining a free-text role and region (e.g. "IT Director" +
-"UAE"); `fetch()` then `firecrawl.scrape()`s each matched URL with
-`JOB_LISTING_SCHEMA` — the same shape as `firecrawl_careers.py`'s, since
-both are extracting a list of job postings from a page rather than one
-company's details. If a listing's own location is empty, it falls back
-to the searched region string itself before running it through
-`parse_location()`, since the search was already scoped there. Verified
-against live data while building this: correctly surfaces roles like
-"Director of IT" and "IT Applications Director," and correctly resolves
-Dubai/Abu Dhabi listings to `country="United Arab Emirates"`. Powers the
-"Discover" bar on the Jobs tab (`/api/ingest/job_search`) — manual-only,
-like the other two Firecrawl sources.
+"UAE") through `parallel_map()`, pooling and deduping the result URLs;
+`fetch()` then runs `firecrawl.scrape()` on each matched URL, also
+through `parallel_map()`, with `JOB_LISTING_SCHEMA` — the same shape as
+`firecrawl_careers.py`'s, since both are extracting a list of job
+postings from a page rather than one company's details. If a listing's
+own location is empty, it falls back to the searched region string
+itself before running it through `parse_location()`, since the search
+was already scoped there. Verified against live data while building
+this: correctly surfaces roles like "Director of IT" and "IT
+Applications Director," and correctly resolves Dubai/Abu Dhabi listings
+to `country="United Arab Emirates"`. Powers the "Discover" bar on the
+Jobs tab (`/api/ingest/job_search`) — manual-only, like the other two
+Firecrawl sources.
 
 ### `backend/app/sources/business/firecrawl_business.py`
 The business-opportunity pipeline. `_search_urls()` runs `firecrawl.
 search()` against four query templates per industry/region (funding,
 active hiring, expansion, new leadership — the four signal types the
-build brief called out), pooling and deduping the result URLs. `fetch()`
-then `firecrawl.scrape()`s each URL with `COMPANY_SCHEMA` — a JSON-mode
+build brief called out) through `parallel_map()`, pooling and deduping
+the result URLs. `fetch()` then runs `firecrawl.scrape()` on each URL,
+also through `parallel_map()`, with `COMPANY_SCHEMA` — a JSON-mode
 extraction asking for the company's name, domain, HQ location, size,
 funding stage, the specific signal, and a **company-level** contact path,
 explicitly prompted to never return a named individual's personal contact
@@ -462,20 +481,33 @@ present) shown as a letterspaced mono line, and — if the lead has a
 border, which is the card's visual focal point. The star button toggles
 directly via the `onToggleStar` callback passed down from `App.tsx`.
 
+### `frontend/src/components/Spinner.tsx`
+A small `<span>` styled as a spinning ring purely with Tailwind
+(`animate-spin` + a transparent top border-side), no image/SVG asset.
+Takes an optional `className` so callers can resize/recolor it (it
+inherits `currentColor` for the ring, so it matches whatever text color
+context it's dropped into). Used anywhere a request can visibly take a
+while: both Discover buttons, "Refresh job sources," and the initial
+results load.
+
 ### `frontend/src/components/ResultsFeed.tsx`
-The grid of `LeadCard`s plus the three non-happy-path states: an error
-message, an empty-state message (styled as an italic serif line, matching
-the masthead voice), and a "Load more" button shown while `leads.length <
-total`. Purely a presentational component — pagination state lives in
-`App.tsx`.
+The grid of `LeadCard`s plus four states: an error message, a centered
+`Spinner` for the initial load (`loading && leads.length === 0`), an
+empty-state message (styled as an italic serif line, matching the
+masthead voice) once loading has finished with nothing to show, and a
+smaller inline spinner+"Loading…" under the grid while paginating
+further pages of an already-populated list. Purely a presentational
+component — pagination state lives in `App.tsx`.
 
 ### `frontend/src/components/BusinessDiscovery.tsx`
 The industry/region search bar shown above the feed on the Business
 Opportunities tab. If `firecrawlConfigured` is false (checked once by
 `App.tsx` via `/api/ingest/status`), renders a note about setting
 `FIRECRAWL_API_KEY` instead of the input. Otherwise, submitting calls
-`api.ingestBusiness()` and reports how many leads were created/updated,
-then calls `onDiscovered()` so `App.tsx` re-fetches the feed.
+`api.ingestBusiness()`, shows a `Spinner` in the button while the
+(now-parallelized, but still multi-second) request is in flight, and
+reports how many leads were created/updated, then calls `onDiscovered()`
+so `App.tsx` re-fetches the feed.
 
 ### `frontend/src/components/JobDiscovery.tsx`
 The equivalent search bar for the Jobs tab — a free-text role instead of

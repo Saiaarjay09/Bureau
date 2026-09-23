@@ -7,6 +7,7 @@ import LeadTypeToggle from './components/LeadTypeToggle'
 import LoginPage from './components/LoginPage'
 import RegionSelector, { GLOBAL, type RegionValue } from './components/RegionSelector'
 import ResultsFeed from './components/ResultsFeed'
+import Spinner from './components/Spinner'
 import type { Lead, LeadType } from './types'
 
 const PAGE_SIZE = 30
@@ -149,8 +150,9 @@ export default function App() {
             <button
               onClick={refreshJobSources}
               disabled={ingesting}
-              className="border border-[var(--hairline)] px-3 py-1 hover:border-[var(--hairline-strong)] disabled:opacity-50"
+              className="flex items-center gap-2 border border-[var(--hairline)] px-3 py-1 hover:border-[var(--hairline-strong)] disabled:opacity-50"
             >
+              {ingesting && <Spinner />}
               {ingesting ? 'Refreshing…' : 'Refresh job sources'}
             </button>
             <span>{username}</span>

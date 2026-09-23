@@ -227,10 +227,13 @@ Type a role (e.g. "IT Director", "Head of IT") and, if you've set a
 region filter, it searches within that region — e.g. filter to United
 Arab Emirates first, then search "IT Director" — or leave the filter on
 Global to search everywhere. Each search spends Firecrawl credits (a
-handful of search + scrape calls per click), so like the business-leads
-bar, it's manual rather than automatic. Verified live while building
-this: found 47 director/IT-director-titled roles and 19 real UAE
-listings, both zero from the three automatic sources alone.
+handful of search + scrape calls per click, run concurrently — see
+`backend/app/sources/concurrency.py` — rather than one at a time, which
+took discovery from ~45s down to ~20s in testing), so like the
+business-leads bar, it's manual rather than automatic. A spinner shows
+in the button while it's running. Verified live while building this:
+found 47 director/IT-director-titled roles and 19 real UAE listings,
+both zero from the three automatic sources alone.
 
 ## Populating business leads
 
