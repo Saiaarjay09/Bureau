@@ -1,4 +1,4 @@
-from fastapi import APIRouter, Depends, HTTPException, Response
+from fastapi import APIRouter, Depends, HTTPException, Request, Response
 
 from ..auth import (
     create_account,
@@ -9,6 +9,7 @@ from ..auth import (
     verify_credentials,
 )
 from ..config import SESSION_COOKIE_NAME, SESSION_MAX_AGE_SECONDS
+from ..rate_limit import record_failure, record_success, seconds_until_retry
 from ..schemas import LoginRequest, RecoverRequest, SignupRequest
 
 router = APIRouter(prefix="/api/auth", tags=["auth"])
@@ -22,6 +23,16 @@ def _set_session_cookie(response: Response, username: str) -> None:
         httponly=True,
         samesite="lax",
     )
+
+
+def _client_key(request: Request) -> str:
+    return request.client.host if request.client else "unknown"
+
+
+def _enforce_throttle(key: str) -> None:
+    wait = seconds_until_retry(key)
+    if wait:
+        raise HTTPException(status_code=429, detail=f"Too many attempts — try again in {wait}s")
 
 
 @router.get("/status")
@@ -41,19 +52,27 @@ def signup(body: SignupRequest, response: Response):
 
 
 @router.post("/login")
-def login(body: LoginRequest, response: Response):
+def login(body: LoginRequest, response: Response, request: Request):
+    key = _client_key(request)
+    _enforce_throttle(key)
     if not verify_credentials(body.username, body.password):
+        record_failure(key)
         raise HTTPException(status_code=401, detail="Invalid username or password")
+    record_success(key)
     _set_session_cookie(response, body.username)
     return {"username": body.username}
 
 
 @router.post("/recover")
-def recover(body: RecoverRequest):
+def recover(body: RecoverRequest, request: Request):
+    key = _client_key(request)
+    _enforce_throttle(key)
     if len(body.new_password) < 8:
         raise HTTPException(status_code=400, detail="Password must be at least 8 characters")
     if not reset_password_with_recovery(body.recovery_phrase, body.new_password):
+        record_failure(key)
         raise HTTPException(status_code=400, detail="That recovery phrase doesn't match")
+    record_success(key)
     return {"ok": True}
 
 

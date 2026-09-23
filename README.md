@@ -3,13 +3,14 @@
 A single-user, single-page lead-generation tool. It surfaces two kinds of
 leads — **job openings** and **business opportunities** — filterable by
 region (continent → country → city), with save/star and CSV/JSON export.
-It's meant to run on your own Mac and be reachable only from your own
-Tailscale network, not the public internet.
 
 **Links:** [github.com/Saiaarjay09/Bureau](https://github.com/Saiaarjay09/Bureau)
 (source) · [ARCHITECTURE.md](ARCHITECTURE.md) (a full code tour, file by
-file). The running app itself is tailnet-only by design (see "Serving
-over Tailscale" below) — there's no public URL to link.
+file) · **[haven.taila6d3cb.ts.net:8930](https://haven.taila6d3cb.ts.net:8930)**
+— a running instance, open to anyone with the URL. It's still gated by a
+username/password login (see "Credentials" below) — this link gets you
+to the sign-in screen, not straight into anyone's data. If you're
+running your own copy rather than using that one, see "Setup" below.
 
 ## Architecture
 
@@ -109,6 +110,14 @@ time: `cd frontend && npm run dev` (proxies `/api` to port 8910 — see
 
 ## Credentials
 
+Bureau is single-user — one account, no separate profiles. Sharing
+access with someone else (a family member, e.g.) means sharing that one
+username/password with them directly, out of band — text, call, in
+person — never by putting it in this README or anywhere else in the
+repo, especially now that the repo and the running instance are both
+public. Whoever's logged in sees the same leads, stars, and everything
+else; there's no per-person data separation.
+
 **Forgot your password?** Click "Forgot password?" on the sign-in
 screen, paste in your 12-word recovery phrase, and set a new one — no
 CLI needed. The recovery phrase itself doesn't change when you do this.
@@ -167,38 +176,48 @@ tail -f ~/Library/Logs/Bureau/backend.log
 
 ## Serving over Tailscale
 
-You asked whether this needs Serve or Funnel: **Serve**. Funnel exposes a
-port to the whole public internet (that's what Haven uses, since
-friends outside your tailnet need to reach it); Serve only makes it
-reachable from devices logged into your own tailnet, which is all Bureau
-needs since it's just for you.
+Two options here, and which one you want depends on who needs to reach
+it:
 
-This is already set up and running on this machine:
+- **Serve** — reachable only from devices logged into your own tailnet.
+  No public exposure at all; the right default if it's just for you.
+- **Funnel** — reachable from the open internet at a stable
+  `*.ts.net` URL, the same way Haven exposes itself to friends. Needed
+  if someone without Tailscale installed (a family member, e.g.) should
+  be able to just open a link.
+
+This machine runs **Funnel**, because that's what's needed for someone
+outside the tailnet to use it:
 
 ```bash
-tailscale serve --bg --https=8930 http://127.0.0.1:8910
+tailscale funnel --bg --https=8930 http://127.0.0.1:8910
 ```
 
 That maps `https://<your-device>.<your-tailnet>.ts.net:8930` to the
-backend on 127.0.0.1:8910 — HTTPS handled entirely by Tailscale,
-tailnet-only (no public exposure). Run `tailscale status` to see your
-own device/tailnet name. Verify any time with:
+backend on 127.0.0.1:8910 — HTTPS handled entirely by Tailscale. Run
+`tailscale status` to see your own device/tailnet name. Verify any time
+with `tailscale funnel status` — look for `(Funnel on)` next to the 8930
+entry.
 
-```bash
-tailscale serve status
-```
+If you'd rather keep it private, swap `funnel` for `serve` in that
+command instead (or run `tailscale funnel --https=8930 off` to drop back
+to tailnet-only, assuming a `serve` mapping for the same port already
+exists). Because Funnel/Serve config is shared per-port on this device,
+and ports 443/8443/10000 are already funneled for Haven's other apps,
+Bureau uses its own port (8930) rather than reusing one of those.
 
-Look for `(tailnet only)` next to the 8930 entry, not `(Funnel on)`. To
-tear it down: `tailscale serve --https=8930 off`.
+**Because this is now open to the whole internet, not just your
+tailnet:** the login and password-recovery endpoints are rate-limited
+(5 failed attempts per 5 minutes per IP, in-memory — see
+`backend/app/rate_limit.py`) specifically to blunt automated password
+guessing now that the URL is public. That's a basic deterrent, not a
+hardened defense — use a real password, and treat the recovery phrase
+with the same care as the password itself, since either one alone gets
+in.
 
-Because Funnel and Serve share config per-port on this device, and ports
-443/8443/10000 are already funneled (public) for Haven's other apps,
-Bureau deliberately uses its own port (8930) that's never been funneled —
-don't run `tailscale funnel --https=8930 ...` unless you specifically
-want to make Bureau public too.
-
-**Visit `https://<your-device>.<your-tailnet>.ts.net:8930` from any
-device signed into your tailnet.** It won't resolve from anywhere else.
+**Visit `https://<your-device>.<your-tailnet>.ts.net:8930` from
+anywhere** — no Tailscale required on the visitor's end when Funnel is
+on.
 
 ## Finding what the automatic sources miss
 

@@ -198,7 +198,22 @@ bcrypt hash and sets the session cookie), `POST /recover` (verifies the
 recovery phrase and, if it matches, sets a new password — 400 on a
 non-matching phrase), `POST /logout` (clears the cookie), `GET /me` (the
 session check the frontend runs on every load to decide whether to show
-the login screen at all).
+the login screen at all). `login` and `recover` both call
+`_enforce_throttle()` first (keyed on `request.client.host`) and
+`record_failure()`/`record_success()` after, via `rate_limit.py` — added
+once the app moved from tailnet-only to Tailscale Funnel, since a
+publicly reachable login form is a meaningfully different threat model
+than one only your own tailnet can even reach.
+
+### `backend/app/rate_limit.py`
+A deliberately simple in-memory throttle: `seconds_until_retry(key)`
+prunes that key's failure timestamps older than a 5-minute window and
+returns how long until the oldest one ages out, or 0 if under the
+5-attempt limit; `record_failure()`/`record_success()` add or clear
+entries. No persistence (resets on restart) and no distributed
+coordination — intentional, since the goal is raising the cost of casual
+automated password guessing against a single-user tool, not building a
+production-grade WAF.
 
 ### `backend/app/routers/leads.py`
 `/api/leads*` and `/api/regions*` — everything the results feed and
