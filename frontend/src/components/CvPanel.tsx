@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useRef, useState } from 'react'
 import { api, ApiError } from '../api'
 import type { MatchStatus } from '../types'
 import Spinner from './Spinner'
@@ -7,8 +7,10 @@ export default function CvPanel({ onClose, onSaved }: { onClose: () => void; onS
   const [status, setStatus] = useState<MatchStatus | null>(null)
   const [text, setText] = useState('')
   const [saving, setSaving] = useState(false)
+  const [uploading, setUploading] = useState(false)
   const [message, setMessage] = useState<string | null>(null)
   const [error, setError] = useState<string | null>(null)
+  const fileInput = useRef<HTMLInputElement>(null)
 
   useEffect(() => {
     api.matchStatus().then(setStatus).catch(() => {})
@@ -34,6 +36,26 @@ export default function CvPanel({ onClose, onSaved }: { onClose: () => void; onS
       setError(err instanceof ApiError ? err.message : 'Could not save the CV.')
     } finally {
       setSaving(false)
+    }
+  }
+
+  async function upload(file: File) {
+    setUploading(true)
+    setError(null)
+    setMessage(null)
+    try {
+      const res = await api.uploadCv(file)
+      setMessage(
+        `Read ${res.chars.toLocaleString()} characters from ${res.filename} (${res.parsed_from}). ` +
+          `Re-screening ${res.rescoring.toLocaleString()} leads in the background.`,
+      )
+      setStatus(await api.matchStatus())
+      onSaved()
+    } catch (err) {
+      setError(err instanceof ApiError ? err.message : 'Could not read that file.')
+    } finally {
+      setUploading(false)
+      if (fileInput.current) fileInput.current.value = ''
     }
   }
 
@@ -94,6 +116,44 @@ export default function CvPanel({ onClose, onSaved }: { onClose: () => void; onS
             </div>
           )}
         </dl>
+
+        <div className="mt-5">
+          <span className="font-mono-kicker mb-2 block text-[10px] text-[var(--ink-faint)]">
+            Upload a file
+          </span>
+          <input
+            ref={fileInput}
+            type="file"
+            accept=".pdf,.docx,.txt,.md,application/pdf,application/vnd.openxmlformats-officedocument.wordprocessingml.document,text/plain"
+            onChange={(e) => {
+              const file = e.target.files?.[0]
+              if (file) upload(file)
+            }}
+            className="hidden"
+          />
+          <div className="flex flex-wrap items-center gap-3">
+            <button
+              onClick={() => fileInput.current?.click()}
+              disabled={uploading}
+              className="flex items-center gap-2 border border-[var(--hairline)] px-3 py-1.5 text-sm text-[var(--ink)] hover:border-[var(--hairline-strong)] disabled:opacity-50"
+            >
+              {uploading && <Spinner />}
+              {uploading ? 'Reading…' : 'Browse files…'}
+            </button>
+            <span className="text-xs text-[var(--ink-faint)]">PDF, Word (.docx) or plain text</span>
+          </div>
+          <p className="mt-2 text-xs text-[var(--ink-faint)]">
+            The file is read in memory and discarded — only the extracted text is stored. A
+            scanned or image-only PDF has no text to extract, and will say so rather than
+            saving an empty CV.
+          </p>
+        </div>
+
+        <div className="mt-5 flex items-center gap-3">
+          <span className="h-px flex-1 bg-[var(--hairline)]" />
+          <span className="font-mono-kicker text-[10px] text-[var(--ink-faint)]">or paste it</span>
+          <span className="h-px flex-1 bg-[var(--hairline)]" />
+        </div>
 
         <label className="mt-4 block text-sm">
           <span className="font-mono-kicker mb-1 block text-[10px] text-[var(--ink-faint)]">

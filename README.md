@@ -226,11 +226,17 @@ the local hiring-council service, which runs a seven-member panel of
 open-weight models over a job and a CV. Both tiers run entirely on this
 Mac — nothing is sent to any external service.
 
-Paste your CV under **CV** in the header. It's stored at
+Add your CV under **CV** in the header — either **Browse files…** for a
+PDF or Word (.docx) file, or paste the text. Uploaded files are parsed in
+memory and the bytes discarded; only the extracted text is stored, at
 `backend/data/cv.txt` (gitignored). That's a deliberate departure from
 Sabha, which keeps a CV in memory and never writes it down: Bureau needs
 it on disk so new leads can be screened while nobody's at the keyboard.
 Delete it any time from the same panel.
+
+A scanned or image-only PDF has no extractable text, and Bureau says so
+rather than silently storing an empty CV — which would otherwise screen
+every lead as a poor match for a reason that looked like the jobs' fault.
 
 There are **two numbers, and they mean different things**:
 

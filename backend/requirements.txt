@@ -6,3 +6,8 @@ bcrypt==4.2.0
 itsdangerous==2.2.0
 python-dotenv==1.0.1
 firecrawl-py==4.44.0
+# CV uploads: pypdf/python-docx extract the text, python-multipart is what
+# lets FastAPI accept a file upload at all.
+pypdf==6.19.0
+python-docx==1.2.0
+python-multipart==0.0.32

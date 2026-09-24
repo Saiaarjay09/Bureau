@@ -274,6 +274,22 @@ background task rather than a request handler.
 unreachable or replies with something unparseable — an unscored lead is
 recoverable, a fabricated score silently poisons the ranking.
 
+### `backend/app/cv_extract.py`
+Turns an uploaded PDF/`.docx`/text file into CV text, using the same two
+libraries Sabha's `council/extract.py` uses (pypdf, python-docx) but
+deliberately *not* importing it: the two repos are separately cloneable,
+and coupling them through a filesystem path would break both. Bureau also
+doesn't need Sabha's structural ATS signals (tables, text boxes, embedded
+images) — those exist to audit how a parser will mangle a CV, which isn't
+Bureau's job.
+
+The guard worth keeping is the scan check: a PDF yielding under ~120
+characters is almost certainly an image-only export, and saying so beats
+storing an empty CV that then screens every lead as a poor match. Format
+detection sniffs magic bytes as well as the extension, since a CV emailed
+around for years often arrives misnamed. Errors are phrased to be shown
+to a person and are passed through the API verbatim.
+
 ### `backend/app/screener.py`
 The background loop that works through unscored leads. Two deliberate
 properties: it polls Sabha's health and **stands down entirely while a

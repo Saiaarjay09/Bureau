@@ -1,10 +1,11 @@
 import json
 import logging
 
-from fastapi import APIRouter, BackgroundTasks, Depends, HTTPException
+from fastapi import APIRouter, BackgroundTasks, Depends, File, HTTPException, UploadFile
 from pydantic import BaseModel
 
 from ..auth import require_session
+from ..cv_extract import ExtractionError, from_upload
 from ..db import Lead, SessionLocal, utcnow
 from ..sabha import clear_cv, cv_status, cv_text, run_council, sabha_health, set_cv, summarise_council
 from ..screener import STATE, outstanding_count, rescore_all
@@ -37,6 +38,27 @@ def put_cv(body: CVRequest):
     # changes, so they're cleared rather than left to age.
     cleared = rescore_all()
     return {**cv_status(), "rescoring": cleared}
+
+
+@router.post("/cv/upload")
+async def upload_cv(file: UploadFile = File(...)):
+    """Same destination as PUT /cv — a PDF or Word file is just another way
+    of arriving at CV text. The uploaded bytes are parsed in memory and
+    dropped; only the extracted text is stored."""
+    data = await file.read()
+    try:
+        text, kind = from_upload(file.filename or "", data)
+    except ExtractionError as exc:
+        # These messages are written to be read by a person, so they're
+        # passed through rather than flattened into a generic 400.
+        raise HTTPException(status_code=400, detail=str(exc)) from exc
+
+    if len(text) < 200:
+        raise HTTPException(status_code=400, detail="That CV is too short to match against.")
+
+    set_cv(text)
+    cleared = rescore_all()
+    return {**cv_status(), "rescoring": cleared, "parsed_from": kind, "filename": file.filename}
 
 
 @router.delete("/cv")

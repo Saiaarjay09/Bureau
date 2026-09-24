@@ -70,6 +70,19 @@ export const api = {
     }),
 
   matchStatus: () => request<MatchStatus>('/api/match/status'),
+  uploadCv: async (file: File) => {
+    const body = new FormData()
+    body.append('file', file)
+    // Deliberately not using request(): it sets Content-Type: application/json,
+    // and a multipart upload needs the browser to set that header itself so it
+    // can include the boundary.
+    const res = await fetch('/api/match/cv/upload', { method: 'POST', credentials: 'include', body })
+    if (!res.ok) {
+      const payload = await res.json().catch(() => ({}))
+      throw new ApiError(res.status, payload.detail || res.statusText)
+    }
+    return (await res.json()) as { chars: number; rescoring: number; parsed_from: string; filename: string }
+  },
   putCv: (text: string) =>
     request<{ present: boolean; chars: number; rescoring: number }>('/api/match/cv', {
       method: 'PUT',
