@@ -48,13 +48,23 @@ export default function LeadCard({
           </p>
         </div>
         <div className="flex shrink-0 items-center gap-2">
-          {lead.fit_score !== null && (
-            <span
-              title={lead.fit_reason ?? undefined}
-              className="font-mono-kicker text-[10px] text-[var(--ink-muted)]"
-            >
-              {lead.council_score !== null ? `council ${lead.council_score}` : lead.fit_score}
+          {/* Either number may exist without the other: a lead can be
+              screened but never sent to the council, or sent to the council
+              directly without ever having been screened. The council verdict
+              is the stronger signal, so it wins when both are present. */}
+          {lead.council_score !== null ? (
+            <span className="font-mono-kicker text-[10px] text-[var(--accent)]">
+              council {lead.council_score}
             </span>
+          ) : (
+            lead.fit_score !== null && (
+              <span
+                title={lead.fit_reason ?? undefined}
+                className="font-mono-kicker text-[10px] text-[var(--ink-muted)]"
+              >
+                {lead.fit_score}
+              </span>
+            )
           )}
           <button
             // Stops the card's own onClick from firing — starring shouldn't

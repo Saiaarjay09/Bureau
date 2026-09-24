@@ -8,6 +8,7 @@ from ..auth import require_session
 from ..cv_extract import ExtractionError, from_upload
 from ..db import Lead, SessionLocal, utcnow
 from ..sabha import clear_cv, cv_status, cv_text, run_council, sabha_health, set_cv, summarise_council
+from ..sources.job_description import fetch_description
 from ..screener import STATE, outstanding_count, rescore_all
 
 logger = logging.getLogger("bureau.match")
@@ -68,12 +69,25 @@ def delete_cv():
     return {"ok": True, "cleared_scores": cleared}
 
 
-def _council_task(lead_id: int, title: str, description: str | None, cv: str) -> None:
+def _council_task(lead_id: int, title: str, description: str | None, url: str | None, cv: str) -> None:
     """Runs in a background thread — a council run is minutes long, far past
     any sensible HTTP timeout, so the request returns immediately and the
     frontend polls the lead for the verdict."""
     db = SessionLocal()
     try:
+        # The council can run on a title alone, but it's much sharper with the
+        # real posting. Since this is about to spend ~5 minutes of GPU anyway,
+        # it's worth ~5 seconds first to go and get the text.
+        if not (description or "").strip() and url:
+            fetched = fetch_description(url, title)
+            if fetched:
+                description = fetched
+                lead = db.get(Lead, lead_id)
+                if lead:
+                    # Kept, so the next run and the screen both benefit.
+                    lead.description = fetched
+                    db.commit()
+
         result = run_council(title, description, cv)
         summary = summarise_council(result)
         lead = db.get(Lead, lead_id)
@@ -116,17 +130,12 @@ def start_council(lead_id: int, background: BackgroundTasks):
             raise HTTPException(status_code=404, detail="Lead not found")
         if lead.council_status == "running":
             raise HTTPException(status_code=409, detail="A council run is already in flight for this lead.")
-        if not (lead.description or "").strip():
-            raise HTTPException(
-                status_code=400,
-                detail="No description was captured for this lead, so there's nothing for the council to assess.",
-            )
-        title, description = lead.title, lead.description
+        title, description, url = lead.title, lead.description, lead.url
         lead.council_status = "running"
         lead.council_run_at = utcnow()
         db.commit()
     finally:
         db.close()
 
-    background.add_task(_council_task, lead_id, title, description, cv)
+    background.add_task(_council_task, lead_id, title, description, url, cv)
     return {"status": "running", "lead_id": lead_id}

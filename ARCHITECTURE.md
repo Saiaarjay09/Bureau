@@ -296,8 +296,14 @@ properties: it polls Sabha's health and **stands down entirely while a
 council run is active** (bulk work should never slow down the thing a
 person is sitting waiting for), and it uses the `fit_score IS NULL`
 column itself as the queue, so it resumes across restarts with no
-separate progress file to fall out of sync. `rescore_all()` clears every
-score when the CV changes.
+separate progress file to fall out of sync.
+
+`rescore_all()` clears every score when the CV changes — council verdicts
+as well as screen scores. The council number is the more authoritative
+one and the one someone acts on, so leaving a stale verdict on a card
+whose screen score had just been cleared would be exactly backwards.
+Fetched descriptions survive, since a posting's text doesn't depend on
+whose CV it's being read against.
 
 ### `backend/app/routers/match.py`
 `/api/match/*`: `GET /status` (is a CV stored, is Sabha up, how much
@@ -369,6 +375,26 @@ to sanitise. Block tags become newlines, `<li>` becomes a bullet,
 `<script>`/`<style>` content is dropped entirely. Verified against a real
 36KB Remotive posting (→ 2.8KB readable) and an XSS payload (→ just the
 harmless text).
+
+### `backend/app/sources/job_description.py`
+Fetches one posting's text on demand, immediately before a council run on
+a lead that has no description — about two thirds of job leads, all of
+which do have a URL. Backfilling all ~1,250 would spend a credit each on
+pages almost none of which get opened; doing it at this moment spends a
+few seconds to give five minutes of GPU something real to assess, and the
+result is written back so the screen and later runs benefit.
+
+Uses schema extraction rather than plain markdown, which was tried first
+and rejected on evidence: `only_main_content` left a job-board page as
+20KB of "Dismiss / Close menu / Popular / Locations" navigation with the
+posting buried in it. Handing that to Sabha would be worse than a
+title-only run, since its first step decomposes the posting into
+requirements and would have been decomposing a nav bar. Naming the role
+in the prompt also disambiguates aggregator pages listing many jobs.
+
+Retries once on a rate limit (Firecrawl allows 18 req/min here, and a
+sweep can exhaust it), matching on the message rather than the SDK's
+internal exception class.
 
 ### `backend/app/sources/discovered.py`
 The local half of the daily automation: reads the

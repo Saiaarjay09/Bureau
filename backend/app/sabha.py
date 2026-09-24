@@ -161,12 +161,13 @@ def run_council(title: str, description: str | None, cv: str, timeout_s: int = 1
     open the SSE stream, and the run is discarded once that stream closes —
     so the stream has to be consumed in one go, right here.
     """
+    # A title alone is a supported input, not an error: Sabha's own API asks
+    # for "a title at minimum, ideally the full description", its job-analysis
+    # prompt explicitly tells the model to infer standard requirements from
+    # the title when the description is thin, and it has a dedicated generic
+    # rubric for that case which says so in its own summary. Bureau used to
+    # reject these, which was stricter than the service it calls.
     jd = (description or "").strip()
-    if len(jd) < 40:
-        # Sabha decomposes the posting into requirements before it reads the
-        # CV. With nothing but a title there's nothing to decompose, and the
-        # verdict would be noise dressed as a score.
-        raise ValueError("This lead has no description captured, so there's nothing for the council to assess.")
 
     with httpx.Client(timeout=httpx.Timeout(30.0, read=timeout_s)) as client:
         resp = client.post(

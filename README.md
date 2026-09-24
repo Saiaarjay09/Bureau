@@ -254,8 +254,18 @@ the screen had put the same job at 45.
 
 Screening runs continuously in the background and **stands down whenever a
 council run is in flight**, so the thing you're waiting on gets the GPU.
-Changing your CV clears every existing screen score, because a score
-against an old CV is worse than no score.
+Changing or removing your CV clears every existing score — screen *and*
+council — because a score against an old CV is worse than no score.
+Fetched job descriptions are kept, since those don't depend on your CV.
+
+**Leads without a description still work.** About two thirds arrive with
+only a title (job boards that aged out, or listing pages that showed no
+body text). Convening the council on one of those fetches the real
+posting first — a few seconds and one Firecrawl credit, well spent given
+the run costs five minutes of GPU either way — and stores it, so the
+screen and any later run get it too. If the fetch fails or there's no
+URL, Sabha assesses the title against a generic rubric for that role and
+says so in its own summary.
 
 Sabha must be running locally (port 8700) for the council button to work —
 the CV panel shows whether it's reachable.

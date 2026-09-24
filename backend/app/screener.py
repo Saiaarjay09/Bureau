@@ -104,12 +104,32 @@ async def background_loop():
 
 
 def rescore_all() -> int:
-    """Clears every screen score so the loop re-does them — used when the CV
-    changes, since scores against an old CV are worse than none."""
+    """Clears every score so the loop re-does them — used when the CV changes,
+    since a score against an old CV is worse than none.
+
+    This clears council verdicts as well, not just screen scores. A council
+    verdict is the more authoritative number and the one a person will act
+    on, so leaving a stale one on the card while its screen score vanished
+    would be exactly backwards. They cost five minutes each to regenerate,
+    but only for leads someone chooses to re-run."""
     db = SessionLocal()
     try:
         n = db.query(Lead).filter(Lead.fit_score.isnot(None)).update(
             {Lead.fit_score: None, Lead.fit_reason: None, Lead.fit_scored_at: None},
+            synchronize_session=False,
+        )
+        # Deliberately not filtered on council_status == "running": a run in
+        # flight was started against the old CV too, and its result would be
+        # written back afterwards. Clearing here means the stale verdict is
+        # at least not presented as current.
+        db.query(Lead).filter(Lead.council_score.isnot(None)).update(
+            {
+                Lead.council_status: None,
+                Lead.council_score: None,
+                Lead.council_match_pct: None,
+                Lead.council_json: None,
+                Lead.council_run_at: None,
+            },
             synchronize_session=False,
         )
         db.commit()

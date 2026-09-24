@@ -152,8 +152,10 @@ export default function LeadDetailPanel({
               </p>
             ) : (
               <p className="mt-2 text-sm text-[var(--ink-muted)]">
-                No description was captured for this lead — the source didn't provide one. Open the
-                original posting for the full text.
+                No description was captured when this lead was ingested — the source only listed a
+                title. Convening the council will try to fetch the posting first
+                {lead.url ? '' : ', though this lead has no URL to fetch from'}; failing that, it
+                assesses the title against a generic rubric for that role.
               </p>
             )}
           </>
@@ -241,6 +243,7 @@ function CouncilSection({
       <p className="mt-2 text-xs text-[var(--ink-faint)]">
         Runs Sabha's full seven-member panel against your CV locally — 5–7 minutes. The screen
         score above is a one-pass triage signal, not this.
+        {!lead.description && ' With no description stored, it fetches the posting first.'}
       </p>
     </div>
   )
