@@ -19,8 +19,34 @@ export interface Lead {
   funding_stage: string | null
   signal: string | null
   tags: string[]
+  fit_score: number | null
+  fit_reason: string | null
+  council_status: string | null
+  council_score: number | null
   posted_date: string | null
   starred: boolean
+}
+
+export interface CouncilVerdict {
+  score?: number
+  match_pct?: number
+  verdict?: string
+  confidence?: string
+  summary?: string
+  blocking_gaps?: string[]
+  error?: string
+}
+
+export interface LeadDetail extends Lead {
+  description: string | null
+  council_match_pct: number | null
+  council: CouncilVerdict | null
+}
+
+export interface MatchStatus {
+  cv: { present: boolean; chars: number; updated_at: string | null }
+  sabha: { available: boolean; council_size?: number; error?: string }
+  screening: { running: boolean; screened: number; remaining: number; paused_for_council: boolean }
 }
 
 export interface LeadsPage {
@@ -32,4 +58,4 @@ export interface Regions {
   continents: Record<string, string[]>
 }
 
-export type SortOrder = 'newest' | 'oldest' | 'company'
+export type SortOrder = 'newest' | 'oldest' | 'company' | 'fit'

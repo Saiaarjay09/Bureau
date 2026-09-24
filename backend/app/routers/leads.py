@@ -12,7 +12,7 @@ from sqlalchemy.orm import Session
 from ..auth import require_session
 from ..db import Lead, SessionLocal
 from ..regions import CONTINENTS
-from ..schemas import LeadOut, LeadsPage
+from ..schemas import LeadDetail, LeadOut, LeadsPage
 
 router = APIRouter(prefix="/api", tags=["leads"], dependencies=[Depends(require_session)])
 
@@ -57,6 +57,10 @@ def _sorted(query, sort: str):
         return query.order_by(Lead.posted_date.asc().nulls_last())
     if sort == "company":
         return query.order_by(Lead.company.asc())
+    if sort == "fit":
+        # Unscored leads sort last rather than as zero — "not looked at yet"
+        # and "looked at and judged a poor match" are different things.
+        return query.order_by(Lead.fit_score.desc().nulls_last(), Lead.posted_date.desc().nulls_last())
     return query.order_by(Lead.posted_date.desc().nulls_last())  # "newest" (default)
 
 
@@ -138,6 +142,24 @@ def export_leads(
         media_type="text/csv",
         headers={"Content-Disposition": f"attachment; filename=bureau-{lead_type}-leads.csv"},
     )
+
+
+# Declared after /leads/export deliberately: FastAPI resolves routes in
+# declaration order, so a bare /leads/{lead_id} above it would swallow
+# "export" as a lead id and 422 the whole export feature.
+@router.get("/leads/{lead_id}", response_model=LeadDetail)
+def get_lead(lead_id: int, db: Session = Depends(get_db)):
+    lead = db.get(Lead, lead_id)
+    if not lead:
+        raise HTTPException(status_code=404, detail="Lead not found")
+    data = LeadDetail.model_validate(lead)
+    data.tags = json.loads(lead.tags_json) if lead.tags_json else []
+    if lead.council_json:
+        try:
+            data.council = json.loads(lead.council_json)
+        except json.JSONDecodeError:
+            data.council = None
+    return data
 
 
 @router.get("/regions")

@@ -28,11 +28,29 @@ class LeadOut(BaseModel):
     signal: Optional[str] = None
     tags: list[str] = []
 
+    # The cheap local screen, carried in list responses so the feed can be
+    # ranked and each card can show it. The full Sabha verdict is not here —
+    # it's on-demand, and lives on LeadDetail.
+    fit_score: Optional[int] = None
+    fit_reason: Optional[str] = None
+    council_status: Optional[str] = None
+    council_score: Optional[int] = None
+
     posted_date: Optional[datetime] = None
     starred: bool = False
 
     class Config:
         from_attributes = True
+
+
+class LeadDetail(LeadOut):
+    """What the expanded card shows. Descriptions run to several KB each, so
+    they're deliberately excluded from list responses — 30 of them per page
+    would be most of the payload for text nobody has opened yet."""
+
+    description: Optional[str] = None
+    council_match_pct: Optional[int] = None
+    council: Optional[dict] = None
 
 
 class LeadsPage(BaseModel):

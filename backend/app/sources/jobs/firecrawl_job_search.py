@@ -17,6 +17,7 @@ from datetime import datetime
 from ...enrichment import guess_seniority
 from ..concurrency import parallel_map
 from ..firecrawl_client import get_client
+from ..html_text import html_to_text
 from ..location import parse_location
 
 logger = logging.getLogger("bureau.sources.firecrawl_jobs")
@@ -34,6 +35,12 @@ JOB_LISTING_SCHEMA = {
                     "location": {"type": "string"},
                     "remote_type": {"type": "string", "description": "remote, hybrid, or onsite if stated"},
                     "url": {"type": "string"},
+                    "description": {
+                        "type": "string",
+                        "description": "The posting's own text — what the role involves and what "
+                                       "it requires. Whatever the page actually shows; omit rather "
+                                       "than inventing one if the page only lists a title.",
+                    },
                 },
                 "required": ["title", "company"],
             },
@@ -55,9 +62,12 @@ def _result_url(item) -> str | None:
     return getattr(item, "url", None)
 
 
-def _search_one(client, query: str, limit_per_query: int) -> list[str]:
+def _search_one(client, query: str, limit_per_query: int, domains: list[str] | None = None) -> list[str]:
+    kwargs = {"limit": limit_per_query, "sources": ["web"]}
+    if domains:
+        kwargs["include_domains"] = domains
     try:
-        result = client.search(query, limit=limit_per_query, sources=["web"])
+        result = client.search(query, **kwargs)
     except Exception:
         logger.exception("Firecrawl search failed for %r", query)
         return []
@@ -81,7 +91,8 @@ def _scrape_one(client, role: str, region: str, url: str) -> list[dict]:
                     f"Extract every current job listing on this page matching "
                     f"the role '{role}'" + (f" in {region}" if region else "")
                     + ": title, company, location, whether it's remote/hybrid/"
-                    "onsite if stated, and the direct URL to the listing if present."
+                    "onsite if stated, the direct URL to the listing if present, "
+                    "and the posting's own description text where the page shows it."
                 ),
                 "schema": JOB_LISTING_SCHEMA,
             }],
@@ -118,6 +129,7 @@ def _scrape_one(client, role: str, region: str, url: str) -> list[dict]:
             "city": city,
             "remote_type": remote_type,
             "seniority": guess_seniority(title),
+            "description": html_to_text(job.get("description")),
             "tags": [role],
             "posted_date": datetime.utcnow(),
             "raw": {},
@@ -132,4 +144,20 @@ def fetch(role: str, region: str = "", max_pages: int = 10) -> list[dict]:
 
     urls = _search_urls(client, role, region)[:max_pages]
     results = parallel_map(lambda url: _scrape_one(client, role, region, url), urls)
+    return [job for batch in results if batch for job in batch]
+
+
+def fetch_scoped(query: str, region: str = "", domains: list[str] | None = None,
+                 max_pages: int = 3) -> list[dict]:
+    """One raw query, optionally confined to specific domains — what the
+    discovered-sites sweep uses. Unlike fetch(), this doesn't fan out across
+    query templates: the domain is already the narrowing, so three variations
+    of the same query against one site would mostly return the same pages at
+    three times the credit cost."""
+    client = get_client()
+    if not client:
+        return []
+
+    urls = _search_one(client, query, limit_per_query=max_pages, domains=domains)[:max_pages]
+    results = parallel_map(lambda url: _scrape_one(client, query, region, url), urls)
     return [job for batch in results if batch for job in batch]

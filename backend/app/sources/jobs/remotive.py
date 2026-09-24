@@ -6,6 +6,7 @@ from datetime import datetime
 import httpx
 
 from ...enrichment import guess_seniority
+from ..html_text import html_to_text
 from ..location import parse_location
 
 logger = logging.getLogger("bureau.sources.remotive")
@@ -41,6 +42,7 @@ def fetch() -> list[dict]:
             "city": city,
             "remote_type": "remote",
             "seniority": guess_seniority(job.get("title", "")),
+            "description": html_to_text(job.get("description")),
             "tags": (job.get("tags") or [])[:10],
             "posted_date": posted,
             "raw": {"category": job.get("category"), "job_type": job.get("job_type")},

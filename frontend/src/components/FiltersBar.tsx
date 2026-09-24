@@ -49,6 +49,7 @@ export default function FiltersBar({
         className={fieldClass}
       >
         <option value="newest">Newest first</option>
+        <option value="fit">Best fit first</option>
         <option value="oldest">Oldest first</option>
         <option value="company">Company A-Z</option>
       </select>

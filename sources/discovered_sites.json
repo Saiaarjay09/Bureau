@@ -1,0 +1,205 @@
+{
+  "updated_at": "2026-09-24T15:05:53.013036+00:00",
+  "sites": [
+    {
+      "name": "Directory of Singapore Fintech Companies - Fintech Startups ...",
+      "domain": "fintechnews.sg",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore startup funding news and company directory",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Government Electronic Business System (GeBIZ)",
+      "domain": "gebiz.gov.sg",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Business Opportunities - Singapore - NUS",
+      "domain": "nus.edu.sg",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Singapore Ecosystem - Startup Genome",
+      "domain": "startupgenome.com",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore startup funding news and company directory",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Startup SG - The Singapore Startup Ecosystem",
+      "domain": "startupsg.gov.sg",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore startup funding news and company directory",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Search | Singapore Quotations and business opportunities - TenderBoard",
+      "domain": "tenderboard.biz",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Top 13 Singapore Startups \u2014 Newly Funded & Hiring",
+      "domain": "topstartups.io",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore startup funding news and company directory",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Top Dubai Startups 2026 \u2014 Directory of 180+ UAE Companies | DXBStart",
+      "domain": "dxbstart.com",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates startup funding news and company directory",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "eSupply - The official supply portal of Dubai Government",
+      "domain": "esupply.dubai.gov.ae",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "UAE Fintech Startups Directory",
+      "domain": "fintechnews.ae",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates startup funding news and company directory",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Dubai for Start-ups & SMEs | Opportunities, Funding & Support",
+      "domain": "investindubai.gov.ae",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates startup funding news and company directory",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Top Startups in United Arab Emirates - StartupBlink",
+      "domain": "startupblink.com",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates startup funding news and company directory",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "UAE Tenders, Government Bids & RFPs | TendersInfo",
+      "domain": "tendersinfo.com",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "TenderUAE",
+      "domain": "tenderuae.com",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "United Arab Emirates Tenders | UAE Tenders | Eprocurement | Dubai ...",
+      "domain": "uaetenders.com",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "200,000+ Jobs in Singapore: Apply for September 2026 Hiring | foundit ...",
+      "domain": "foundit.sg",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "best job boards in Singapore for professionals",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Jobstreet - Find your next job and get hired on Asia's favourite career site!",
+      "domain": "jobstreet.com",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "best job boards in Singapore for professionals",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "MyCareersFuture Singapore",
+      "domain": "mycareersfuture.gov.sg",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "Singapore recruitment website list hiring portal",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Indeed: Job Search",
+      "domain": "sg.indeed.com",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "best job boards in Singapore for professionals",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Jobstreet: Jobs in Singapore - Search Job Vacancies - Career",
+      "domain": "sg.jobstreet.com",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "Singapore recruitment website list hiring portal",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Bayt.com: The Middle East's Leading Job Site",
+      "domain": "bayt.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "best job boards in United Arab Emirates for professionals",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Dubai Careers: Home",
+      "domain": "dubaicareers.ae",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Emirates Group Careers: Home",
+      "domain": "emiratesgroupcareers.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "GulfTalent: Jobs in Dubai and Middle East",
+      "domain": "gulftalent.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "best job boards in United Arab Emirates for professionals",
+      "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Job Search | Michael Page",
+      "domain": "michaelpage.ae",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "best job boards in United Arab Emirates for professionals",
+      "first_seen": "2026-09-24"
+    }
+  ]
+}

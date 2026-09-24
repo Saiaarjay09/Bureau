@@ -92,9 +92,19 @@ source might populate (job-only fields like `remote_type`/`seniority`,
 business-only fields like `industry`/`contact_path`, and shared fields
 like `signal`/`company_size`/`funding_stage`). A unique constraint on
 `(source, external_id)` is what makes re-running a source idempotent —
-see `ingest.py`. `init_db()` creates the table if it doesn't exist; there
-are no migrations, since a schema change just means deleting
-`data/bureau.db` and letting sources repopulate it.
+see `ingest.py`. Also carries `description` (the posting's own text, as
+plain text — see `sources/html_text.py`), the cheap `fit_score`/
+`fit_reason` screen, and the `council_*` columns holding a full Sabha
+verdict.
+
+`init_db()` creates the table, then `_add_missing_columns()` ALTERs in any
+column the model has but the table doesn't. That second step exists
+because `create_all()` only ever creates missing *tables* — a new column
+on an existing database would otherwise be silently absent until
+something SELECTed it. There are still no real migrations (this is a
+single-user SQLite tool), so it handles exactly one kind of change:
+adding a nullable column. Anything structural means rebuilding
+`data/bureau.db`.
 
 ### `backend/app/auth.py`
 Single-user session auth, now with a Haven-style recovery phrase.
@@ -245,6 +255,41 @@ set, via `sources.firecrawl_client.is_configured()`, rather than
 attempting a call that would fail anyway. `GET /status` reports whether
 Firecrawl is configured and the background loop's last-run timestamps.
 
+### `backend/app/sabha.py`
+The bridge to Sabha, the local hiring-council service on port 8700, and
+the place the two-tier design is written down. `quick_screen()` is one
+call to a single local model (~5s) giving a rough 0-100 so 1,500+ leads
+can be *ranked*; `run_council()` is Sabha's real seven-assessor pipeline
+(~5 min measured) for one job someone has decided is worth it. They are
+never conflated in the UI or the schema.
+
+`run_council()` has to follow Sabha's two-step, order-dependent contract:
+`POST /api/analyze` only *registers* a run and hands back an id — the work
+doesn't start until the SSE stream is opened, and the run is discarded the
+moment that stream closes. So the stream has to be opened and consumed in
+one pass, which is why this blocks for minutes and gets called from a
+background task rather than a request handler.
+
+`quick_screen()` returns `None` rather than a number when the model is
+unreachable or replies with something unparseable — an unscored lead is
+recoverable, a fabricated score silently poisons the ranking.
+
+### `backend/app/screener.py`
+The background loop that works through unscored leads. Two deliberate
+properties: it polls Sabha's health and **stands down entirely while a
+council run is active** (bulk work should never slow down the thing a
+person is sitting waiting for), and it uses the `fit_score IS NULL`
+column itself as the queue, so it resumes across restarts with no
+separate progress file to fall out of sync. `rescore_all()` clears every
+score when the CV changes.
+
+### `backend/app/routers/match.py`
+`/api/match/*`: `GET /status` (is a CV stored, is Sabha up, how much
+screening is left), `PUT|DELETE /cv`, and `POST /council/{lead_id}` which
+marks the lead `running`, hands the work to a background task, and
+returns immediately — the frontend polls the lead for the verdict, since
+no sensible HTTP timeout survives a five-minute council.
+
 ## `backend/app/sources/` — one module per lead source
 
 ### `backend/app/sources/location.py`
@@ -296,6 +341,27 @@ boards) or derived from a `remote` boolean field (Arbeitnow, which lists
 onsite roles too). Each is wrapped in a `try/except httpx.HTTPError` that
 logs and returns `[]` rather than taking the whole ingest run down if one
 API is temporarily unreachable.
+
+### `backend/app/sources/html_text.py`
+Turns a posting's HTML into plain text at ingest time. This is a security
+boundary, not a formatting nicety: storing third-party HTML and rendering
+it in the logged-in page would let a malicious posting read the session
+cookie, and the app is now reachable from the open internet. Sanitising
+HTML properly needs an allowlist parser kept patched; job descriptions
+lose almost nothing as text, so this converts instead and leaves nothing
+to sanitise. Block tags become newlines, `<li>` becomes a bullet,
+`<script>`/`<style>` content is dropped entirely. Verified against a real
+36KB Remotive posting (→ 2.8KB readable) and an XSS payload (→ just the
+harmless text).
+
+### `backend/app/sources/discovered.py`
+The local half of the daily automation: reads the
+`sources/discovered_sites.json` that the GitHub Action commits, and turns
+those domains into leads via domain-scoped Firecrawl searches. Sweeps a
+bounded rotating slice (`todays_slice()`, 8 sites a day) rather than the
+whole list, because the list only grows and a full daily sweep would
+scale credit spend with it. The rotation is keyed on the date rather than
+a stored cursor, so it's stable within a day and needs nothing persisted.
 
 ### `backend/app/sources/concurrency.py`
 `parallel_map(fn, items)` — the thing that makes Discover fast instead of
@@ -478,8 +544,31 @@ Renders one lead. Builds a small tag list (work mode/seniority for jobs,
 industry for businesses, plus company size and funding stage when
 present) shown as a letterspaced mono line, and — if the lead has a
 `signal` — renders it as an italic serif pull-quote with a left accent
-border, which is the card's visual focal point. The star button toggles
-directly via the `onToggleStar` callback passed down from `App.tsx`.
+border, which is the card's visual focal point.
+
+The whole card is the click target (opening `LeadDetailPanel`), which
+means the two interactive things *inside* it have to opt out: the star
+button calls `stopPropagation()` so starring doesn't also open the panel,
+and the title is no longer a link — "open the original posting" moved
+into the panel, since a link inside a clickable card gives two different
+outcomes for what looks like one target. Keyboard access is explicit
+(`role="button"`, Enter/Space) because a `<div>` doesn't get it for free.
+
+### `frontend/src/components/LeadDetailPanel.tsx`
+The drawer a card opens into: the full description (rendered as plain
+text with `whitespace-pre-wrap`, since it *is* plain text by the time it
+reaches here), the screen score and its note, and the council section —
+which is a small state machine over `council_status`: a run button, a
+"the council is sitting" state that polls every 10s, or the finished
+verdict with score, requirement-match percentage and blocking gaps.
+Polling rather than holding a connection is what makes closing the panel
+mid-run safe.
+
+### `frontend/src/components/CvPanel.tsx`
+Where the CV goes in, and the honest status panel for the whole matching
+stack: whether a CV is stored and how big, whether Sabha is reachable
+(so a five-minute run doesn't fail at the end for a reason that was
+knowable up front), and how many leads are still queued for screening.
 
 ### `frontend/src/components/Spinner.tsx`
 A small `<span>` styled as a spinning ring purely with Tailwind
@@ -540,6 +629,21 @@ md`'s "Running as a persistent background service" section for the copy
 in its script shebangs, so if this repo is ever moved to a different
 path, `backend/.venv` has to be deleted and recreated there — `mv`-ing
 it along with the rest of the repo will silently break it.
+
+### `.github/workflows/discover-sources.yml` and `backend/scripts/discover_sources.py`
+The cloud half of the daily automation. The script sweeps regions through
+Firecrawl for job boards and opportunity portals, normalises what it finds
+to bare domains (dropping aggregators, social sites and our own existing
+sources), and merges new entries into `sources/discovered_sites.json` —
+append-only, each carrying the query that found it, because Bureau spends
+credits on every domain in that file daily and a bad entry keeps costing
+until someone removes it.
+
+The workflow runs on `schedule` and `workflow_dispatch` **only**. In a
+public repo a `pull_request` trigger would expose `FIRECRAWL_API_KEY` to
+anyone who opened a fork PR, so that trigger is deliberately absent — and
+the job fails with a clear message rather than a confusing API error when
+the secret isn't set at all.
 
 ### `.claude/launch.json`
 Not part of the running app — this only tells Claude Code's browser

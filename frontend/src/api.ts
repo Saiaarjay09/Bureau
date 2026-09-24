@@ -1,4 +1,4 @@
-import type { Lead, LeadsPage, Regions } from './types'
+import type { Lead, LeadDetail, LeadsPage, MatchStatus, Regions } from './types'
 
 class ApiError extends Error {
   status: number
@@ -49,6 +49,7 @@ export const api = {
 
   leads: (params: Record<string, string | number | boolean | undefined>) =>
     request<LeadsPage>('/api/leads?' + new URLSearchParams(cleanParams(params))),
+  lead: (id: number) => request<LeadDetail>(`/api/leads/${id}`),
   toggleStar: (id: number) => request<Lead>(`/api/leads/${id}/star`, { method: 'POST' }),
   exportUrl: (params: Record<string, string | number | boolean | undefined>) =>
     '/api/leads/export?' + new URLSearchParams(cleanParams(params)).toString(),
@@ -67,6 +68,16 @@ export const api = {
       method: 'POST',
       body: JSON.stringify({ role, region }),
     }),
+
+  matchStatus: () => request<MatchStatus>('/api/match/status'),
+  putCv: (text: string) =>
+    request<{ present: boolean; chars: number; rescoring: number }>('/api/match/cv', {
+      method: 'PUT',
+      body: JSON.stringify({ text }),
+    }),
+  deleteCv: () => request<{ ok: boolean }>('/api/match/cv', { method: 'DELETE' }),
+  startCouncil: (leadId: number) =>
+    request<{ status: string }>(`/api/match/council/${leadId}`, { method: 'POST' }),
 }
 
 function cleanParams(params: Record<string, string | number | boolean | undefined>) {

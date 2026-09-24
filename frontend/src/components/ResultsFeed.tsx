@@ -8,6 +8,7 @@ export default function ResultsFeed({
   loading,
   error,
   onToggleStar,
+  onOpen,
   onLoadMore,
   hasMore,
 }: {
@@ -16,6 +17,7 @@ export default function ResultsFeed({
   loading: boolean
   error: string | null
   onToggleStar: (id: number) => void
+  onOpen: (id: number) => void
   onLoadMore: () => void
   hasMore: boolean
 }) {
@@ -47,7 +49,7 @@ export default function ResultsFeed({
       </p>
       <div className="grid grid-cols-1 gap-3 sm:grid-cols-2 xl:grid-cols-3">
         {leads.map((lead) => (
-          <LeadCard key={lead.id} lead={lead} onToggleStar={onToggleStar} />
+          <LeadCard key={lead.id} lead={lead} onToggleStar={onToggleStar} onOpen={onOpen} />
         ))}
       </div>
       {loading && (

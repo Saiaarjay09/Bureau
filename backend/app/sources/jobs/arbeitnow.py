@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 import httpx
 
 from ...enrichment import guess_seniority
+from ..html_text import html_to_text
 from ..location import parse_location
 
 logger = logging.getLogger("bureau.sources.arbeitnow")
@@ -44,6 +45,7 @@ def fetch() -> list[dict]:
             "city": city,
             "remote_type": "remote" if job.get("remote") else "onsite",
             "seniority": guess_seniority(job.get("title", "")),
+            "description": html_to_text(job.get("description")),
             "tags": (job.get("tags") or [])[:10],
             "posted_date": posted,
             "raw": {"job_types": job.get("job_types")},

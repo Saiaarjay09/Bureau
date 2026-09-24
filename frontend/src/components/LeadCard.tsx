@@ -9,7 +9,15 @@ function timeAgo(iso: string | null): string {
   return `${Math.floor(days / 30)} mo ago`
 }
 
-export default function LeadCard({ lead, onToggleStar }: { lead: Lead; onToggleStar: (id: number) => void }) {
+export default function LeadCard({
+  lead,
+  onToggleStar,
+  onOpen,
+}: {
+  lead: Lead
+  onToggleStar: (id: number) => void
+  onOpen: (id: number) => void
+}) {
   const location = [lead.city, lead.country].filter(Boolean).join(', ') || 'Location unknown'
 
   const tags = [
@@ -20,28 +28,47 @@ export default function LeadCard({ lead, onToggleStar }: { lead: Lead; onToggleS
   ].filter(Boolean) as string[]
 
   return (
-    <div className="flex flex-col border border-[var(--hairline)] bg-[var(--surface)] p-4">
+    <div
+      role="button"
+      tabIndex={0}
+      onClick={() => onOpen(lead.id)}
+      onKeyDown={(e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+          e.preventDefault()
+          onOpen(lead.id)
+        }
+      }}
+      className="flex cursor-pointer flex-col border border-[var(--hairline)] bg-[var(--surface)] p-4 text-left transition hover:border-[var(--hairline-strong)]"
+    >
       <div className="flex items-start justify-between gap-3">
         <div className="min-w-0">
-          <a
-            href={lead.url ?? undefined}
-            target="_blank"
-            rel="noreferrer"
-            className="block truncate text-[15px] font-medium text-[var(--ink)] hover:text-[var(--accent)]"
-          >
-            {lead.title}
-          </a>
+          <span className="block truncate text-[15px] font-medium text-[var(--ink)]">{lead.title}</span>
           <p className="truncate text-sm text-[var(--ink-muted)]">
             {lead.company} · {location}
           </p>
         </div>
-        <button
-          onClick={() => onToggleStar(lead.id)}
-          aria-label={lead.starred ? 'Unstar' : 'Star'}
-          className={`shrink-0 text-lg leading-none ${lead.starred ? 'text-[var(--accent)]' : 'text-[var(--hairline-strong)] hover:text-[var(--accent)]'}`}
-        >
-          {lead.starred ? '★' : '☆'}
-        </button>
+        <div className="flex shrink-0 items-center gap-2">
+          {lead.fit_score !== null && (
+            <span
+              title={lead.fit_reason ?? undefined}
+              className="font-mono-kicker text-[10px] text-[var(--ink-muted)]"
+            >
+              {lead.council_score !== null ? `council ${lead.council_score}` : lead.fit_score}
+            </span>
+          )}
+          <button
+            // Stops the card's own onClick from firing — starring shouldn't
+            // also open the panel.
+            onClick={(e) => {
+              e.stopPropagation()
+              onToggleStar(lead.id)
+            }}
+            aria-label={lead.starred ? 'Unstar' : 'Star'}
+            className={`text-lg leading-none ${lead.starred ? 'text-[var(--accent)]' : 'text-[var(--hairline-strong)] hover:text-[var(--accent)]'}`}
+          >
+            {lead.starred ? '★' : '☆'}
+          </button>
+        </div>
       </div>
 
       {tags.length > 0 && (

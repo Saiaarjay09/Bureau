@@ -1,0 +1,58 @@
+name: Discover lead sources
+
+# Deliberately NOT triggered by pull_request. This repo is public, and a
+# workflow that runs on PRs from forks would hand FIRECRAWL_API_KEY to
+# anyone who opens one. Schedule and manual dispatch only — both of which
+# can only ever run from this repo's own branches.
+on:
+  schedule:
+    - cron: "17 3 * * *" # 03:17 UTC daily, off the top of the hour
+  workflow_dispatch:
+    inputs:
+      regions:
+        description: "Comma-separated regions (blank = the built-in sweep)"
+        required: false
+        type: string
+
+permissions:
+  contents: write
+
+concurrency:
+  group: discover-sources
+  cancel-in-progress: false
+
+jobs:
+  discover:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+
+      - name: Install Firecrawl SDK
+        run: pip install --quiet firecrawl-py==4.44.0
+
+      - name: Discover sources
+        env:
+          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
+        run: |
+          if [ -z "$FIRECRAWL_API_KEY" ]; then
+            echo "::error::FIRECRAWL_API_KEY secret is not set on this repository."
+            echo "Add it under Settings → Secrets and variables → Actions."
+            exit 1
+          fi
+          python3 backend/scripts/discover_sources.py ${{ inputs.regions && format('--regions "{0}"', inputs.regions) || '' }}
+
+      - name: Commit any new sources
+        run: |
+          if git diff --quiet -- sources/discovered_sites.json; then
+            echo "No new sources today."
+            exit 0
+          fi
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add sources/discovered_sites.json
+          git commit -m "Discovered lead sources: $(date -u +%Y-%m-%d)"
+          git push

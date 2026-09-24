@@ -1,8 +1,10 @@
 import { useCallback, useEffect, useState } from 'react'
 import { api } from './api'
 import BusinessDiscovery from './components/BusinessDiscovery'
+import CvPanel from './components/CvPanel'
 import FiltersBar, { type Filters } from './components/FiltersBar'
 import JobDiscovery from './components/JobDiscovery'
+import LeadDetailPanel from './components/LeadDetailPanel'
 import LeadTypeToggle from './components/LeadTypeToggle'
 import LoginPage from './components/LoginPage'
 import RegionSelector, { GLOBAL, type RegionValue } from './components/RegionSelector'
@@ -33,6 +35,8 @@ export default function App() {
   const [ingestMessage, setIngestMessage] = useState<string | null>(null)
   const [refreshTick, setRefreshTick] = useState(0)
   const [firecrawlConfigured, setFirecrawlConfigured] = useState(false)
+  const [openLeadId, setOpenLeadId] = useState<number | null>(null)
+  const [cvOpen, setCvOpen] = useState(false)
 
   useEffect(() => {
     api
@@ -155,6 +159,12 @@ export default function App() {
               {ingesting && <Spinner />}
               {ingesting ? 'Refreshing…' : 'Refresh job sources'}
             </button>
+            <button
+              onClick={() => setCvOpen(true)}
+              className="border border-[var(--hairline)] px-3 py-1 hover:border-[var(--hairline-strong)]"
+            >
+              CV
+            </button>
             <span>{username}</span>
             <button onClick={() => api.logout().then(() => setAuthState('out'))} className="hover:text-[var(--ink)]">
               Sign out
@@ -199,10 +209,26 @@ export default function App() {
           loading={loading}
           error={error}
           onToggleStar={toggleStar}
+          onOpen={setOpenLeadId}
           onLoadMore={() => setPage((p) => p + 1)}
           hasMore={leads.length < total}
         />
       </main>
+
+      {openLeadId !== null && (
+        <LeadDetailPanel
+          key={openLeadId}
+          leadId={openLeadId}
+          onClose={() => setOpenLeadId(null)}
+          onLeadChanged={() => setRefreshTick((t) => t + 1)}
+        />
+      )}
+      {cvOpen && (
+        <CvPanel
+          onClose={() => setCvOpen(false)}
+          onSaved={() => setRefreshTick((t) => t + 1)}
+        />
+      )}
     </div>
   )
 }

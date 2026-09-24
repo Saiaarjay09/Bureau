@@ -219,6 +219,67 @@ in.
 anywhere** — no Tailscale required on the visitor's end when Funnel is
 on.
 
+## Matching leads against your CV (Sabha)
+
+Bureau hands jobs to [Sabha](https://github.com/Saiaarjay09/hiring-council),
+the local hiring-council service, which runs a seven-member panel of
+open-weight models over a job and a CV. Both tiers run entirely on this
+Mac — nothing is sent to any external service.
+
+Paste your CV under **CV** in the header. It's stored at
+`backend/data/cv.txt` (gitignored). That's a deliberate departure from
+Sabha, which keeps a CV in memory and never writes it down: Bureau needs
+it on disk so new leads can be screened while nobody's at the keyboard.
+Delete it any time from the same panel.
+
+There are **two numbers, and they mean different things**:
+
+| | What it is | Cost | Where |
+|---|---|---|---|
+| **screen** | One pass of a single local model over the job + CV, giving a rough 0-100 so the feed can be sorted | ~5s/lead, automatic | On every card, and the "Best fit first" sort |
+| **council** | Sabha's real pipeline — job decomposed into requirements *before* the CV is read, then seven biased assessors argue | ~5 min/job, on demand | "Convene the council" inside a lead |
+
+The screen exists only to rank 1,500+ leads so the council's five minutes
+get spent on the right ones. It reads the job and CV together, which is
+exactly the shortcut Sabha's design argues against — treat it as triage,
+not as a verdict. Measured on this machine: a full council run took 293s
+and returned a considered 30/100 with seven specific blocking gaps, where
+the screen had put the same job at 45.
+
+Screening runs continuously in the background and **stands down whenever a
+council run is in flight**, so the thing you're waiting on gets the GPU.
+Changing your CV clears every existing screen score, because a score
+against an old CV is worse than no score.
+
+Sabha must be running locally (port 8700) for the council button to work —
+the CV panel shows whether it's reachable.
+
+## Daily automation: discovering new sources
+
+Two halves, split by what each needs:
+
+**On GitHub** (`.github/workflows/discover-sources.yml`, daily at 03:17
+UTC): sweeps regions for job boards and opportunity portals worldwide and
+commits anything new to [`sources/discovered_sites.json`](sources/discovered_sites.json).
+It found `mycareersfuture.gov.sg` (Singapore's official government job
+portal), `dubaicareers.ae`, and `gebiz.gov.sg` (government procurement) on
+its first run — exactly the regional coverage the three keyless APIs lack.
+
+This needs **`FIRECRAWL_API_KEY` as a repository secret** (Settings →
+Secrets and variables → Actions). The workflow triggers on `schedule` and
+`workflow_dispatch` only, never `pull_request` — in a public repo, a
+fork-PR trigger would hand that key to anyone who opened one.
+
+**On this Mac**: the background loop sweeps a rotating slice of those
+sites once a day (8 per pass, so the list gets covered over several days
+rather than burning credits on all of it every morning) and ingests what
+it finds. Run it by hand any time with:
+
+```bash
+cd backend && source .venv/bin/activate
+python3 scripts/discover_sources.py --regions "India,Kenya" --dry-run
+```
+
 ## Finding what the automatic sources miss
 
 The "Search the web for [a role]" bar on the Jobs tab exists specifically

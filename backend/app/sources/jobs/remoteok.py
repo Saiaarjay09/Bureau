@@ -7,6 +7,7 @@ from datetime import datetime, timezone
 import httpx
 
 from ...enrichment import guess_seniority
+from ..html_text import html_to_text
 from ..location import parse_location
 
 logger = logging.getLogger("bureau.sources.remoteok")
@@ -47,6 +48,7 @@ def fetch() -> list[dict]:
             "city": city,
             "remote_type": "remote",
             "seniority": guess_seniority(job.get("position") or ""),
+            "description": html_to_text(job.get("description")),
             "tags": (job.get("tags") or [])[:10],
             "posted_date": posted.replace(tzinfo=timezone.utc) if posted and not posted.tzinfo else posted,
             "raw": {},
