@@ -34,7 +34,7 @@ export default function App() {
   const [ingesting, setIngesting] = useState(false)
   const [ingestMessage, setIngestMessage] = useState<string | null>(null)
   const [refreshTick, setRefreshTick] = useState(0)
-  const [firecrawlConfigured, setFirecrawlConfigured] = useState(false)
+  const [webAvailable, setWebAvailable] = useState(false)
   const [openLeadId, setOpenLeadId] = useState<number | null>(null)
   const [cvOpen, setCvOpen] = useState(false)
 
@@ -52,7 +52,7 @@ export default function App() {
     if (authState !== 'in') return
     api
       .ingestStatus()
-      .then((res) => setFirecrawlConfigured(res.firecrawl_configured))
+      .then((res) => setWebAvailable(res.web_available))
       .catch(() => {})
   }, [authState])
 
@@ -182,7 +182,7 @@ export default function App() {
         {ingestMessage && <p className="mb-3 text-sm text-[var(--ink-muted)]">{ingestMessage}</p>}
         {leadType === 'business' && (
           <BusinessDiscovery
-            firecrawlConfigured={firecrawlConfigured}
+            webAvailable={webAvailable}
             region={region.city || region.country || region.continent || ''}
             onDiscovered={() => {
               setPage(1)
@@ -192,7 +192,7 @@ export default function App() {
         )}
         {leadType === 'job' && (
           <JobDiscovery
-            firecrawlConfigured={firecrawlConfigured}
+            webAvailable={webAvailable}
             region={region.city || region.country || region.continent || ''}
             onDiscovered={() => {
               setPage(1)

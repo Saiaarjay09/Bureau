@@ -109,6 +109,28 @@ def _add_missing_columns() -> None:
             logger.info("added missing column leads.%s (%s)", name, ddl)
 
 
+def _migrate_source_names() -> None:
+    """Firecrawl was replaced by a free local stack, so the source labels it
+    left behind are now wrong — they show on every card, and dedup keys off
+    (source, external_id). Renaming both sides together keeps existing leads
+    deduping against their new-source equivalents instead of silently
+    re-inserting as duplicates. Idempotent: after the first run there's
+    nothing matching left to rename."""
+    renames = {
+        "firecrawl_jobs": "web_jobs",
+        "firecrawl_business": "web_business",
+        "firecrawl_careers": "web_careers",
+    }
+    with engine.begin() as conn:
+        for old, new in renames.items():
+            result = conn.execute(
+                text("UPDATE leads SET source = :new WHERE source = :old"), {"new": new, "old": old}
+            )
+            if result.rowcount:
+                logger.info("renamed source %s -> %s on %d leads", old, new, result.rowcount)
+
+
 def init_db():
     Base.metadata.create_all(engine)
     _add_missing_columns()
+    _migrate_source_names()

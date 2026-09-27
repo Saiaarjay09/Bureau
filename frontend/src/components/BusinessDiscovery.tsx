@@ -3,11 +3,11 @@ import { api, ApiError } from '../api'
 import Spinner from './Spinner'
 
 export default function BusinessDiscovery({
-  firecrawlConfigured,
+  webAvailable,
   region,
   onDiscovered,
 }: {
-  firecrawlConfigured: boolean
+  webAvailable: boolean
   region: string
   onDiscovered: () => void
 }) {
@@ -15,12 +15,11 @@ export default function BusinessDiscovery({
   const [running, setRunning] = useState(false)
   const [message, setMessage] = useState<string | null>(null)
 
-  if (!firecrawlConfigured) {
+  if (!webAvailable) {
     return (
       <p className="mb-4 border border-[var(--hairline)] bg-[var(--accent-soft)] px-3 py-2 text-sm text-[var(--ink-muted)]">
-        Set <code className="font-mono-kicker text-[10px] normal-case tracking-normal">FIRECRAWL_API_KEY</code> in
-        backend/.env to discover new business leads live. Showing whatever's already in the database (mock data,
-        until then).
+        Ollama isn't reachable, and it's what reads fetched pages into structured leads. Start it to
+        discover new business leads — everything here runs locally, there's no API key to set.
       </p>
     )
   }

@@ -32,7 +32,15 @@ if not SECRET_KEY:
 SESSION_COOKIE_NAME = "bureau_session"
 SESSION_MAX_AGE_SECONDS = 60 * 60 * 24 * 30  # 30 days
 
+# Kept only so an existing .env doesn't error; nothing reads it any more.
+# Web search, page fetching and extraction all run free and locally now —
+# see sources/web.py.
 FIRECRAWL_API_KEY = os.environ.get("FIRECRAWL_API_KEY")
+
+# The model that pulls structured data out of fetched pages, replacing
+# Firecrawl's paid JSON-mode scrape. Same default as the CV screen so the
+# weights stay resident rather than thrashing between two models.
+EXTRACT_MODEL = os.environ.get("BUREAU_EXTRACT_MODEL", "qwen2.5:14b")
 
 # Sabha (the local hiring-council service) and the Ollama it runs on. Both
 # are local-only by nature; nothing here reaches the internet.

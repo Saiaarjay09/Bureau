@@ -5,7 +5,17 @@ httpx==0.27.2
 bcrypt==4.2.0
 itsdangerous==2.2.0
 python-dotenv==1.0.1
-firecrawl-py==4.44.0
+
+# The free replacement for Firecrawl (see app/sources/web.py): ddgs for
+# search, trafilatura to pull the readable content out of fetched HTML,
+# and playwright only for the sites that refuse a plain HTTP fetch or
+# render client-side. Structured extraction runs on the local Ollama, so
+# there is no paid API anywhere in this path.
+# Playwright also needs a one-off browser download: python -m playwright install chromium
+ddgs==9.16.0
+trafilatura==2.2.0
+playwright==1.63.0
+
 # CV uploads: pypdf/python-docx extract the text, python-multipart is what
 # lets FastAPI accept a file upload at all.
 pypdf==6.19.0

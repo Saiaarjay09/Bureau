@@ -3,11 +3,11 @@ import { api, ApiError } from '../api'
 import Spinner from './Spinner'
 
 export default function JobDiscovery({
-  firecrawlConfigured,
+  webAvailable,
   region,
   onDiscovered,
 }: {
-  firecrawlConfigured: boolean
+  webAvailable: boolean
   region: string
   onDiscovered: () => void
 }) {
@@ -15,8 +15,8 @@ export default function JobDiscovery({
   const [running, setRunning] = useState(false)
   const [message, setMessage] = useState<string | null>(null)
 
-  if (!firecrawlConfigured) {
-    return null // the job feed already works without Firecrawl; no need to nag here too
+  if (!webAvailable) {
+    return null // the job feed already works without this; no need to nag here too
   }
 
   async function run() {

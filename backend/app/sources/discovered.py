@@ -18,7 +18,7 @@ from datetime import date
 from pathlib import Path
 
 from ..config import BACKEND_DIR
-from .jobs import firecrawl_job_search
+from .jobs import job_search
 
 logger = logging.getLogger("bureau.sources.discovered")
 
@@ -63,7 +63,7 @@ def fetch(role: str = "", per_pass: int = SITES_PER_PASS) -> list[dict]:
         domain, region = site["domain"], site.get("region", "")
         query = f"{role} jobs {region}".strip() if role else f"jobs hiring {region}".strip()
         try:
-            leads = firecrawl_job_search.fetch_scoped(
+            leads = job_search.fetch_scoped(
                 query=query, region=region, domains=[domain], max_pages=PAGES_PER_SITE
             )
         except Exception:

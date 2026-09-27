@@ -4,7 +4,7 @@ This is a technical tour of the repository: the overall architecture, then
 what every individual file does. `README.md` is the pitch, setup steps,
 and Tailscale/launchd operations guide; this document is the one to read
 to understand the *code* — how a lead actually gets from a public API or
-a Firecrawl scrape onto your screen, and which file is responsible for
+a web fetch onto your screen, and which file is responsible for
 which part of that.
 
 ## The big picture
@@ -24,11 +24,11 @@ SQLite table:
 
 - **Job leads**: three keyless public APIs (Remotive, Arbeitnow,
   RemoteOK) refreshed automatically every few hours by a background
-  asyncio loop, plus Firecrawl-based company-careers-page discovery
-  triggered manually (it spends Firecrawl credits, so it's never
-  automatic).
-- **Business-opportunity leads**: Firecrawl web/news search per
-  industry+region, then a structured-JSON scrape of each matched page to
+  asyncio loop, plus web search and company-careers-page discovery
+  triggered manually (each costs minutes of local fetching and model
+  time, so it's never automatic).
+- **Business-opportunity leads**: web search per
+  industry+region, then local extraction over each matched page to
   pull out a company's name, location, size, funding stage, and the
   specific signal that makes it a live lead — triggered manually from the
   "Discover businesses" bar on the Business Opportunities tab.
@@ -83,8 +83,10 @@ default), the SQLite path, the bcrypt-auth file path, and generates (or
 loads) the `SECRET_KEY` used to sign session cookies — if you don't set
 `BUREAU_SECRET_KEY` yourself, one is created on first run and cached in
 `data/.secret_key` so sessions survive restarts (but not a wipe of
-`data/`). Also reads `FIRECRAWL_API_KEY` and the background-ingest
-interval.
+`data/`). Also names the local models used for CV screening and page
+extraction, and the background-ingest interval. It still reads
+`FIRECRAWL_API_KEY` so an existing `.env` doesn't error, but nothing
+uses it any more.
 
 ### `backend/app/db.py`
 The SQLAlchemy setup: one `Lead` table with every field either family of
@@ -161,13 +163,13 @@ existing row (matched on `source` + `external_id`, never touching its
 `starred` flag) or inserts a new one. Returns `(created, updated)` counts,
 which is what the ingestion endpoints and the background loop report
 back. Dedupes against a `pending` dict of this batch's own new rows, not
-just the database — a single Firecrawl-search call can legitimately
+just the database — a single search can legitimately
 return the same job twice (matched by two different query templates,
 scraped off two different search-result pages), and without the in-batch
 check the second occurrence looks "new" to a plain SELECT (SQLAlchemy
 hasn't flushed the first one yet) and crashes the whole batch on
 SQLite's UNIQUE constraint at commit time instead of just updating in
-place (found while live-testing `firecrawl_job_search.py`).
+place (found while live-testing the web job search).
 
 ### `backend/app/enrichment.py`
 Two pieces of enrichment that don't need an external API call:
@@ -177,14 +179,14 @@ many other job leads the same company has posted within a rolling
 30-day window and writes a "Hiring N roles in the last 30 days" signal
 onto each one if that count is ≥2. This is what fills in the growth
 signal for the three keyless job sources, which don't carry funding/
-hiring-surge data themselves the way a Firecrawl-sourced business lead
-does.
+hiring-surge data themselves the way a web-sourced business lead does.
 
 ### `backend/app/scheduler.py`
-The background refresh loop for the **keyless job sources only** —
-Firecrawl-based sources are deliberately excluded here because they cost
-credits per call; those only run when a person clicks something (see
-`routers/ingest.py`). `run_job_sources_once()` calls every fetcher in
+The background refresh loop. The three keyless job APIs are free and fast,
+so they refresh every few hours; the discovered-sites sweep fetches and
+extracts pages locally — free, but seconds of GPU each — so it runs once a
+day over a rotating slice. The on-demand endpoints stay manual, since
+each is minutes of local compute (see `routers/ingest.py`). `run_job_sources_once()` calls every fetcher in
 `sources.registry.JOB_FETCHERS`, upserts the results, and reapplies
 growth signals; `background_loop()` wraps that in an infinite
 sleep-then-run cycle at `config.INGEST_INTERVAL_SECONDS`, started once
@@ -244,16 +246,17 @@ actually exist, instead of a static gazetteer.
 ### `backend/app/routers/ingest.py`
 The manual-trigger endpoints, all requiring a session: `POST /jobs`
 (re-runs the keyless sources on demand, same function the background
-loop uses), `POST /careers` (Firecrawl career-page discovery for a
+loop uses), `POST /careers` (career-page discovery for a
 specific list of `{name, domain}` companies), `POST /business`
-(Firecrawl business-lead discovery for one industry/region), `POST
-/job_search` (Firecrawl-based job search for any role/region combo —
+(business-lead discovery for one industry/region), `POST
+/job_search` (job search for any role/region combo —
 this is what reaches leadership titles and regions like the Gulf/Middle
 East that the three keyless boards structurally can't). All three
-Firecrawl-backed endpoints 400 immediately if `FIRECRAWL_API_KEY` isn't
-set, via `sources.firecrawl_client.is_configured()`, rather than
-attempting a call that would fail anyway. `GET /status` reports whether
-Firecrawl is configured and the background loop's last-run timestamps.
+web-scraping endpoints 503 immediately if Ollama — which does the
+extraction — isn't reachable, via `sources.web.is_available()`, rather
+than attempting a run that would fail minutes later. `GET /status`
+reports that availability and the background loop's last-run
+timestamps.
 
 ### `backend/app/sabha.py`
 The bridge to Sabha, the local hiring-council service on port 8700, and
@@ -337,19 +340,37 @@ data while building this — about 40% of listings are just "Berlin",
 safely falls through to "unknown" in `location.py` rather than a wrong
 guess.
 
-### `backend/app/sources/firecrawl_client.py`
-A single `get_client()` (lru-cached) that constructs a `firecrawl.
-Firecrawl` SDK client from `config.FIRECRAWL_API_KEY`, or returns `None`
-if it isn't set — every Firecrawl-based source module calls this and
-bails out (returning an empty list) rather than raising, which is why the
-app still runs fine with zero leads from these two sources when no key
-is configured. `is_configured()` is the cheap check the ingest router
-uses to 400 early.
+### `backend/app/sources/web.py`
+The free, local replacement for Firecrawl, and the only module that knows
+how the open web is reached. Firecrawl did three separable things and each
+has a free equivalent here: `search()` is DuckDuckGo via ddgs (no key),
+`fetch_text()` is httpx + trafilatura, and `extract()` runs the local
+Ollama over a page to pull out structured records.
+
+That last one is the point worth noting — paying an API to run an LLM over
+a page is the expensive half of a scrape, and this machine already has
+models resident for Sabha. Extraction was never the part that needed
+buying.
+
+`fetch_text()` is two-tier on measurement, not principle: plain HTTP gets
+arbeitnow and michaelpage in ~0.5s but returns 403 on Indeed, Bayt and
+GulfTalent and 0 characters on mycareersfuture (a client-rendered app).
+A headless Chromium gets all four at 3-4s. So HTTP runs first and the
+browser only starts when that came back blocked, empty or suspiciously
+thin — most pages never pay the 3s. `search()` retries on DuckDuckGo's
+habit of answering a throttled query with "No results found", which was
+observed silently costing a third of a search's coverage.
+
+What this gives up versus a commercial scraping API: no proxy pool, no
+CAPTCHA solving, so the hardest bot protection still wins. Callers treat
+a failed fetch as "no data for this lead", which is the same posture they
+had toward Firecrawl failures.
+
 
 ### `backend/app/sources/registry.py`
 `JOB_FETCHERS`: the dict of `{name: fetch_function}` for the three
 keyless job sources, consumed by `scheduler.py`'s background loop and by
-the manual `/api/ingest/jobs` trigger. Firecrawl-based sources are
+the manual `/api/ingest/jobs` trigger. The web-scraping sources are
 intentionally not registered here (see `scheduler.py`).
 
 ### `backend/app/sources/jobs/remotive.py`, `arbeitnow.py`, `remoteok.py`
@@ -392,85 +413,82 @@ title-only run, since its first step decomposes the posting into
 requirements and would have been decomposing a nav bar. Naming the role
 in the prompt also disambiguates aggregator pages listing many jobs.
 
-Retries once on a rate limit (Firecrawl allows 18 req/min here, and a
-sweep can exhaust it), matching on the message rather than the SDK's
-internal exception class.
+Fetching and extraction both go through `sources/web.py`, so this
+inherits its HTTP-then-browser fallback and its search retry.
 
 ### `backend/app/sources/discovered.py`
+
 The local half of the daily automation: reads the
 `sources/discovered_sites.json` that the GitHub Action commits, and turns
-those domains into leads via domain-scoped Firecrawl searches. Sweeps a
-bounded rotating slice (`todays_slice()`, 8 sites a day) rather than the
-whole list, because the list only grows and a full daily sweep would
-scale credit spend with it. The rotation is keyed on the date rather than
-a stored cursor, so it's stable within a day and needs nothing persisted.
+those domains into leads via domain-scoped searches. Sweeps a bounded
+rotating slice (`todays_slice()`, 8 sites a day) rather than the whole
+list, because the list only grows and a full daily sweep would scale
+local fetch-and-extract time with it. The rotation is keyed on the date
+rather than a stored cursor, so it's stable within a day and needs
+nothing persisted.
 
 ### `backend/app/sources/concurrency.py`
-`parallel_map(fn, items)` — the thing that makes Discover fast instead of
-taking ~45 seconds. Every Firecrawl source used to run its handful of
-search queries one at a time, then its handful of scrapes one at a
-time; each is a network round trip (a scrape can take several seconds
-on a JS-heavy page), so those added up strictly sequentially. None of
-those calls depend on each other, so a `ThreadPoolExecutor` (default 6
-workers — Firecrawl's Python SDK makes a plain blocking HTTP request per
-call, which releases the GIL while waiting) runs them concurrently
-instead, preserving input order and logging+skipping (returning `None`
-in that slot) rather than aborting the batch if one item raises. Cut a
-representative job search from ~45s to ~20s in testing.
 
-### `backend/app/sources/jobs/firecrawl_careers.py`
-Given a list of `{name, domain}` companies, `firecrawl.map()`s each
-domain looking for a URL containing "career"/"job", then
-`firecrawl.scrape()`s that page with a JSON-mode extraction schema
-(`JOB_LISTING_SCHEMA`) asking for every open listing's title, location,
-department, and URL. `fetch_for_companies()` runs one company's
-map+scrape per `parallel_map()` worker, since different companies are
-fully independent of each other. Only triggered from `/api/ingest/
-careers` — never on the background schedule, since every call spends
-Firecrawl credits.
+`parallel_map(fn, items)` — what keeps a discovery run to minutes rather
+than tens of minutes. Every source runs a handful of searches and then a
+handful of page fetches, each a network round trip (and, on the browser
+tier, several seconds). None depend on each other, so a
+`ThreadPoolExecutor` (6 workers) runs them concurrently, preserving input
+order and logging-and-skipping a failed item rather than aborting the
+batch.
 
-### `backend/app/sources/jobs/firecrawl_job_search.py`
-The general-purpose job source, added specifically because the three
-keyless boards have two structural blind spots: they skew toward
-individual-contributor tech roles (leadership titles like "IT Director"
-or "Head of IT" essentially never appear), and their regional coverage
-is Western/remote-only (Remotive/RemoteOK are remote-only, Arbeitnow is
-Europe-centric — none has meaningful Gulf/Middle East coverage, and
-Adzuna, the other free-tier option, doesn't cover the Middle East
-either — confirmed by checking Adzuna's own country list while building
-this). `_search_urls()` runs `firecrawl.search()` against three query
-templates combining a free-text role and region (e.g. "IT Director" +
-"UAE") through `parallel_map()`, pooling and deduping the result URLs;
-`fetch()` then runs `firecrawl.scrape()` on each matched URL, also
-through `parallel_map()`, with `JOB_LISTING_SCHEMA` — the same shape as
-`firecrawl_careers.py`'s, since both are extracting a list of job
-postings from a page rather than one company's details. If a listing's
-own location is empty, it falls back to the searched region string
-itself before running it through `parse_location()`, since the search
-was already scoped there. Verified against live data while building
-this: correctly surfaces roles like "Director of IT" and "IT
-Applications Director," and correctly resolves Dubai/Abu Dhabi listings
-to `country="United Arab Emirates"`. Powers the "Discover" bar on the
-Jobs tab (`/api/ingest/job_search`) — manual-only, like the other two
-Firecrawl sources.
+### `backend/app/sources/jobs/career_pages.py`
 
-### `backend/app/sources/business/firecrawl_business.py`
-The business-opportunity pipeline. `_search_urls()` runs `firecrawl.
-search()` against four query templates per industry/region (funding,
-active hiring, expansion, new leadership — the four signal types the
-build brief called out) through `parallel_map()`, pooling and deduping
-the result URLs. `fetch()` then runs `firecrawl.scrape()` on each URL,
-also through `parallel_map()`, with `COMPANY_SCHEMA` — a JSON-mode
-extraction asking for the company's name, domain, HQ location, size,
-funding stage, the specific signal, and a **company-level** contact path,
-explicitly prompted to never return a named individual's personal contact
-info. This is also where Crunchbase/LinkedIn company pages would be
-picked up if a search result lands on one — no domain filtering excludes
-them, per the explicit call made when this was built, only their public
-unauthenticated pages are ever touched. Verified against live data while
-building this: it correctly extracts a single specific company (not the
-whole roundup) out of a multi-company funding-news article. Also
-manual-only, for the same credit-cost reason as `firecrawl_careers.py`.
+Given a list of `{name, domain}` companies, finds each one's careers page
+and extracts its open listings. Firecrawl's `map` used to enumerate a
+domain's URLs to locate that page; without it this probes the handful of
+paths companies actually use (`/careers`, `/jobs`, …) and falls back to a
+site-scoped search. Less thorough than a real crawl, but free, and those
+conventional paths cover most company sites. The probe deliberately
+passes `allow_browser=False` — starting Chromium six times just to
+discover a URL would cost more than the page is worth. Manual-only, via
+`/api/ingest/careers`.
+
+### `backend/app/sources/jobs/job_search.py`
+
+The general-purpose job source, added because the three keyless boards
+have two structural blind spots: they skew toward individual-contributor
+tech roles (leadership titles essentially never appear) and their
+regional coverage is Western/remote-only (no Gulf presence at all, and
+Adzuna — the other free-tier option — doesn't cover the Middle East
+either). `_search_urls()` runs three query templates through
+`web.search()` concurrently; `fetch()` then fetches and extracts each
+matched page, also concurrently.
+
+The extraction prompt deliberately does **not** ask the model to filter
+by role or region, which was measured actively losing leads: a page found
+by searching "IT Director in UAE" listed a Riyadh role, and the model
+dutifully returned nothing because it wasn't in the UAE. The search
+already did the targeting, each job's own location is parsed below, and
+the app has its own region filter — a second, stricter filter here only
+discards good leads. After that fix the same search returned 24 real UAE
+leads.
+
+`fetch_scoped()` is the variant the discovered-sites sweep uses: one raw
+query confined to specific domains, with no template fan-out, since the
+domain is already the narrowing.
+
+### `backend/app/sources/business/company_signals.py`
+
+The business-opportunity pipeline. Four query templates per
+industry/region (funding, active hiring, expansion, new leadership — the
+four signal types the brief called out) go through `web.search()`, and
+each matched page is fetched and read by the local model for the
+company's name, domain, HQ, size, funding stage, the specific signal, and
+a **company-level** contact path — explicitly prompted never to return a
+named individual's personal contact details.
+
+This is also where Crunchbase/LinkedIn company pages get picked up if a
+search lands on one: in scope per explicit sign-off despite both
+prohibiting scraping in their ToS, public unauthenticated pages only.
+Worth knowing that both now refuse a plain HTTP fetch and are only
+reachable through the browser tier, and LinkedIn often refuses outright —
+those come back empty rather than failing the run.
 
 ## `backend/scripts/` — one-off CLI scripts
 
@@ -491,8 +509,8 @@ have populated anything.
 
 ### `backend/scripts/clear_mock_data.py`
 Deletes every lead with `source = "mock"`. The natural next step after
-`seed_mock_data.py` once real sources (or a real Firecrawl-sourced
-business lead) have replaced the need for sample data.
+`seed_mock_data.py` once real sources have replaced the need for sample
+data.
 
 ---
 
@@ -631,23 +649,25 @@ further pages of an already-populated list. Purely a presentational
 component — pagination state lives in `App.tsx`.
 
 ### `frontend/src/components/BusinessDiscovery.tsx`
-The industry/region search bar shown above the feed on the Business
-Opportunities tab. If `firecrawlConfigured` is false (checked once by
-`App.tsx` via `/api/ingest/status`), renders a note about setting
-`FIRECRAWL_API_KEY` instead of the input. Otherwise, submitting calls
-`api.ingestBusiness()`, shows a `Spinner` in the button while the
-(now-parallelized, but still multi-second) request is in flight, and
-reports how many leads were created/updated, then calls `onDiscovered()`
-so `App.tsx` re-fetches the feed.
+
+The industry/region search bar above the feed on the Business
+Opportunities tab. If the backend reports the local extraction model is
+unreachable (checked once by `App.tsx` via `/api/ingest/status`), it says
+so instead of offering a search that would fail. Otherwise, submitting
+calls `api.ingestBusiness()`, shows a `Spinner` while the request is in
+flight — this one is genuinely minutes long — and reports how many leads
+were created/updated before calling `onDiscovered()` so `App.tsx`
+re-fetches.
 
 ### `frontend/src/components/JobDiscovery.tsx`
-The equivalent search bar for the Jobs tab — a free-text role instead of
-an industry, calling `api.ingestJobSearch()` — this is what a person
-actually uses to pull in a leadership title or a region the three
-automatic sources don't cover. Renders nothing at all (not even a
-Firecrawl-not-configured note) when `firecrawlConfigured` is false,
-unlike `BusinessDiscovery`, since the job feed already has three working
-automatic sources and doesn't need to nag about a fourth, optional one.
+
+The equivalent search bar for the Jobs tab — a free-text role rather than
+an industry, calling `api.ingestJobSearch()`. This is what a person
+actually uses to pull in a leadership title or a region the automatic
+sources don't cover. Renders nothing at all when the extraction model is
+unreachable, unlike `BusinessDiscovery`: the job feed already has three
+working automatic sources and doesn't need to nag about a fourth,
+optional one.
 
 ### `frontend/vite.config.ts`
 Registers the React and Tailwind v4 Vite plugins, and proxies `/api` to
@@ -673,19 +693,21 @@ path, `backend/.venv` has to be deleted and recreated there — `mv`-ing
 it along with the rest of the repo will silently break it.
 
 ### `.github/workflows/discover-sources.yml` and `backend/scripts/discover_sources.py`
-The cloud half of the daily automation. The script sweeps regions through
-Firecrawl for job boards and opportunity portals, normalises what it finds
-to bare domains (dropping aggregators, social sites and our own existing
-sources), and merges new entries into `sources/discovered_sites.json` —
-append-only, each carrying the query that found it, because Bureau spends
-credits on every domain in that file daily and a bad entry keeps costing
-until someone removes it.
 
-The workflow runs on `schedule` and `workflow_dispatch` **only**. In a
-public repo a `pull_request` trigger would expose `FIRECRAWL_API_KEY` to
-anyone who opened a fork PR, so that trigger is deliberately absent — and
-the job fails with a clear message rather than a confusing API error when
-the secret isn't set at all.
+The cloud half of the daily automation. The script sweeps regions through
+DuckDuckGo for job boards and opportunity portals, normalises what it
+finds to bare domains (dropping aggregators, social sites, search engines
+and our own existing sources), and merges new entries into
+`sources/discovered_sites.json` — append-only, each carrying the query
+that found it, because Bureau spends a fetch and a model call on every
+domain in that file and a bad entry keeps costing until someone removes
+it. It retries a throttled search, since DuckDuckGo answers those with
+"No results found" and would otherwise silently drop a region's coverage.
+
+The workflow needs **no secrets at all** — DuckDuckGo takes no API key.
+It previously needed `FIRECRAWL_API_KEY`, which in a public repo meant
+carefully ensuring no `pull_request` trigger could ever expose it to a
+fork PR; dropping the paid API removed that whole class of problem.
 
 ### `.claude/launch.json`
 Not part of the running app — this only tells Claude Code's browser
@@ -714,15 +736,17 @@ The 2048-word BIP39 English wordlist, copied verbatim from Haven
 `recovery.py`, which asserts it has exactly 2048 lines.
 
 ### `backend/requirements.txt`
-Pinned backend dependencies: FastAPI, Uvicorn, SQLAlchemy, httpx (job-API
-calls), bcrypt, itsdangerous (session signing), python-dotenv, and
-firecrawl-py.
+Pinned backend dependencies: FastAPI, Uvicorn, SQLAlchemy, httpx, bcrypt,
+itsdangerous (session signing), python-dotenv; ddgs/trafilatura/playwright
+for the free scraping stack; and pypdf/python-docx/python-multipart for CV
+uploads. Playwright also needs a one-off `python -m playwright install
+chromium`.
 
 ### `backend/.env.example`
 The template for `backend/.env` (which is gitignored and never
-committed): `FIRECRAWL_API_KEY`, `BUREAU_SECRET_KEY`, and
-`BUREAU_INGEST_INTERVAL_SECONDS`, each commented with what it does and
-what happens if you leave it blank.
+committed). Nothing in it is required any more now that scraping runs
+free and locally; it documents the optional `BUREAU_SECRET_KEY` and
+`BUREAU_INGEST_INTERVAL_SECONDS`.
 
 ### `README.md`
 The pitch, setup steps, credential management, launchd service commands,

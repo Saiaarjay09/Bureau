@@ -20,11 +20,12 @@ running your own copy rather than using that one, see "Setup" below.
 - **Auth**: single username/password, bcrypt-hashed, session cookie —
   see "Credentials" below.
 - **Job sources**: three keyless public APIs (Remotive, Arbeitnow,
-  RemoteOK) refreshed automatically every 6 hours, plus Firecrawl-based
+  RemoteOK) refreshed automatically every 6 hours, plus web search and
   career-page discovery triggered manually.
-- **Business-lead sources**: Firecrawl web/news search + page scraping,
-  triggered manually per industry/region from the UI's "Discover
-  businesses" bar (Business Opportunities tab).
+- **Business-lead sources**: web search + page reading per industry/region,
+  triggered manually from the UI's "Discover businesses" bar.
+- **Scraping stack**: free and local — DuckDuckGo search, httpx with a
+  headless-Chromium fallback, and Ollama for extraction. No paid API.
 
 ## Data sources and their limits — read before relying on this
 
@@ -46,16 +47,15 @@ needs a signup) is narrower still. Neither is wired up here — see
 "Finding what the automatic sources miss" below for what actually
 closes those two gaps today.
 
-**Job leads (manual, costs Firecrawl credits):** career-page discovery
-for specific companies via `/api/ingest/careers` — maps a company's
-domain, finds its careers page, and extracts current listings. Also a
-general role/region job search via `/api/ingest/job_search` — the
-"Discover" bar on the Jobs tab — which is what actually reaches
-leadership titles and regions like the UAE that the three automatic
-sources can't; see below.
+**Job leads (manual, free but slow):** career-page discovery for
+specific companies via `/api/ingest/careers`, and a general role/region
+job search via `/api/ingest/job_search` — the "Discover" bar on the Jobs
+tab — which is what actually reaches leadership titles and regions like
+the UAE that the three automatic sources can't. Both search, fetch and
+extract locally, so they cost nothing but take a couple of minutes.
 
-**Business-opportunity leads (manual, costs Firecrawl credits):**
-Firecrawl web/news search per industry+region, then scrapes the matched
+**Business-opportunity leads (manual, free but slow):**
+web search per industry+region, then reads the matched
 pages for company details and a "why now" signal (funding, hiring surge,
 expansion, new exec). **This includes Crunchbase and LinkedIn company
 pages** — both explicitly prohibit scraping in their Terms of Service.
@@ -66,12 +66,19 @@ wall, and never a named individual's personal contact info — only
 company-level contact paths (an inquiry email pattern or contact page
 URL).
 
-**Firecrawl requires its own API key** (get one at
-[firecrawl.dev](https://www.firecrawl.dev)) — set `FIRECRAWL_API_KEY` in
-`backend/.env`. Without it, `/api/ingest/careers` and `/api/ingest/business`
-return 400 and the "Discover businesses" bar shows a note instead of the
-search box; everything else (job sources, mock business data, filtering,
-export) still works.
+**Nothing here needs a paid API.** Web search is DuckDuckGo (no key),
+pages are fetched with plain HTTP and — only when a site refuses that or
+renders client-side — a local headless Chromium, and the structured
+extraction that turns a page into leads runs on the same local Ollama
+that does CV screening. The only external dependency is Ollama being up;
+if it isn't, the discovery bars say so.
+
+This replaced Firecrawl, which was doing the same three jobs for money.
+The honest tradeoff: there's no proxy pool or CAPTCHA solving, so sites
+behind the very hardest bot protection can still refuse, and a page takes
+seconds rather than being someone else's problem. In testing the browser
+tier recovered every site that blocked plain HTTP — Indeed, Bayt,
+GulfTalent — and a UAE "IT Director" search returned 24 real leads.
 
 ## Setup
 
@@ -80,7 +87,7 @@ cd backend
 python3 -m venv .venv
 source .venv/bin/activate
 pip install -r requirements.txt
-cp .env.example .env        # edit in FIRECRAWL_API_KEY etc. if you have them
+cp .env.example .env        # optional; nothing in it is required any more
 
 cd ../frontend
 npm install
@@ -261,8 +268,8 @@ Fetched job descriptions are kept, since those don't depend on your CV.
 **Leads without a description still work.** About two thirds arrive with
 only a title (job boards that aged out, or listing pages that showed no
 body text). Convening the council on one of those fetches the real
-posting first — a few seconds and one Firecrawl credit, well spent given
-the run costs five minutes of GPU either way — and stores it, so the
+posting first — a few seconds of local fetching, well spent given the run
+costs five minutes of GPU either way — and stores it, so the
 screen and any later run get it too. If the fetch fails or there's no
 URL, Sabha assesses the title against a generic rubric for that role and
 says so in its own summary.
@@ -281,15 +288,15 @@ It found `mycareersfuture.gov.sg` (Singapore's official government job
 portal), `dubaicareers.ae`, and `gebiz.gov.sg` (government procurement) on
 its first run — exactly the regional coverage the three keyless APIs lack.
 
-This needs **`FIRECRAWL_API_KEY` as a repository secret** (Settings →
-Secrets and variables → Actions). The workflow triggers on `schedule` and
-`workflow_dispatch` only, never `pull_request` — in a public repo, a
-fork-PR trigger would hand that key to anyone who opened one.
+It needs **no repository secret at all** — DuckDuckGo search takes no API
+key. (It used to need `FIRECRAWL_API_KEY`, which in a public repo meant
+being careful no fork-PR trigger could ever expose it; that whole class
+of problem went away with the paid API.)
 
 **On this Mac**: the background loop sweeps a rotating slice of those
 sites once a day (8 per pass, so the list gets covered over several days
-rather than burning credits on all of it every morning) and ingests what
-it finds. Run it by hand any time with:
+rather than spending an hour of local compute every morning) and ingests
+what it finds. Run it by hand any time with:
 
 ```bash
 cd backend && source .venv/bin/activate
@@ -303,37 +310,26 @@ for the two gaps above: leadership titles and non-Western regions.
 Type a role (e.g. "IT Director", "Head of IT") and, if you've set a
 region filter, it searches within that region — e.g. filter to United
 Arab Emirates first, then search "IT Director" — or leave the filter on
-Global to search everywhere. Each search spends Firecrawl credits (a
-handful of search + scrape calls per click, run concurrently — see
-`backend/app/sources/concurrency.py` — rather than one at a time, which
-took discovery from ~45s down to ~20s in testing), so like the
-business-leads bar, it's manual rather than automatic. A spinner shows
+Global to search everywhere. Each search costs no money but a couple of minutes of local fetching and
+model time (pages are fetched concurrently — see
+`backend/app/sources/concurrency.py`), so like the business-leads bar,
+it's manual rather than automatic. A spinner shows
 in the button while it's running. Verified live while building this:
 found 47 director/IT-director-titled roles and 19 real UAE listings,
 both zero from the three automatic sources alone.
 
 ## Populating business leads
 
-Live-tested end to end while building this (search → scrape → structured
-extraction → dedupe → visible in the feed) using a one-off Firecrawl call
-outside the app, and the result — a real company pulled correctly out of
-a multi-company funding roundup article, with a company-level contact
-path, not a named person's — is sitting in the database right now on the
-Business Opportunities tab (`source: firecrawl_business`). That confirms
-the pipeline and its extraction schema work; it does not substitute for
-setting your own key. I have Firecrawl access through this coding
-session's own MCP connection, which lets *me* call Firecrawl while we
-talk, but that's not a credential I can extract or hand to your running
-server — the backend needs its **own** `FIRECRAWL_API_KEY` (from your
-own [firecrawl.dev](https://www.firecrawl.dev) account) in `backend/.env`
-before the in-app "Discover" button will work on its own.
+Live-tested end to end: search → fetch → extraction → dedupe → visible in
+the feed, all on free local infrastructure. A UAE "IT Director" search
+returned 24 real leads (including roles at IOTA Group in Abu Dhabi and
+Focus Direct in Dubai) in about two and a half minutes, and a Singapore
+fintech sweep returned companies with genuine funding signals.
 
 The "Discover businesses" bar (Business Opportunities tab) takes an
 industry and searches within whatever region you've currently filtered
-to (or globally, if set to "Global"). Each click spends Firecrawl
-credits, so it's manual rather than on a schedule — check
-[firecrawl.dev](https://www.firecrawl.dev)'s pricing before running it
-across a lot of industries/regions.
+to (or globally, if set to "Global"). Each click costs a couple of minutes of local fetching and model time
+rather than money, so it's manual rather than on a schedule.
 
 Career-page discovery for specific companies is API-only for now (no UI
 yet):

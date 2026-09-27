@@ -1,9 +1,9 @@
 name: Discover lead sources
 
-# Deliberately NOT triggered by pull_request. This repo is public, and a
-# workflow that runs on PRs from forks would hand FIRECRAWL_API_KEY to
-# anyone who opens one. Schedule and manual dispatch only — both of which
-# can only ever run from this repo's own branches.
+# No secrets are used or needed: search is DuckDuckGo via ddgs, which takes
+# no API key. This used to require FIRECRAWL_API_KEY, which in a public repo
+# meant being careful that no fork-PR trigger could ever expose it. That
+# whole class of problem went away with the paid API.
 on:
   schedule:
     - cron: "17 3 * * *" # 03:17 UTC daily, off the top of the hour
@@ -31,18 +31,11 @@ jobs:
         with:
           python-version: "3.12"
 
-      - name: Install Firecrawl SDK
-        run: pip install --quiet firecrawl-py==4.44.0
+      - name: Install search dependency
+        run: pip install --quiet ddgs==9.16.0
 
       - name: Discover sources
-        env:
-          FIRECRAWL_API_KEY: ${{ secrets.FIRECRAWL_API_KEY }}
         run: |
-          if [ -z "$FIRECRAWL_API_KEY" ]; then
-            echo "::error::FIRECRAWL_API_KEY secret is not set on this repository."
-            echo "Add it under Settings → Secrets and variables → Actions."
-            exit 1
-          fi
           python3 backend/scripts/discover_sources.py ${{ inputs.regions && format('--regions "{0}"', inputs.regions) || '' }}
 
       - name: Commit any new sources

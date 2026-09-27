@@ -4,15 +4,18 @@ version-controlled list of them.
 
 This is the half of the daily automation that runs on GitHub rather than on
 the Mac, because it's the half that doesn't need anything local: it only
-needs Firecrawl and somewhere to commit a JSON file. The other half —
+needs a web search and somewhere to commit a JSON file. The other half —
 actually pulling leads from these sites — stays on the Mac, because that's
 where the database and the local models are.
 
+Search is DuckDuckGo via ddgs: free, no API key, and therefore nothing to
+store as a repository secret.
+
 The output (sources/discovered_sites.json) is deliberately a curated list
 rather than a scrape dump: Bureau uses each entry's domain to scope its own
-Firecrawl searches, so a wrong or dead domain costs credits every day until
-someone removes it. Entries are therefore only added, never silently
-replaced, and each carries where it came from.
+daily sweep, so a wrong or dead domain wastes a fetch and a model call every
+day until someone removes it. Entries are therefore only added, never
+silently replaced, and each carries where it came from.
 
 Usage:
     python3 backend/scripts/discover_sources.py            # all regions
@@ -22,9 +25,9 @@ Usage:
 
 import argparse
 import json
-import os
 import re
 import sys
+import time
 from datetime import datetime, timezone
 from pathlib import Path
 from urllib.parse import urlparse
@@ -53,31 +56,14 @@ QUERY_TEMPLATES = {
     ],
 }
 
-SITE_SCHEMA = {
-    "type": "object",
-    "properties": {
-        "sites": {
-            "type": "array",
-            "items": {
-                "type": "object",
-                "properties": {
-                    "name": {"type": "string"},
-                    "url": {"type": "string", "description": "The site's own homepage URL"},
-                    "covers": {"type": "string", "description": "What this site lists, in a few words"},
-                },
-                "required": ["name", "url"],
-            },
-        }
-    },
-    "required": ["sites"],
-}
-
 # Aggregators, our own sources, and social sites are noise here: they're
 # either already ingested or aren't lead sources at all.
 EXCLUDED_DOMAINS = {
     "linkedin.com", "facebook.com", "twitter.com", "x.com", "instagram.com",
     "youtube.com", "reddit.com", "wikipedia.org", "quora.com", "medium.com",
     "remotive.com", "arbeitnow.com", "remoteok.com", "github.com",
+    # Search engines turn up in their own results and are not lead sources.
+    "google.com", "bing.com", "duckduckgo.com", "yahoo.com", "baidu.com",
 }
 
 
@@ -105,19 +91,36 @@ def load_existing() -> dict:
     return {"updated_at": None, "sites": []}
 
 
-def discover(client, region: str, kind: str, limit: int) -> list[dict]:
+def _search_with_retry(query: str, limit: int, attempts: int = 3) -> list[dict]:
+    """DuckDuckGo answers a perfectly good query with "No results found" when
+    it's throttling, which silently costs a whole region's coverage."""
+    from ddgs import DDGS
+
+    for attempt in range(attempts):
+        try:
+            rows = list(DDGS().text(query, max_results=limit))
+            if rows:
+                return rows
+        except Exception as exc:
+            if attempt == attempts - 1:
+                print(f"  search failed ({query}): {exc}", file=sys.stderr)
+                return []
+        time.sleep(3 * (attempt + 1))
+    return []
+
+
+def discover(region: str, kind: str, limit: int) -> list[dict]:
     found: list[dict] = []
     for template in QUERY_TEMPLATES[kind]:
         query = template.format(region=region)
-        try:
-            result = client.search(query, limit=limit, sources=["web"])
-        except Exception as exc:
-            print(f"  search failed ({query}): {exc}", file=sys.stderr)
+        rows = _search_with_retry(query, limit)
+        if not rows:
+            print(f"  search returned nothing: {query}", file=sys.stderr)
             continue
 
-        for item in (getattr(result, "web", None) or []):
-            url = item.get("url") if isinstance(item, dict) else getattr(item, "url", None)
-            title = item.get("title") if isinstance(item, dict) else getattr(item, "title", None)
+        for item in rows:
+            url = item.get("href") or item.get("url")
+            title = item.get("title")
             domain = normalise_domain(url or "")
             if not domain:
                 continue
@@ -138,14 +141,6 @@ def main() -> int:
     parser.add_argument("--dry-run", action="store_true", help="Print what would change, write nothing")
     args = parser.parse_args()
 
-    api_key = os.environ.get("FIRECRAWL_API_KEY")
-    if not api_key:
-        print("FIRECRAWL_API_KEY is not set", file=sys.stderr)
-        return 1
-
-    from firecrawl import Firecrawl
-
-    client = Firecrawl(api_key=api_key)
     regions = [r.strip() for r in args.regions.split(",")] if args.regions else DEFAULT_REGIONS
 
     existing = load_existing()
@@ -154,7 +149,7 @@ def main() -> int:
 
     for region in regions:
         for kind in ("job", "business"):
-            for site in discover(client, region, kind, args.limit):
+            for site in discover(region, kind, args.limit):
                 if site["domain"] in known:
                     continue
                 known.add(site["domain"])

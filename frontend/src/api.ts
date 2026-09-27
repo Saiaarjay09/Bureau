@@ -54,7 +54,7 @@ export const api = {
   exportUrl: (params: Record<string, string | number | boolean | undefined>) =>
     '/api/leads/export?' + new URLSearchParams(cleanParams(params)).toString(),
 
-  ingestStatus: () => request<{ firecrawl_configured: boolean; last_run: Record<string, string> }>(
+  ingestStatus: () => request<{ web_available: boolean; last_run: Record<string, string> }>(
     '/api/ingest/status',
   ),
   ingestJobs: () => request('/api/ingest/jobs', { method: 'POST' }),

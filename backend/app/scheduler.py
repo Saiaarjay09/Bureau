@@ -4,11 +4,10 @@ Two cadences, split by what a run costs:
 
 - The three keyless job-board APIs are free, so they refresh every few
   hours (INGEST_INTERVAL_SECONDS).
-- The discovered-sites sweep goes through Firecrawl and costs credits per
-  call, so it runs once a day and only over a rotating slice of the site
-  list. Firecrawl's on-demand endpoints (/api/ingest/*) stay manual — a
-  person clicking a button is a different thing from a loop spending
-  credits unattended.
+- The discovered-sites sweep fetches and extracts pages locally, which is
+  free but costs real time and GPU (seconds per page), so it runs once a
+  day over a rotating slice of the site list. The on-demand endpoints
+  (/api/ingest/*) stay manual, since each is minutes of local compute.
 """
 
 import asyncio
@@ -20,7 +19,7 @@ from .db import SessionLocal
 from .enrichment import apply_growth_signals
 from .ingest import upsert_leads
 from .sources import discovered
-from .sources.firecrawl_client import is_configured
+from .sources.web import is_available
 from .sources.registry import JOB_FETCHERS
 
 logger = logging.getLogger("bureau.scheduler")
@@ -50,8 +49,9 @@ def run_job_sources_once() -> dict[str, tuple[int, int]]:
 
 def run_discovered_sites_once() -> tuple[int, int]:
     """Today's slice of the sites the GitHub Action found. Returns (created,
-    updated); (0, 0) when Firecrawl isn't configured or the list is empty."""
-    if not is_configured():
+    updated); (0, 0) when the local extraction model is down or the list is
+    empty."""
+    if not is_available():
         return (0, 0)
     leads = discovered.fetch()
     if not leads:
