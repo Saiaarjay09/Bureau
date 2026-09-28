@@ -1,6 +1,446 @@
 {
-  "updated_at": "2026-09-24T15:05:53.013036+00:00",
+  "updated_at": "2026-09-28T10:00:20.081295+00:00",
   "sites": [
+    {
+      "name": "Comprar | Argentina.gob.ar",
+      "domain": "argentina.gob.ar",
+      "region": "Argentina",
+      "type": "business",
+      "found_via": "Argentina business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "100 Top Companies in Argentina \u00b7 September 2026 | F6S",
+      "domain": "f6s.com",
+      "region": "Argentina",
+      "type": "business",
+      "found_via": "Argentina startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Australian Startup Funding Data and Reports | Cut Through Venture",
+      "domain": "cutthrough.com",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Brazil Tenders | Online Brazil Tenders | Brazil Government ...",
+      "domain": "braziltenders.com",
+      "region": "Brazil",
+      "type": "business",
+      "found_via": "Brazil business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Brazil Government Tenders \u2014 Open Procurement Data (PNCP)",
+      "domain": "importtobrazil.com",
+      "region": "Brazil",
+      "type": "business",
+      "found_via": "Brazil business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Bids and Tenders - BidsAndTenders",
+      "domain": "bids.bidsandtenders.ca",
+      "region": "Canada",
+      "type": "business",
+      "found_via": "Canada business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Tender opportunities | CanadaBuys",
+      "domain": "canadabuys.canada.ca",
+      "region": "Canada",
+      "type": "business",
+      "found_via": "Canada business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "MERX : Find New Contracts, Bids & Tenders for Canadian Businesses",
+      "domain": "merx.com",
+      "region": "Canada",
+      "type": "business",
+      "found_via": "Canada business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Latest Canadian Startup News & Funding Announcements",
+      "domain": "thetechfactor.ca",
+      "region": "Canada",
+      "type": "business",
+      "found_via": "Canada startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Egypt Startups: Tech Companies, Funding & Investors",
+      "domain": "au-startups.com",
+      "region": "Egypt",
+      "type": "business",
+      "found_via": "Egypt startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Homepage | Egypt Business Gate",
+      "domain": "egyptbusinessgate.com",
+      "region": "Egypt",
+      "type": "business",
+      "found_via": "Egypt business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Egypt Startup Directory | Egyptian Startups",
+      "domain": "egyptianstartups.com",
+      "region": "Egypt",
+      "type": "business",
+      "found_via": "Egypt startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Egypt Tenders |\u0645\u0646\u0627\u0642\u0635\u0627\u062a \u0645\u0635\u0631| Procurement Portal",
+      "domain": "tendersarabia.com",
+      "region": "Egypt",
+      "type": "business",
+      "found_via": "Egypt business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Germany Tenders | RFP, Bids, eProcurement | Online Tender Portal",
+      "domain": "germanytenders.com",
+      "region": "Germany",
+      "type": "business",
+      "found_via": "Germany business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Funding News | Startup Investments & Venture Capital | India",
+      "domain": "beststartup.in",
+      "region": "India",
+      "type": "business",
+      "found_via": "India startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Startup Spotlight India | Latest Startup News, Funding ...",
+      "domain": "startupspotlightindia.com",
+      "region": "India",
+      "type": "business",
+      "found_via": "India startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "TICE News | India\u2019s Leading Startup & Business Media Platform",
+      "domain": "tice.news",
+      "region": "India",
+      "type": "business",
+      "found_via": "India startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Indonesia Contracts & Tenders - Bid & Public Procurement 2026 ...",
+      "domain": "bidassist.com",
+      "region": "Indonesia",
+      "type": "business",
+      "found_via": "Indonesia business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 100 Indonesian Startups 2026 - indexed.vc",
+      "domain": "indexed.vc",
+      "region": "Indonesia",
+      "type": "business",
+      "found_via": "Indonesia startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Tender Indonesia | Home",
+      "domain": "indonesiatender.com",
+      "region": "Indonesia",
+      "type": "business",
+      "found_via": "Indonesia business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Startup.id by DailySocial - Indonesia's Digital Economy Hub",
+      "domain": "startup.id",
+      "region": "Indonesia",
+      "type": "business",
+      "found_via": "Indonesia startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Discover Startups & Investors in Indonesia | StartupIndonesia",
+      "domain": "startupindonesia.id",
+      "region": "Indonesia",
+      "type": "business",
+      "found_via": "Indonesia startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Government Procurement Information Website",
+      "domain": "information1.gov-procurement.go.jp",
+      "region": "Japan",
+      "type": "business",
+      "found_via": "Japan business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Japan Tenders | RFP, Bids, eProcurement | Japan Government ...",
+      "domain": "japantenders.com",
+      "region": "Japan",
+      "type": "business",
+      "found_via": "Japan business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Japanese Government Procurement | Business Opportunities ...",
+      "domain": "jetro.go.jp",
+      "region": "Japan",
+      "type": "business",
+      "found_via": "Japan business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Access to Government Procurement Opportunities",
+      "domain": "agpo.go.ke",
+      "region": "Kenya",
+      "type": "business",
+      "found_via": "Kenya business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Kenya startup funding \u00b7 $385M across 17 rounds | Datapile",
+      "domain": "datapile.co",
+      "region": "Kenya",
+      "type": "business",
+      "found_via": "Kenya startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Welcome to eGP Portal of Government of Kenya",
+      "domain": "egpkenya.go.ke",
+      "region": "Kenya",
+      "type": "business",
+      "found_via": "Kenya business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Public Procurement",
+      "domain": "pparb.go.ke",
+      "region": "Kenya",
+      "type": "business",
+      "found_via": "Kenya business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Tenders Kenya \u2022 Tenders in Kenya for NGOs, Government ...",
+      "domain": "tenderskenya.co.ke",
+      "region": "Kenya",
+      "type": "business",
+      "found_via": "Kenya business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Mexico Tenders | RFP, Bids, eProcurement | Government T...",
+      "domain": "app.tendersgo.com",
+      "region": "Mexico",
+      "type": "business",
+      "found_via": "Mexico business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Compranet Mexico - Public Procurement Portal | Cuberfy",
+      "domain": "cuberfy.com",
+      "region": "Mexico",
+      "type": "business",
+      "found_via": "Mexico business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Mexico Startup Directory - Mexican Startups",
+      "domain": "mexicanstartups.com",
+      "region": "Mexico",
+      "type": "business",
+      "found_via": "Mexico startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Bureau of Public Procurement - Bureau of Public Procurement",
+      "domain": "bpp.gov.ng",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Delphi Atlas \u2014 Nigerian Startups, Investors & Funding Data",
+      "domain": "delphiatlas.com",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "eBid Nigeria \u2013 Tenders and Contract Procurement Listings in ...",
+      "domain": "ebid.com.ng",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "NIGERIA GOVERNMENT AND PRIVATE SECTOR TENDERS & CONTRACT ...",
+      "domain": "etenders.com.ng",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Nigeria Tech Ecosystem 2026: Startups, Funding, Unicorns ...",
+      "domain": "liners.com",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Welcome To The Official Nigeria Open Contracting Portal (NOCOPO)",
+      "domain": "nocopo.bpp.gov.ng",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "90 Nigeria Startups (2026) \u2013 Tech Companies Database",
+      "domain": "startupmaphub.com",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Startup Qatar Investment Program reveals first successful ...",
+      "domain": "invest.qa",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Home - Monaqasat | The Unified Website of State Procurement",
+      "domain": "monaqasat.mof.gov.qa",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Qatar Procurement Tenders & Procurement Alerts | Open Opportunities",
+      "domain": "openopps.com",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Qatar Tenders Projects Platform | \u0628\u0648\u0627\u0628\u0629 \u0642\u0637\u0631 \u0644\u0644\u0645\u0646\u0627\u0642\u0635\u0627\u062a \u0648\u0627\u0644\u0645\u0634\u0631\u0648\u0639\u0627\u062a \u2013 Qatar Tenders and Projects Gate | \u0628\u0648\u0627\u0628\u0629 \u0645\u0646\u0627\u0642\u0635\u0627\u062a \u0648\u0645\u0634\u0631\u0648",
+      "domain": "qbusinessgate.qa",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Startup Qatar | An Initiative by Invest Qatar",
+      "domain": "startupqatar.qa",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "qatar Startup News & Updates | Latest Funding & Industry ...",
+      "domain": "startups.in",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Qatar Government Tenders, RFP, EOI and Qatar Public Procurement 2026",
+      "domain": "tendersontime.com",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Recently Funded Startups in Saudi Arabia (Sep 2026) | FundedIQ",
+      "domain": "fundediq.co",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "250+ Funded Saudi Arabia Startups 2026 | Data & Contacts",
+      "domain": "growthlist.co",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Home - KSA Tenders & Business Gate|\u0645\u0646\u0635\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629 \u0644\u0644\u0645\u0646\u0627\u0642\u0635\u0627\u062a \u0648\u0627\u0644\u0623\u0639\u0645\u0627\u0644",
+      "domain": "ksatendersgate.com",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Tenders and Procurement",
+      "domain": "mof.gov.sa",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Saudi Startup Funding Tracker: VC Deals, Sectors, Stages, and ...",
+      "domain": "riyadh2030.ai",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "TenderSA",
+      "domain": "tendersa.com",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Startups - The Saudi Times",
+      "domain": "thesauditimes.net",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "GeBIZ Singapore Tenders 2026 \u2014 Procurement Opportunities",
+      "domain": "bidsfactory.com",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
     {
       "name": "Directory of Singapore Fintech Companies - Fintech Startups ...",
       "domain": "fintechnews.sg",
@@ -10,12 +450,28 @@
       "first_seen": "2026-09-24"
     },
     {
+      "name": "Singapore Startups \u2013 Recently Funded Sep 2026 | Fundup AI",
+      "domain": "fundup.ai",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
       "name": "Government Electronic Business System (GeBIZ)",
       "domain": "gebiz.gov.sg",
       "region": "Singapore",
       "type": "business",
       "found_via": "Singapore business tenders and procurement opportunities portal",
       "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Singapore Public Procurement Guide (2026) | Jorpex",
+      "domain": "jorpex.com",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
     },
     {
       "name": "Business Opportunities - Singapore - NUS",
@@ -58,6 +514,86 @@
       "first_seen": "2026-09-24"
     },
     {
+      "name": "Home Page - eTenders Portal",
+      "domain": "etenders.gov.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Tenders South Africa | South Africa Tender Portal | e-Tender",
+      "domain": "etendersa.co.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "National Strategic Opportunity Platform | South Africa",
+      "domain": "opportunitiessa.org",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "eTenders South Africa: Search Every Tender | ProTenders",
+      "domain": "protenders.co.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "SimplyTenders \u2014 South African tender opportunities",
+      "domain": "simplytenders.co.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Startup.Africa | African Startup, Funding & Technology News",
+      "domain": "startup.africa",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Korea Tenders | RFP, Bids, eProcurement | Korea Government ...",
+      "domain": "koreatenders.com",
+      "region": "South Korea",
+      "type": "business",
+      "found_via": "South Korea business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "South Korea Tenders & Procurement Opportunities | MangoFetch",
+      "domain": "mangofetch.com",
+      "region": "South Korea",
+      "type": "business",
+      "found_via": "South Korea business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Public Procurement Service - \uc870\ub2ec\uccad",
+      "domain": "pps.go.kr",
+      "region": "South Korea",
+      "type": "business",
+      "found_via": "South Korea business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Abu Dhabi Startups - Dedicated to the Abu Dhabi Startup World \ud83d\ude80",
+      "domain": "abudhabistartup.com",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
       "name": "Top Dubai Startups 2026 \u2014 Directory of 180+ UAE Companies | DXBStart",
       "domain": "dxbstart.com",
       "region": "United Arab Emirates",
@@ -74,6 +610,14 @@
       "first_seen": "2026-09-24"
     },
     {
+      "name": "Top 89 United Arab Emirates Startups to Watch in 2026",
+      "domain": "failory.com",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
       "name": "UAE Fintech Startups Directory",
       "domain": "fintechnews.ae",
       "region": "United Arab Emirates",
@@ -82,12 +626,36 @@
       "first_seen": "2026-09-24"
     },
     {
+      "name": "UAE Tenders | Latest UAE Tender Opportunities",
+      "domain": "globaltenders.com",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
       "name": "Dubai for Start-ups & SMEs | Opportunities, Funding & Support",
       "domain": "investindubai.gov.ae",
       "region": "United Arab Emirates",
       "type": "business",
       "found_via": "United Arab Emirates startup funding news and company directory",
       "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Government Procurement | Ministry of Finance - United Arab ...",
+      "domain": "mof.gov.ae",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "List of Recently Funded Startups in the United Arab Emirates for 2026",
+      "domain": "revli.com",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates startup funding news and company directory",
+      "first_seen": "2026-09-28"
     },
     {
       "name": "Top Startups in United Arab Emirates - StartupBlink",
@@ -114,12 +682,692 @@
       "first_seen": "2026-09-24"
     },
     {
+      "name": "Startups in United Arab Emirates - 2026 Latest Funding Rounds, Trends and News - Tracxn",
+      "domain": "tracxn.com",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "UAE Tenders & Business Gate|\u0645\u0646\u0635\u0629 \u0627\u0644\u0627\u0645\u0627\u0631\u0627\u062a \u0644\u0644\u0645\u0646\u0627\u0642\u0635\u0627\u062a \u0648\u0627\u0644\u0623\u0639\u0645\u0627\u0644",
+      "domain": "uaebusinessgate.ae",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
       "name": "United Arab Emirates Tenders | UAE Tenders | Eprocurement | Dubai ...",
       "domain": "uaetenders.com",
       "region": "United Arab Emirates",
       "type": "business",
       "found_via": "United Arab Emirates business tenders and procurement opportunities portal",
       "first_seen": "2026-09-24"
+    },
+    {
+      "name": "United Arab Emirates Tenders | UAE Tenders | Eprocurement ...",
+      "domain": "uaetenders.org",
+      "region": "United Arab Emirates",
+      "type": "business",
+      "found_via": "United Arab Emirates business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "List of Funded UK Startups (2026) - Fundraise Insider",
+      "domain": "fundraiseinsider.com",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Contracts Finder - GOV.UKUK Tenders | Latest UK Tender OpportunitiesSearch results - Find a TenderLatest United Kingdom ",
+      "domain": "gov.uk",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "UK Startups - Latest Funded Startups From The UK",
+      "domain": "startupmag.co.uk",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Find UK tenders that fit your business | UK Tender Check",
+      "domain": "uktendercheck.co.uk",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Vietnam tenders | rfq in Vietnam | Vietnam government tenders",
+      "domain": "bidsinfo.com",
+      "region": "Vietnam",
+      "type": "business",
+      "found_via": "Vietnam business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "List of top Vietnam Startups - Crunchbase Hub Profile",
+      "domain": "crunchbase.com",
+      "region": "Vietnam",
+      "type": "business",
+      "found_via": "Vietnam startup funding news and company directory",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Vietnam Tenders | RFP, Bids, eProcurement | Vietnam ...",
+      "domain": "vietnamtenders.com",
+      "region": "Vietnam",
+      "type": "business",
+      "found_via": "Vietnam business tenders and procurement opportunities portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Recruitment Agencies in Argentina 2026 - lupahire.com",
+      "domain": "lupahire.com",
+      "region": "Argentina",
+      "type": "job",
+      "found_via": "Argentina recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best job boards in Australia for employers in 2026: free and ...",
+      "domain": "100hires.com",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "best job boards in Australia for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "40+ Best Job Sites In Australia For 2026 - Arielle ExecutiveBest Job Sites in Australia 2026: Top 15 Platforms Ranked fo",
+      "domain": "arielle.com.au",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "Australia recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best job sites in Australia for 2025 - Jora22 Best Job Sites in Australia in 2026 - GrabJobs40+ Best Job Sites In Austra",
+      "domain": "au.jora.com",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "Australia recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Sites in Australia 2026 (Ranked by Traffic)",
+      "domain": "backpackerjobboard.com.au",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "Australia recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Boards in Australia 2026 | Compared, Plus Niche ...",
+      "domain": "drivetube.ai",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "best job boards in Australia for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top Job Boards in Australia 2026 | Best websites for ...",
+      "domain": "jobma.com",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "best job boards in Australia for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Job Portals in Australia: Experts\u2019 List of the Best & Top ...",
+      "domain": "visababu.com",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "Australia recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Brazil Jobs (2026) \u2014 Local & Global Recruitment Sites",
+      "domain": "almijob.almiworld.com",
+      "region": "Brazil",
+      "type": "job",
+      "found_via": "Brazil recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 11 Recruitment Agencies in Brazil in 2026",
+      "domain": "anywherer.com",
+      "region": "Brazil",
+      "type": "job",
+      "found_via": "Brazil recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Job Sites in Brazil - jobRank",
+      "domain": "jobrank.org",
+      "region": "Brazil",
+      "type": "job",
+      "found_via": "Brazil recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "The 8 Best Job Posting Sites in Brazil (Free & Paid) in 2026",
+      "domain": "lessie.ai",
+      "region": "Brazil",
+      "type": "job",
+      "found_via": "best job boards in Brazil for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Search Sites in Brazil (2026 Guide) - philipebrazuca.com",
+      "domain": "philipebrazuca.com",
+      "region": "Brazil",
+      "type": "job",
+      "found_via": "best job boards in Brazil for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Boards in Canada for 2026 | Canuck Hire",
+      "domain": "canuckhire.com",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "best job boards in Canada for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "14+ Best Job Search Sites Canada-Based Professionals Should Use",
+      "domain": "roberthalf.com",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "best job boards in Canada for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Job Vacancies and Recruitment in Egypt | 3amal.com",
+      "domain": "3amal.com",
+      "region": "Egypt",
+      "type": "job",
+      "found_via": "Egypt recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 10 Best Job Posting Websites in Egypt in 2025",
+      "domain": "blog.9cv9.com",
+      "region": "Egypt",
+      "type": "job",
+      "found_via": "Egypt recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "10 Best Websites to Find a Job in Egypt | DrJobPro",
+      "domain": "blog.drjobpro.com",
+      "region": "Egypt",
+      "type": "job",
+      "found_via": "best job boards in Egypt for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top Recruiting Firms in Egypt - Sep 2026 Rankings | Clutch.coJob Vacancies and Recruitment in Egypt | 3amal.comTop Job P",
+      "domain": "clutch.co",
+      "region": "Egypt",
+      "type": "job",
+      "found_via": "Egypt recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Tawziif - Egypt's Job Platform | Find Your Perfect Job",
+      "domain": "tawziif.com",
+      "region": "Egypt",
+      "type": "job",
+      "found_via": "Egypt recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Portals and Platforms for Job Search in Germany",
+      "domain": "expatrio.com",
+      "region": "Germany",
+      "type": "job",
+      "found_via": "best job boards in Germany for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 11 Job Searching Sites in Germany in 2026",
+      "domain": "germany-visa.org",
+      "region": "Germany",
+      "type": "job",
+      "found_via": "Germany recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best websites to find jobs in Germany \u2014 HalloGermanyTop 11 Job Searching Sites in Germany in 2026Job listings - Make it ",
+      "domain": "hallogermany.com",
+      "region": "Germany",
+      "type": "job",
+      "found_via": "Germany recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best job sites in Germany: 18 platforms for hiring in 2026 - JOIN",
+      "domain": "join.com",
+      "region": "Germany",
+      "type": "job",
+      "found_via": "best job boards in Germany for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "9 Best Job Portals in Germany 2026 for Expats",
+      "domain": "liveingermany.de",
+      "region": "Germany",
+      "type": "job",
+      "found_via": "best job boards in Germany for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Portals in Germany (2026): Where to Actually Apply",
+      "domain": "lumicv.com",
+      "region": "Germany",
+      "type": "job",
+      "found_via": "best job boards in Germany for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "12 Best Job Sites in Germany for Foreigners in 2026 (Proven)",
+      "domain": "workercv.com",
+      "region": "Germany",
+      "type": "job",
+      "found_via": "best job boards in Germany for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "17 Best Job Portals in India (Updated list for 2026) - FactoHR",
+      "domain": "factohr.com",
+      "region": "India",
+      "type": "job",
+      "found_via": "India recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 15 Job Portals in India (2026): Compare the Best Job Sites",
+      "domain": "internshala.com",
+      "region": "India",
+      "type": "job",
+      "found_via": "India recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top Job Portals in India: 10 Websites for Job Search & Hiring",
+      "domain": "jobsbob.com",
+      "region": "India",
+      "type": "job",
+      "found_via": "India recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 10 Best Job Sites in India 2026 - Ranked & Reviewed",
+      "domain": "theindiajobs.com",
+      "region": "India",
+      "type": "job",
+      "found_via": "India recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "14 Job Portal Indonesia, Resmi, Terbaik, dan Terpercaya",
+      "domain": "dealls.com",
+      "region": "Indonesia",
+      "type": "job",
+      "found_via": "Indonesia recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "11 Job Portal Terbaik untuk HR Indonesia (Update 2026)",
+      "domain": "jobseeker.software",
+      "region": "Indonesia",
+      "type": "job",
+      "found_via": "Indonesia recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "11 Job Portal Terbaik di Indonesia untuk Cari Kerja 2026",
+      "domain": "linovhr.com",
+      "region": "Indonesia",
+      "type": "job",
+      "found_via": "Indonesia recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "The Best Job Boards in Indonesia (2026): Rankings, Strengths ...",
+      "domain": "mixwork.co",
+      "region": "Indonesia",
+      "type": "job",
+      "found_via": "best job boards in Indonesia for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Remote Job Boards in Indonesia in 2026 - roamjobs.com",
+      "domain": "roamjobs.com",
+      "region": "Indonesia",
+      "type": "job",
+      "found_via": "best job boards in Indonesia for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "7 Best Job Boards to Find Talent Indonesia [2026]",
+      "domain": "secondtalent.com",
+      "region": "Indonesia",
+      "type": "job",
+      "found_via": "best job boards in Indonesia for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Japan Job Sites 2026: Top Platforms Compared",
+      "domain": "careerboom.ai",
+      "region": "Japan",
+      "type": "job",
+      "found_via": "best job boards in Japan for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Hunting Websites in Japan for Foreigners (2026 Guide)",
+      "domain": "cotoacademy.com",
+      "region": "Japan",
+      "type": "job",
+      "found_via": "best job boards in Japan for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Daijob.com - Looking for jobs in Japan? Want to work in Japan?",
+      "domain": "daijob.com",
+      "region": "Japan",
+      "type": "job",
+      "found_via": "Japan recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Websites to Find a Job in Japan (2026 Guide) - Japademy",
+      "domain": "japademy.com",
+      "region": "Japan",
+      "type": "job",
+      "found_via": "Japan recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Job Search Websites in Japan for Foreigners - Japan Living Guide",
+      "domain": "japanlivingguide.com",
+      "region": "Japan",
+      "type": "job",
+      "found_via": "Japan recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 6 Job Boards in Japan by Market Share (2026) - wmtips.com",
+      "domain": "wmtips.com",
+      "region": "Japan",
+      "type": "job",
+      "found_via": "best job boards in Japan for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "11 Best Job Boards in Japan To Find Experts Without HassleBest Job Hunting Websites in Japan for Foreigners (2026 Guide)",
+      "domain": "workello.com",
+      "region": "Japan",
+      "type": "job",
+      "found_via": "best job boards in Japan for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 20 Websites for Jobs in Kenya, 2026 | Achi Systems",
+      "domain": "achisystems.co.ke",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "10 Best Career Transition Platforms in Kenya (2026)",
+      "domain": "ascendurepro.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "best job boards in Kenya for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Websites to Find Jobs in Kenya (2026) - business.co.ke",
+      "domain": "business.co.ke",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "best job boards in Kenya for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 10 Jobs & Career Boosters: Best Platforms for Finding ...",
+      "domain": "citynews.co.ke",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "best job boards in Kenya for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Jobify Kenya \u2013 Jobs & Internships in Kenya | Career Portal",
+      "domain": "jobifykenya.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Job Vacancies and Recruitment in Kenya | Kenyajob.com",
+      "domain": "kenyajob.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Kenya Jobs Hub | Find Latest Jobs & Career Opportunities",
+      "domain": "kenyajobshub.co.ke",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "The List of Top 10 Job Websites in Kenya - Kenyan Backpacker",
+      "domain": "kenyanbackpacker.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Boards in Kenya 2026 \u2014 Compared | Zaajira",
+      "domain": "zaajira.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "best job boards in Kenya for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top Job Posting Sites in Mexico | AllRemote",
+      "domain": "allremote.jobs",
+      "region": "Mexico",
+      "type": "job",
+      "found_via": "Mexico recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Websites to Find Jobs in Mexico for English Speakers",
+      "domain": "themexicohandbook.com",
+      "region": "Mexico",
+      "type": "job",
+      "found_via": "Mexico recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Sites in Nigeria (Verified List) - Awajis.Com",
+      "domain": "awajis.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "best job boards in Nigeria for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Search Websites in Nigeria 2026 (Updated & Trusted ...",
+      "domain": "careerradarng.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "best job boards in Nigeria for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "18 Best Job Sites in Nigeria - GrabJobs",
+      "domain": "grabjobs.co",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "best job boards in Nigeria for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Sites in Nigeria 2026: Where to Actually Find Work",
+      "domain": "hirepadi.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "best job boards in Nigeria for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Latest Recruitment in Nigeria \u2014 10 Best Job Portals Ranked ...",
+      "domain": "naijajobportal.com.ng",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "10 Best Job Websites In Nigeria (2026) - Nigerian Informer",
+      "domain": "nigerianinformer.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "7 Best Nigerian Job Websites for Jobseekers in 2025 | Pulse ...",
+      "domain": "pulse.ng",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "best job boards in Nigeria for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "10 Recruitment Sites in Nigeria Every Graduate Should Know",
+      "domain": "seed.com.ng",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Qatar job board comparison | Best job sites and CV tips",
+      "domain": "airesume.online",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "best job boards in Qatar for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Jobs in Qatar (2026): Best Platforms, How to Apply & Visas",
+      "domain": "qatariscoop.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "best job boards in Qatar for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Home - Qatar Job Portal",
+      "domain": "qatarjobportal.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "best job boards in Qatar for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "All Jobs | Qatar Jobs Portal",
+      "domain": "qatarjobsportal.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "Qatar recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Websites for Jobs in Qatar - Top Job Portals & Platforms 2026",
+      "domain": "seekqatar.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "best job boards in Qatar for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 10 Job Portals in Qatar | Zimyo M.E.",
+      "domain": "zimyo.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "Qatar recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Boards in Saudi Arabia",
+      "domain": "betterteam.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "best job boards in Saudi Arabia for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "12 Best Job Sites In Saudi Arabia To Reach Top Talent",
+      "domain": "cercli.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "best job boards in Saudi Arabia for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 12 Job Search Websites in Saudi Arabia for Expatriates (2026)",
+      "domain": "ksaexpats.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "Saudi Arabia recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "KSA Job Finder | Jobs & Vacancies across Saudi Arabia",
+      "domain": "ksajobfinder.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "Saudi Arabia recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Saudi Jobs Website September 2026 | Tanqeeb KSA",
+      "domain": "saudi.tanqeeb.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "Saudi Arabia recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top job posting sites in Saudi Arabia | Snaphunt",
+      "domain": "snaphunt.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "best job boards in Saudi Arabia for professionals",
+      "first_seen": "2026-09-28"
     },
     {
       "name": "200,000+ Jobs in Singapore: Apply for September 2026 Hiring | foundit ...",
@@ -130,6 +1378,14 @@
       "first_seen": "2026-09-24"
     },
     {
+      "name": "Jobs at Singapore Global Network Hiring Partners Companies ...",
+      "domain": "jobs.singaporeglobalnetwork.gov.sg",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "Singapore recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
       "name": "Jobstreet - Find your next job and get hired on Asia's favourite career site!",
       "domain": "jobstreet.com",
       "region": "Singapore",
@@ -138,12 +1394,28 @@
       "first_seen": "2026-09-24"
     },
     {
+      "name": "16 Free Job Portals in Singapore to Attract Top Talent",
+      "domain": "manatal.com",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "Singapore recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
       "name": "MyCareersFuture Singapore",
       "domain": "mycareersfuture.gov.sg",
       "region": "Singapore",
       "type": "job",
       "found_via": "Singapore recruitment website list hiring portal",
       "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Complete List of The Best Job Portals in Singapore for 2026",
+      "domain": "resumewriter.sg",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "Singapore recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
     },
     {
       "name": "Indeed: Job Search",
@@ -160,6 +1432,102 @@
       "type": "job",
       "found_via": "Singapore recruitment website list hiring portal",
       "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Singapore Jobs & Career Portal | sgCareers",
+      "domain": "sgcareers.com.sg",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "Singapore recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "10+ Best Job Portals in Singapore (2025) | Top Career Sites ...",
+      "domain": "smartercareers.com",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "Singapore recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "20 Best South African Jobs and Recruitment Websites of 2026The Complete Directory of Job Boards and Recruitment Sites in",
+      "domain": "buzzsouthafrica.com",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "South Africa recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 10 Job Boards in South Africa (2026): Where to Find Real ...",
+      "domain": "careersdaily.co.za",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "best job boards in South Africa for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "10 Best Job Search Websites in South Africa (2026): Complete ...",
+      "domain": "careerspursuit.com",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "best job boards in South Africa for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "The Complete Directory of Job Boards and Recruitment Sites in ...",
+      "domain": "elite-cv.com",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "South Africa recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Jobs in South Africa | Job search | Pnet.co.za",
+      "domain": "pnet.co.za",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "South Africa recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Jobs in South Africa | Search Jobs | RecruitmentPartner",
+      "domain": "recruitmentpartner.co.za",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "South Africa recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "7 Top Recruitment Websites in South Africa - sauceremote.com",
+      "domain": "sauceremote.com",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "South Africa recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "job boards with most candidates South Africa (2026)",
+      "domain": "shiftmate.co.za",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "best job boards in South Africa for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Apps and Boards in Korea for Foreigners 2026",
+      "domain": "bestjobsearchapps.com",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "best job boards in South Korea for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Sites in Korea for Foreign Residents (2026): Honest ...",
+      "domain": "seoulstart.com",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "best job boards in South Korea for professionals",
+      "first_seen": "2026-09-28"
     },
     {
       "name": "Bayt.com: The Middle East's Leading Job Site",
@@ -186,6 +1554,14 @@
       "first_seen": "2026-09-24"
     },
     {
+      "name": "Top 12 Job Boards in the UAE",
+      "domain": "gohire.io",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "best job boards in United Arab Emirates for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
       "name": "GulfTalent: Jobs in Dubai and Middle East",
       "domain": "gulftalent.com",
       "region": "United Arab Emirates",
@@ -194,12 +1570,124 @@
       "first_seen": "2026-09-24"
     },
     {
+      "name": "Best job boards for United Arab Emirates jobs in January 2026 | Meta directory of the best niche job boards",
+      "domain": "jobboardsearch.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "best job boards in United Arab Emirates for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Jobs & Vacancies in UAE | Jobs In Dubai, Abu Dhabi & Sharjah | Best Job Site/Portal In UAE - (Dubai, Abu Dhabi and Sharj",
+      "domain": "jobsportal.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
       "name": "Job Search | Michael Page",
       "domain": "michaelpage.ae",
       "region": "United Arab Emirates",
       "type": "job",
       "found_via": "best job boards in United Arab Emirates for professionals",
       "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Top Job Posting Platforms for Recruiters in the UAE - (July 2026)",
+      "domain": "qureos.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "best job boards in United Arab Emirates for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "#1 Job Portal in Middle East | Job Search | Job Vacancies - The Talent Point",
+      "domain": "thetalentpoint.ae",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "$120-$51/hr Uae Jobs (NOW HIRING) Jul 2026",
+      "domain": "ziprecruiter.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best UK Job Boards 2026 - UK Sites, Remote Boards & Niche ...",
+      "domain": "movingtotheuk.co.uk",
+      "region": "United Kingdom",
+      "type": "job",
+      "found_via": "best job boards in United Kingdom for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "20 Best job sites in the UK [Find your perfect job today]",
+      "domain": "standout-cv.com",
+      "region": "United Kingdom",
+      "type": "job",
+      "found_via": "United Kingdom recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 10 Job Websites in the UK for Foreigners (2025 Update)",
+      "domain": "ukjobhunters.com",
+      "region": "United Kingdom",
+      "type": "job",
+      "found_via": "United Kingdom recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Sites in the UK (The Top 10 Job Boards in 2026)",
+      "domain": "wikijob.co.uk",
+      "region": "United Kingdom",
+      "type": "job",
+      "found_via": "best job boards in United Kingdom for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top 10 Recruitment Websites in Vietnam - dataon.com",
+      "domain": "dataon.com",
+      "region": "Vietnam",
+      "type": "job",
+      "found_via": "Vietnam recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Vietnam Recruitment Platforms 2024: HR Expert's - sailglobal",
+      "domain": "sailglobal.com",
+      "region": "Vietnam",
+      "type": "job",
+      "found_via": "Vietnam recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top Jobs and Employment Websites Ranking in Vietnam",
+      "domain": "similarweb.com",
+      "region": "Vietnam",
+      "type": "job",
+      "found_via": "Vietnam recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Recruitment Platform for Hiring in Vietnam",
+      "domain": "talentjdi.com",
+      "region": "Vietnam",
+      "type": "job",
+      "found_via": "best job boards in Vietnam for professionals",
+      "first_seen": "2026-09-28"
+    },
+    {
+      "name": "VietnamWorks - Recruitment, employment, salary lookup ...",
+      "domain": "vietnamworks.com",
+      "region": "Vietnam",
+      "type": "job",
+      "found_via": "Vietnam recruitment website list hiring portal",
+      "first_seen": "2026-09-28"
     }
   ]
 }
