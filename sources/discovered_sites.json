@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-09-30T09:54:35.379984+00:00",
+  "updated_at": "2026-10-01T10:41:23.787519+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -714,12 +714,28 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Angel Investors in Qatar - Database of Venture Capital ...",
+      "domain": "angelmatch.io",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar startup funding news and company directory",
+      "first_seen": "2026-10-01"
+    },
+    {
       "name": "Startup Qatar Investment Program reveals first successful ...",
       "domain": "invest.qa",
       "region": "Qatar",
       "type": "business",
       "found_via": "Qatar startup funding news and company directory",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "QATAR SCIENCE & TECHNOLOGY PARK AND 500 ...",
+      "domain": "magnitt.com",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar startup funding news and company directory",
+      "first_seen": "2026-10-01"
     },
     {
       "name": "Home - Monaqasat | The Unified Website of State Procurement",
@@ -760,6 +776,14 @@
       "type": "business",
       "found_via": "Qatar startup funding news and company directory",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Companies Backed by Qatar Investment Authority: 41",
+      "domain": "startupfundraising.com",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar startup funding news and company directory",
+      "first_seen": "2026-10-01"
     },
     {
       "name": "Startup Qatar | An Initiative by Invest Qatar",
@@ -2306,6 +2330,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Jobsdb - Search jobs across Hong Kong, Singapore & Thailand",
+      "domain": "jobsdb.com",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "best job boards in Singapore for professionals",
+      "first_seen": "2026-10-01"
+    },
+    {
       "name": "Jobstreet - Find your next job and get hired on Asia's favourite career site!",
       "domain": "jobstreet.com",
       "region": "Singapore",
@@ -2490,12 +2522,28 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "Korean Job Board - Dave's ESL Cafe",
+      "domain": "eslcafe.com",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "South Korea recruitment website list hiring portal",
+      "first_seen": "2026-10-01"
+    },
+    {
       "name": "Real-time Recruitment Info | Find Customized Jobs - JOBPLOY ...",
       "domain": "jobploy.kr",
       "region": "South Korea",
       "type": "job",
       "found_via": "South Korea recruitment website list hiring portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "52+ ESL Jobs Korea \u2014 English Teaching Jobs Board | Korvia",
+      "domain": "korvia.com",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "South Korea recruitment website list hiring portal",
+      "first_seen": "2026-10-01"
     },
     {
       "name": "[2026] Best Job Search Websites and Apps in Korea for ...",
@@ -2506,12 +2554,28 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "Prospective Employees | Loudoun County, VA - Official Website",
+      "domain": "loudoun.gov",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "South Korea recruitment website list hiring portal",
+      "first_seen": "2026-10-01"
+    },
+    {
       "name": "Best Job Sites in Korea for Foreign Residents (2026): Honest ...",
       "domain": "seoulstart.com",
       "region": "South Korea",
       "type": "job",
       "found_via": "best job boards in South Korea for professionals",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Teaching Jobs in Korea 2026 | Teach English in Korea",
+      "domain": "teachaway.com",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "South Korea recruitment website list hiring portal",
+      "first_seen": "2026-10-01"
     },
     {
       "name": "Bayt.com: The Middle East's Leading Job Site",
@@ -2586,12 +2650,28 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "Find Your Dream Job in Gulf | Best Job Portal - Hires Gulf",
+      "domain": "hiresgulf.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-10-01"
+    },
+    {
       "name": "Recruitment Company in Dubai | Job Consultancy Services In UAE",
       "domain": "hiringi.com",
       "region": "United Arab Emirates",
       "type": "job",
       "found_via": "United Arab Emirates recruitment website list hiring portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Now Hiring: 400 Uae Jobs - Indeed",
+      "domain": "indeed.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-10-01"
     },
     {
       "name": "Best job boards for United Arab Emirates jobs in January 2026 | Meta directory of the best niche job boards",
