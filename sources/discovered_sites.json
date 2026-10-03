@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-02T09:53:01.091624+00:00",
+  "updated_at": "2026-10-03T09:29:48.611788+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -458,6 +458,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "StartupFox \u2014 Indian Startup News, Funding Rounds & Analysis",
+      "domain": "startupfox.in",
+      "region": "India",
+      "type": "business",
+      "found_via": "India startup funding news and company directory",
+      "first_seen": "2026-10-03"
+    },
+    {
       "name": "Startup Grants India: Startup Grants & Funding for Indian ...",
       "domain": "startupgrantsindia.com",
       "region": "India",
@@ -472,6 +480,14 @@
       "type": "business",
       "found_via": "India startup funding news and company directory",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "India Startup Funding Tracker - Tech Innovators",
+      "domain": "techinnovators.in",
+      "region": "India",
+      "type": "business",
+      "found_via": "India startup funding news and company directory",
+      "first_seen": "2026-10-03"
     },
     {
       "name": "The Founder Nation | Startup News, Founder Stories & VC ...",
@@ -1250,6 +1266,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Welcome to the Procurement Portal | SA Tender Net",
+      "domain": "sa-tendernet.com",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-03"
+    },
+    {
       "name": "SimplyTenders \u2014 South African tender opportunities",
       "domain": "simplytenders.co.za",
       "region": "South Africa",
@@ -1280,6 +1304,14 @@
       "type": "business",
       "found_via": "South Africa business tenders and procurement opportunities portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Tendora | South African Procurement Portal",
+      "domain": "tendora.co.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-03"
     },
     {
       "name": "VC4A \u2013 Fueling the builders of Africa's future",
@@ -2098,6 +2130,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Home - Findjobindonesia",
+      "domain": "findjobindonesia.com",
+      "region": "Indonesia",
+      "type": "job",
+      "found_via": "Indonesia recruitment website list hiring portal",
+      "first_seen": "2026-10-03"
+    },
+    {
       "name": "11 Job Portal Terbaik untuk HR Indonesia (Update 2026)",
       "domain": "jobseeker.software",
       "region": "Indonesia",
@@ -2640,6 +2680,14 @@
       "type": "job",
       "found_via": "best job boards in Saudi Arabia for professionals",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "The Best Job Sites for Finding Work in Saudi Arabia (2025)",
+      "domain": "jobsinsaudiarabia.info",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "best job boards in Saudi Arabia for professionals",
+      "first_seen": "2026-10-03"
     },
     {
       "name": "Top 12 Job Search Websites in Saudi Arabia for Expatriates (2026)",
