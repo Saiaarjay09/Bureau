@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-04T09:59:35.118045+00:00",
+  "updated_at": "2026-10-05T10:37:35.611100+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -50,6 +50,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Tenders in Argentina | licita.lat",
+      "domain": "licita.lat",
+      "region": "Argentina",
+      "type": "business",
+      "found_via": "Argentina business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-05"
+    },
+    {
       "name": "Sell to State \u2014 Argentina Govt Contract Search",
       "domain": "selltostate.com",
       "region": "Argentina",
@@ -80,6 +88,14 @@
       "type": "business",
       "found_via": "Australia startup funding news and company directory",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Business opportunities - Australian Government Department of ...",
+      "domain": "dfat.gov.au",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-05"
     },
     {
       "name": "Australia's Investor Directory for Tech Startups - Edition",
@@ -184,6 +200,14 @@
       "type": "business",
       "found_via": "Brazil business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Tenders in Brazil \u2014 Open Government & NGO Tenders | OpenTenderHub",
+      "domain": "opentenderhub.com",
+      "region": "Brazil",
+      "type": "business",
+      "found_via": "Brazil business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-05"
     },
     {
       "name": "Startupz | Not\u00edcias de Startups Brasileiras, Fintechs e ...",
@@ -482,6 +506,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Government eProcurement System | National Informatics Centre ...",
+      "domain": "nic.gov.in",
+      "region": "India",
+      "type": "business",
+      "found_via": "India business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-05"
+    },
+    {
       "name": "StartupFox \u2014 Indian Startup News, Funding Rounds & Analysis",
       "domain": "startupfox.in",
       "region": "India",
@@ -730,6 +762,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Government e-Tenders Portal \u2014 Kenya | Kaziiko Resource Hub",
+      "domain": "kaziiko.co.ke",
+      "region": "Kenya",
+      "type": "business",
+      "found_via": "Kenya business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-05"
+    },
+    {
       "name": "Procurement",
       "domain": "kplc.co.ke",
       "region": "Kenya",
@@ -848,6 +888,14 @@
       "type": "business",
       "found_via": "Mexico startup funding news and company directory",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Nigerian Funding Directory \u2014 270 Opportunities | FundNaija",
+      "domain": "app.fundnaija.com",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria startup funding news and company directory",
+      "first_seen": "2026-10-05"
     },
     {
       "name": "Bureau of Public Procurement - Bureau of Public Procurement",
@@ -1170,6 +1218,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "StartupsMENA \u2014 MENA Startup News & Directory",
+      "domain": "startupsmena.com",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia startup funding news and company directory",
+      "first_seen": "2026-10-05"
+    },
+    {
       "name": "Latest 2026 Saudi Arabia Tenders & Government Contracts",
       "domain": "tenderimpulse.com",
       "region": "Saudi Arabia",
@@ -1242,6 +1298,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "GeBiz Singapore Tender Opportunities - Latest GeBiz Alerts ...",
+      "domain": "gbiz.bid",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-05"
+    },
+    {
       "name": "Government Electronic Business System (GeBIZ)",
       "domain": "gebiz.gov.sg",
       "region": "Singapore",
@@ -1312,6 +1376,14 @@
       "type": "business",
       "found_via": "Singapore startup funding news and company directory",
       "first_seen": "2026-09-24"
+    },
+    {
+      "name": "GeBIZ | Singapore Government Developer Portal",
+      "domain": "v2.developer.tech.gov.sg",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-05"
     },
     {
       "name": "228 Recently Funded FinTech Startups in Singapore (September ...",
@@ -1762,6 +1834,22 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Argentina \u2013 Finding Employment - Expat Focus",
+      "domain": "expatfocus.com",
+      "region": "Argentina",
+      "type": "job",
+      "found_via": "Argentina recruitment website list hiring portal",
+      "first_seen": "2026-10-05"
+    },
+    {
+      "name": "Jobs in Argentina - GoAbroad.com",
+      "domain": "jobs.goabroad.com",
+      "region": "Argentina",
+      "type": "job",
+      "found_via": "Argentina recruitment website list hiring portal",
+      "first_seen": "2026-10-05"
+    },
+    {
       "name": "Best Recruitment Agencies in Argentina 2026 - lupahire.com",
       "domain": "lupahire.com",
       "region": "Argentina",
@@ -1960,6 +2048,14 @@
       "type": "job",
       "found_via": "Canada recruitment website list hiring portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Best Websites to Find Jobs in Canada \u2013 Complete List (2026)",
+      "domain": "canora.tech",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "Canada recruitment website list hiring portal",
+      "first_seen": "2026-10-05"
     },
     {
       "name": "Best Job Boards in Canada for 2026 | Canuck Hire",
@@ -2264,6 +2360,14 @@
       "type": "job",
       "found_via": "India recruitment website list hiring portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Top Job Portals in India for Recruiters and Employers (2026)",
+      "domain": "naukri.com",
+      "region": "India",
+      "type": "job",
+      "found_via": "India recruitment website list hiring portal",
+      "first_seen": "2026-10-05"
     },
     {
       "name": "Top 12 Job Portals In India 2026 | Nitso Technologies",
@@ -2858,6 +2962,14 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "Job Boards in Qatar (2026) \u2014 Verified List for Job Seekers ...",
+      "domain": "tools.thedailytalent.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "best job boards in Qatar for professionals",
+      "first_seen": "2026-10-05"
+    },
+    {
       "name": "Top 10 Job Portals in Qatar | Zimyo M.E.",
       "domain": "zimyo.com",
       "region": "Qatar",
@@ -2954,6 +3066,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Best Job Boards for Saudi Arabia Job Seekers - Sitojob",
+      "domain": "sitojob.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "best job boards in Saudi Arabia for professionals",
+      "first_seen": "2026-10-05"
+    },
+    {
       "name": "Top job posting sites in Saudi Arabia | Snaphunt",
       "domain": "snaphunt.com",
       "region": "Saudi Arabia",
@@ -3024,6 +3144,14 @@
       "type": "job",
       "found_via": "best job boards in Singapore for professionals",
       "first_seen": "2026-10-01"
+    },
+    {
+      "name": "Best Job Boards in Singapore 2026: Where Jobs Actually Get ...",
+      "domain": "jobsearch.trevva.io",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "best job boards in Singapore for professionals",
+      "first_seen": "2026-10-05"
     },
     {
       "name": "Jobstreet - Find your next job and get hired on Asia's favourite career site!",
