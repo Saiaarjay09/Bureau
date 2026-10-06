@@ -4,13 +4,22 @@ A single-user, single-page lead-generation tool. It surfaces two kinds of
 leads — **job openings** and **business opportunities** — filterable by
 region (continent → country → city), with save/star and CSV/JSON export.
 
-**Links:** [github.com/Saiaarjay09/Bureau](https://github.com/Saiaarjay09/Bureau)
+**→ [saiaarjay09.github.io/Bureau](https://saiaarjay09.github.io/Bureau/)**
+
+That's the live lead feed: jobs and business opportunities, filterable by
+region, searchable, exportable. It's a **static site rebuilt daily by a
+GitHub Action**, which is the point — it stays up whether or not any
+machine of mine is awake, and costs nothing to host.
+
+Two things the full app does that a static page genuinely can't, so it
+doesn't pretend to: **matching leads against a CV** (the screen and the
+seven-member *Sabha* council both run on local models, and the CV is
+private) and **on-demand "Discover" searches** (which need to fetch and
+read pages server-side). Those need a local install — see "Setup".
+
+**Also:** [github.com/Saiaarjay09/Bureau](https://github.com/Saiaarjay09/Bureau)
 (source) · [ARCHITECTURE.md](ARCHITECTURE.md) (a full code tour, file by
-file) · **[haven.taila6d3cb.ts.net:8930](https://haven.taila6d3cb.ts.net:8930)**
-— a running instance, open to anyone with the URL. It's still gated by a
-username/password login (see "Credentials" below) — this link gets you
-to the sign-in screen, not straight into anyone's data. If you're
-running your own copy rather than using that one, see "Setup" below.
+file)
 
 ## Architecture
 
@@ -181,10 +190,14 @@ launchctl bootout gui/$(id -u) ~/Library/LaunchAgents/com.bureau.backend.plist
 tail -f ~/Library/Logs/Bureau/backend.log
 ```
 
-## Serving over Tailscale
+## Serving the full app over Tailscale
 
-Two options here, and which one you want depends on who needs to reach
-it:
+The static site above covers reading the feed, and does it without this
+machine being awake. This section is for exposing the **full** app — CV
+matching, the council, live Discover searches — which has to run where the
+models and the database are.
+
+Two options, depending on who needs to reach it:
 
 - **Serve** — reachable only from devices logged into your own tailnet.
   No public exposure at all; the right default if it's just for you.
@@ -276,6 +289,45 @@ says so in its own summary.
 
 Sabha must be running locally (port 8700) for the council button to work —
 the CV panel shows whether it's reachable.
+
+## The published site (GitHub Pages)
+
+`.github/workflows/pages.yml` rebuilds
+[saiaarjay09.github.io/Bureau](https://saiaarjay09.github.io/Bureau/)
+daily and on every push to `main`. Pages is free, always on, needs no card
+and never sleeps — which is exactly what a laptop isn't.
+
+**One-time setup:** in the repo, **Settings → Pages → Build and
+deployment → Source: GitHub Actions**. Until that's switched over the
+workflow builds fine but the deploy step has nowhere to publish to.
+
+Where the data comes from matters, because the Action can't reach this
+Mac's database:
+
+- **The three keyless job APIs are refetched live in CI**, every run.
+  They're plain HTTP, so they need nothing local — this is what keeps the
+  site current with the Mac switched off.
+- **The locally-scraped regional leads can't be regenerated there**,
+  because extraction needs Ollama. They come from a committed snapshot
+  instead. Refresh it whenever you want those to move:
+
+```bash
+cd backend && source .venv/bin/activate
+python3 scripts/export_leads.py          # writes site/data/snapshot.json
+git add site/data/snapshot.json && git commit -m "Refresh lead snapshot" && git push
+```
+
+That export deliberately withholds anything personal: no CV match scores,
+no council verdicts, no starred flags. Only the postings, which were
+public already. Starring on the static site is `localStorage` — per
+browser, never uploaded.
+
+To build and preview it locally:
+
+```bash
+python3 backend/scripts/build_site.py --out site
+cd site && python3 -m http.server 8931     # then open http://127.0.0.1:8931
+```
 
 ## Daily automation: discovering new sources
 

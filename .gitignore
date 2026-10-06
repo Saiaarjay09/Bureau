@@ -9,5 +9,13 @@ backend/.env
 frontend/node_modules/
 frontend/dist/
 
+# Static site: index.html and data/snapshot.json ARE committed — the first is
+# the page itself, the second is the locally-scraped leads CI can't
+# regenerate. Everything else under site/data/ is rebuilt by the Pages
+# workflow on every run, so committing it would just be ~900KB of churn.
+site/data/job.json
+site/data/business.json
+site/data/manifest.json
+
 # OS
 .DS_Store

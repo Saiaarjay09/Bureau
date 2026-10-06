@@ -692,6 +692,50 @@ in its script shebangs, so if this repo is ever moved to a different
 path, `backend/.venv` has to be deleted and recreated there — `mv`-ing
 it along with the rest of the repo will silently break it.
 
+### `site/index.html`, `backend/scripts/build_site.py` and `.github/workflows/pages.yml`
+The always-on published copy, at
+[saiaarjay09.github.io/Bureau](https://saiaarjay09.github.io/Bureau/).
+Bureau runs on a laptop, and a laptop sleeps; GitHub Pages is free, never
+sleeps and needs no card, but cannot run Python, SQLite or a local model.
+So the build ships the data and the filtering, and is explicit about the
+two things it can't do — CV matching (local models, private CV) and
+on-demand Discover searches (need server-side fetching).
+
+Where the data comes from is the whole design. The Action can't reach this
+Mac's database, so `build_site.py` **refetches the three keyless job APIs
+live in CI** — they're plain HTTP and import nothing heavier than httpx,
+which is what keeps the site current with the Mac switched off. The
+locally-scraped regional leads (UAE, Gulf, APAC) *can't* be regenerated
+there, since extraction needs Ollama, so they come from a committed
+snapshot that `export_leads.py` writes. The CI job therefore installs only
+`httpx sqlalchemy python-dotenv`, verified in a clean venv.
+
+`export_leads.py` deliberately withholds everything personal: the
+`fit_score`/`fit_reason` screen, the `council_*` verdicts and the starred
+flags are all judgements about one private CV or one private shortlist.
+Only the postings — public to begin with — are published. It also limits
+**per lead type** rather than globally, because one global limit let the
+far more numerous job leads fill the whole quota and exported zero
+business leads, silently emptying that tab on the published site.
+
+`site/index.html` is a single checked-in file with inlined CSS and vanilla
+JS — no build step, no framework — carrying the same broadsheet tokens and
+masthead treatment as the app. Two bugs worth recording from building it:
+the lead grid used `1fr` columns, and since a bare `1fr` means
+`minmax(auto, 1fr)` whose `auto` is the *min-content* width of a
+`white-space:nowrap` title, the grid blew out to 1893px inside a 1024px
+viewport and the ellipsis never engaged (`minmax(0, 1fr)` fixes it); and
+switching tabs carried filters across, so a leftover "director" search
+showed 0 business leads with no hint that a stale filter rather than an
+empty feed was the cause. Stars are `localStorage`, keyed on
+source+title+company rather than an index, because a daily rebuild
+renumbers every lead and an index key would silently re-point stars at
+different jobs.
+
+Enabling it is a one-time repo setting (**Settings → Pages → Source:
+GitHub Actions**); until that's switched the workflow builds fine but the
+deploy step has nowhere to publish.
+
 ### `.github/workflows/discover-sources.yml` and `backend/scripts/discover_sources.py`
 
 The cloud half of the daily automation. The script sweeps regions through
