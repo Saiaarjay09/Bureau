@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-07T10:26:44.584973+00:00",
+  "updated_at": "2026-10-10T10:01:56.234985+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -64,6 +64,14 @@
       "type": "business",
       "found_via": "Argentina business tenders and procurement opportunities portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Top Government Tender Portals Every Australian Business ...",
+      "domain": "asktender.com.au",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-10"
     },
     {
       "name": "Find tenders and contracts - business.gov.au",
@@ -216,6 +224,14 @@
       "type": "business",
       "found_via": "Brazil startup funding news and company directory",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Canada Startup Funding This Week: Canada Is Back \u2014 $400B+ VC ...",
+      "domain": "beststartup.ca",
+      "region": "Canada",
+      "type": "business",
+      "found_via": "Canada startup funding news and company directory",
+      "first_seen": "2026-10-10"
     },
     {
       "name": "BetaKit - Canadian Startup News & Tech Innovation",
@@ -560,6 +576,14 @@
       "type": "business",
       "found_via": "India startup funding news and company directory",
       "first_seen": "2026-10-03"
+    },
+    {
+      "name": "India Tender Search \u2014 23 Million+ Tenders, Results & GeM Bids ...",
+      "domain": "tenders.infralens.in",
+      "region": "India",
+      "type": "business",
+      "found_via": "India business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-10"
     },
     {
       "name": "The Founder Nation | Startup News, Founder Stories & VC ...",
@@ -1010,6 +1034,14 @@
       "first_seen": "2026-10-07"
     },
     {
+      "name": "Nigeria Tenders | RFP, Bids, eProcurement | Nigeria ...",
+      "domain": "nigeriatenders.com",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-10"
+    },
+    {
       "name": "Welcome To The Official Nigeria Open Contracting Portal (NOCOPO)",
       "domain": "nocopo.bpp.gov.ng",
       "region": "Nigeria",
@@ -1458,6 +1490,14 @@
       "first_seen": "2026-10-04"
     },
     {
+      "name": "EasyTenders - All Tenders in South Africa",
+      "domain": "easytenders.co.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-10"
+    },
+    {
       "name": "Startup Directory \u2014 Browse EX.G-Backed Companies",
       "domain": "econxgroup.com",
       "region": "South Africa",
@@ -1514,6 +1554,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "South African Business Funding Guide & Directory 2026",
+      "domain": "southafricanbusinessmatters.co.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa startup funding news and company directory",
+      "first_seen": "2026-10-10"
+    },
+    {
       "name": "Startup.Africa | African Startup, Funding & Technology News",
       "domain": "startup.africa",
       "region": "South Africa",
@@ -1538,6 +1586,14 @@
       "first_seen": "2026-10-04"
     },
     {
+      "name": "Tender Hub : South Africa's Largest All-In-One Tender ...",
+      "domain": "tenderhub.co.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-10"
+    },
+    {
       "name": "South African Tenders | Government & Private Sector Opportunities",
       "domain": "tenders-sa.org",
       "region": "South Africa",
@@ -1560,6 +1616,14 @@
       "type": "business",
       "found_via": "South Africa startup funding news and company directory",
       "first_seen": "2026-10-02"
+    },
+    {
+      "name": "South Korea Startups: Funding, Hiring and Backers | Alion",
+      "domain": "alion.io",
+      "region": "South Korea",
+      "type": "business",
+      "found_via": "South Korea startup funding news and company directory",
+      "first_seen": "2026-10-10"
     },
     {
       "name": "Korean Startup Newsletter Service - startuprecipe",
@@ -1848,6 +1912,14 @@
       "type": "business",
       "found_via": "United Kingdom business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Winfred \u2014 UK Startup Funding Intelligence",
+      "domain": "winfred.uk",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom startup funding news and company directory",
+      "first_seen": "2026-10-10"
     },
     {
       "name": "Vietnam tenders | rfq in Vietnam | Vietnam government tenders",
@@ -2162,6 +2234,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Best Job Search Sites in Canada for 2026, Ranked | CVMaple",
+      "domain": "cvmaple.com",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "Canada recruitment website list hiring portal",
+      "first_seen": "2026-10-10"
+    },
+    {
       "name": "Jobs In Canada \u2013 Best Job Opportunities & Job Search Portal",
       "domain": "jobsrack.com",
       "region": "Canada",
@@ -2218,12 +2298,28 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Find Jobs in Egypt | Best Jobs Site in Egypt",
+      "domain": "eg.mustakbil.com",
+      "region": "Egypt",
+      "type": "job",
+      "found_via": "Egypt recruitment website list hiring portal",
+      "first_seen": "2026-10-10"
+    },
+    {
       "name": "Egyptian Job Bank | #1 Job Board & Careers in Egypt & Arab ...",
       "domain": "egjobank.com",
       "region": "Egypt",
       "type": "job",
       "found_via": "best job boards in Egypt for professionals",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Jobs Egypt",
+      "domain": "egypt.mimusjobs.com",
+      "region": "Egypt",
+      "type": "job",
+      "found_via": "Egypt recruitment website list hiring portal",
+      "first_seen": "2026-10-10"
     },
     {
       "name": "Job Websites in Egypt - jobs-egypt.com",
@@ -2778,6 +2874,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Jobs in Kenya with official application links | work.ke",
+      "domain": "work.ke",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-10-10"
+    },
+    {
       "name": "Best Job Boards in Kenya 2026 \u2014 Compared | Zaajira",
       "domain": "zaajira.com",
       "region": "Kenya",
@@ -3016,6 +3120,14 @@
       "type": "job",
       "found_via": "best job boards in Qatar for professionals",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "25 Best Recruitment Agencies in Qatar (2026) - Edarabia",
+      "domain": "edarabia.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "best job boards in Qatar for professionals",
+      "first_seen": "2026-10-10"
     },
     {
       "name": "Job Vacancies in Qatar | MzadQatar",
@@ -3434,6 +3546,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "South African Recruitment & Job Portal Directory | iEvo",
+      "domain": "ievo.co.za",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "South Africa recruitment website list hiring portal",
+      "first_seen": "2026-10-10"
+    },
+    {
       "name": "Jobs in South Africa | Job search | Pnet.co.za",
       "domain": "pnet.co.za",
       "region": "South Africa",
@@ -3674,12 +3794,28 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Jobs Nation - A Premium Job Portal for Gulf",
+      "domain": "jobs-nation.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-10-10"
+    },
+    {
       "name": "Jobs & Vacancies in UAE | Jobs In Dubai, Abu Dhabi & Sharjah | Best Job Site/Portal In UAE - (Dubai, Abu Dhabi and Sharj",
       "domain": "jobsportal.com",
       "region": "United Arab Emirates",
       "type": "job",
       "found_via": "United Arab Emirates recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Sites In Dubai: Where Recruiters Actually Hire (2026)",
+      "domain": "khaleejwise.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "best job boards in United Arab Emirates for professionals",
+      "first_seen": "2026-10-10"
     },
     {
       "name": "Job Search | Michael Page",
