@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-10T10:01:56.234985+00:00",
+  "updated_at": "2026-10-12T11:02:09.263333+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -504,6 +504,14 @@
       "type": "business",
       "found_via": "India business tenders and procurement opportunities portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Government eProcurement System of NIC-GePNIC",
+      "domain": "gepnic.gov.in",
+      "region": "India",
+      "type": "business",
+      "found_via": "India business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-12"
     },
     {
       "name": "eProcurement - Central Public Procurement Portal (G2C ...",
@@ -1490,6 +1498,14 @@
       "first_seen": "2026-10-04"
     },
     {
+      "name": "Business Funding in South Africa (2026): Complete Guide to ...",
+      "domain": "business-plan.co.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa startup funding news and company directory",
+      "first_seen": "2026-10-12"
+    },
+    {
       "name": "EasyTenders - All Tenders in South Africa",
       "domain": "easytenders.co.za",
       "region": "South Africa",
@@ -1890,6 +1906,14 @@
       "first_seen": "2026-10-04"
     },
     {
+      "name": "Latest United Kingdom startup funding rounds \u00b7 Techropa",
+      "domain": "techropa.com",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom startup funding news and company directory",
+      "first_seen": "2026-10-12"
+    },
+    {
       "name": "Tender Opportunities in the United Kingdom",
       "domain": "tenderpipe.com",
       "region": "United Kingdom",
@@ -2000,6 +2024,14 @@
       "type": "job",
       "found_via": "Argentina recruitment website list hiring portal",
       "first_seen": "2026-10-05"
+    },
+    {
+      "name": "Jobs in Argentina \u2014 Argentina Job Portal | JobSpring",
+      "domain": "jobspring.pro",
+      "region": "Argentina",
+      "type": "job",
+      "found_via": "Argentina recruitment website list hiring portal",
+      "first_seen": "2026-10-12"
     },
     {
       "name": "Best Recruitment Agencies in Argentina 2026 - lupahire.com",
@@ -2192,6 +2224,14 @@
       "type": "job",
       "found_via": "Canada recruitment website list hiring portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Hiring Job in Canada | Explore Job Opportunities in Canada ...",
+      "domain": "canadahires.com",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "Canada recruitment website list hiring portal",
+      "first_seen": "2026-10-12"
     },
     {
       "name": "Canadian Job Portal",
@@ -2954,6 +2994,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Best Job Sites in Nigeria (2026) - Where to Find Verified ...",
+      "domain": "brands.ng",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "best job boards in Nigeria for professionals",
+      "first_seen": "2026-10-12"
+    },
+    {
       "name": "Best Job Search Websites in Nigeria 2026 (Updated & Trusted ...",
       "domain": "careerradarng.com",
       "region": "Nigeria",
@@ -3498,6 +3546,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Job Search Websites Singapore 2026: Best Free Portals",
+      "domain": "themoneybees.co",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "Singapore recruitment website list hiring portal",
+      "first_seen": "2026-10-12"
+    },
+    {
       "name": "20 Best South African Jobs and Recruitment Websites of 2026The Complete Directory of Job Boards and Recruitment Sites in",
       "domain": "buzzsouthafrica.com",
       "region": "South Africa",
@@ -3746,6 +3802,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Jobsites in UAE",
+      "domain": "gulfjobsites.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-10-12"
+    },
+    {
       "name": "GulfTalent: Jobs in Dubai and Middle East",
       "domain": "gulftalent.com",
       "region": "United Arab Emirates",
@@ -3874,12 +3938,28 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "Top 10 Free Job Portal Websites in UAE - UAE JOB FORUM",
+      "domain": "uaejobforum.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-10-12"
+    },
+    {
       "name": "$120-$51/hr Uae Jobs (NOW HIRING) Jul 2026",
       "domain": "ziprecruiter.com",
       "region": "United Arab Emirates",
       "type": "job",
       "found_via": "United Arab Emirates recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Top UK Job Boards 2026 | Free & Paid Platforms - iSmartRecruit",
+      "domain": "ismartrecruit.com",
+      "region": "United Kingdom",
+      "type": "job",
+      "found_via": "best job boards in United Kingdom for professionals",
+      "first_seen": "2026-10-12"
     },
     {
       "name": "Top UK Job Vacancy Websites 2026 | Best Job Boards & Sites",
