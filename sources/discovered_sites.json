@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-13T10:46:55.253692+00:00",
+  "updated_at": "2026-10-14T08:54:52.871014+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -146,6 +146,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Browse tender opportunities | TenderHub",
+      "domain": "tenderhub.com.au",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-14"
+    },
+    {
       "name": "Contract Notices: AusTender - tenders.gov.au",
       "domain": "tenders.gov.au",
       "region": "Australia",
@@ -240,6 +248,14 @@
       "type": "business",
       "found_via": "Brazil business tenders and procurement opportunities portal",
       "first_seen": "2026-10-13"
+    },
+    {
+      "name": "17.7K+ Active Brazil Tenders & Bids 2026",
+      "domain": "tenderspedia.com",
+      "region": "Brazil",
+      "type": "business",
+      "found_via": "Brazil business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-14"
     },
     {
       "name": "Canada Startup Funding This Week: Canada Is Back \u2014 $400B+ VC ...",
@@ -1954,6 +1970,14 @@
       "first_seen": "2026-10-13"
     },
     {
+      "name": "Find a Tender",
+      "domain": "find-tender.service.gov.uk",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-14"
+    },
+    {
       "name": "List of Funded UK Startups (2026) - Fundraise Insider",
       "domain": "fundraiseinsider.com",
       "region": "United Kingdom",
@@ -2130,12 +2154,28 @@
       "first_seen": "2026-10-05"
     },
     {
+      "name": "Jobs in Argentina \u2014 HirePortal",
+      "domain": "hireportal.us.com",
+      "region": "Argentina",
+      "type": "job",
+      "found_via": "Argentina recruitment website list hiring portal",
+      "first_seen": "2026-10-14"
+    },
+    {
       "name": "Jobs in Argentina - GoAbroad.com",
       "domain": "jobs.goabroad.com",
       "region": "Argentina",
       "type": "job",
       "found_via": "Argentina recruitment website list hiring portal",
       "first_seen": "2026-10-05"
+    },
+    {
+      "name": "Best Argentina Job Websites \u2014 Job Search Websites",
+      "domain": "jobsearchsites.net",
+      "region": "Argentina",
+      "type": "job",
+      "found_via": "Argentina recruitment website list hiring portal",
+      "first_seen": "2026-10-14"
     },
     {
       "name": "Jobs in Argentina \u2014 Argentina Job Portal | JobSpring",
@@ -2200,6 +2240,14 @@
       "type": "job",
       "found_via": "Australia recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Seeker Sites for Australian Professionals",
+      "domain": "blog.onqrecruitment.com.au",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "best job boards in Australia for professionals",
+      "first_seen": "2026-10-14"
     },
     {
       "name": "Best Job Boards in Australia: 394 Verified Sites by Category ...",
@@ -2328,6 +2376,14 @@
       "type": "job",
       "found_via": "Brazil recruitment website list hiring portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Best Canada Job Search Websites for Foreigners - ayk.global",
+      "domain": "ayk.global",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "Canada recruitment website list hiring portal",
+      "first_seen": "2026-10-14"
     },
     {
       "name": "Jobs - Canada.ca",
@@ -2970,6 +3026,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "[Jobs for Foreigners] Job Search & Lifestyle Support Portal ...",
+      "domain": "jobgetjapan.com",
+      "region": "Japan",
+      "type": "job",
+      "found_via": "Japan recruitment website list hiring portal",
+      "first_seen": "2026-10-14"
+    },
+    {
       "name": "Best Job Sites for Finding Work in Japan (2026 Guide for ...",
       "domain": "thetailorcv.com",
       "region": "Japan",
@@ -3504,6 +3568,14 @@
       "type": "job",
       "found_via": "best job boards in Saudi Arabia for professionals",
       "first_seen": "2026-10-04"
+    },
+    {
+      "name": "Jobs in Saudi Arabia (October-2026) - Free Job Posting Site ...",
+      "domain": "gulfjobs.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "Saudi Arabia recruitment website list hiring portal",
+      "first_seen": "2026-10-14"
     },
     {
       "name": "Best Job Portals for Saudi Arabia & Gulf 2026 \u2013 Ranked and ...",
@@ -4176,6 +4248,14 @@
       "type": "job",
       "found_via": "United Arab Emirates recruitment website list hiring portal",
       "first_seen": "2026-10-12"
+    },
+    {
+      "name": "UAE Recruitment and Jobs \u2013 UAE Largest Free Job Portal and ...",
+      "domain": "uaerecruitment.ae",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-10-14"
     },
     {
       "name": "$120-$51/hr Uae Jobs (NOW HIRING) Jul 2026",
