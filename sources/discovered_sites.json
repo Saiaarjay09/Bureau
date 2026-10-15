@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-14T08:54:52.871014+00:00",
+  "updated_at": "2026-10-15T08:34:30.711298+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -1682,6 +1682,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "News Archives - StartUp Magazine South Africa",
+      "domain": "startupmag.co.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa startup funding news and company directory",
+      "first_seen": "2026-10-15"
+    },
+    {
       "name": "South Africa\u2019s startup funding is recovering, but founders ...",
       "domain": "techcabal.com",
       "region": "South Africa",
@@ -2392,6 +2400,14 @@
       "type": "job",
       "found_via": "Canada recruitment website list hiring portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Find jobs across Canada \u00b7 Canada Careers",
+      "domain": "canadacareers.jobs",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "Canada recruitment website list hiring portal",
+      "first_seen": "2026-10-15"
     },
     {
       "name": "Hiring Job in Canada | Explore Job Opportunities in Canada ...",
@@ -3400,6 +3416,14 @@
       "type": "job",
       "found_via": "best job boards in Nigeria for professionals",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Top Job Websites in Nigeria 2026: Best Platforms to Find Work",
+      "domain": "ogajob.com.ng",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-10-15"
     },
     {
       "name": "The #1 Job Board for Nigerians Seeking International Remote ...",
