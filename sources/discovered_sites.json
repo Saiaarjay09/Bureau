@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-16T08:22:28.834846+00:00",
+  "updated_at": "2026-10-17T07:55:04.298872+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -1378,6 +1378,14 @@
       "first_seen": "2026-10-16"
     },
     {
+      "name": "Saudi Startup Ecosystem Dashboard \u2014 Invest Riyadh",
+      "domain": "investriyadh.ai",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia startup funding news and company directory",
+      "first_seen": "2026-10-17"
+    },
+    {
       "name": "Home - KSA Tenders & Business Gate|\u0645\u0646\u0635\u0629 \u0627\u0644\u0633\u0639\u0648\u062f\u064a\u0629 \u0644\u0644\u0645\u0646\u0627\u0642\u0635\u0627\u062a \u0648\u0627\u0644\u0623\u0639\u0645\u0627\u0644",
       "domain": "ksatendersgate.com",
       "region": "Saudi Arabia",
@@ -1768,6 +1776,14 @@
       "type": "business",
       "found_via": "South Korea startup funding news and company directory",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Government Tenders in South Korea | Procurement Intelligence ...",
+      "domain": "globalgov.io",
+      "region": "South Korea",
+      "type": "business",
+      "found_via": "South Korea business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-17"
     },
     {
       "name": "Korea Tenders | RFP, Bids, eProcurement | Korea Government ...",
@@ -2506,6 +2522,14 @@
       "first_seen": "2026-10-10"
     },
     {
+      "name": "Foreign candidates from outside Canada - Job Bank",
+      "domain": "jobbank.gc.ca",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "Canada recruitment website list hiring portal",
+      "first_seen": "2026-10-17"
+    },
+    {
       "name": "Jobs In Canada \u2013 Best Job Opportunities & Job Search Portal",
       "domain": "jobsrack.com",
       "region": "Canada",
@@ -2528,6 +2552,14 @@
       "type": "job",
       "found_via": "best job boards in Canada for professionals",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Canadian Job Boards (2026) \u2014 Top 25 Job Sites in Canada ...",
+      "domain": "safehire.ca",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "best job boards in Canada for professionals",
+      "first_seen": "2026-10-17"
     },
     {
       "name": "Job Vacancies and Recruitment in Egypt | 3amal.com",
@@ -2584,6 +2616,14 @@
       "type": "job",
       "found_via": "Egypt recruitment website list hiring portal",
       "first_seen": "2026-10-10"
+    },
+    {
+      "name": "Unlocking Opportunities: The Best Job Boards in Egypt for ...",
+      "domain": "findapropertyegypt.com",
+      "region": "Egypt",
+      "type": "job",
+      "found_via": "best job boards in Egypt for professionals",
+      "first_seen": "2026-10-17"
     },
     {
       "name": "Job Websites in Egypt - jobs-egypt.com",
@@ -2936,6 +2976,14 @@
       "type": "job",
       "found_via": "best job boards in Indonesia for professionals",
       "first_seen": "2026-10-13"
+    },
+    {
+      "name": "JobPortal Indonesia",
+      "domain": "jobportal.id",
+      "region": "Indonesia",
+      "type": "job",
+      "found_via": "Indonesia recruitment website list hiring portal",
+      "first_seen": "2026-10-17"
     },
     {
       "name": "11 Job Portal Terbaik untuk HR Indonesia (Update 2026)",
@@ -4392,6 +4440,14 @@
       "type": "job",
       "found_via": "United Kingdom recruitment website list hiring portal",
       "first_seen": "2026-10-02"
+    },
+    {
+      "name": "Top Recruitment & Staffing Websites in the United Kingdom",
+      "domain": "semrush.com",
+      "region": "United Kingdom",
+      "type": "job",
+      "found_via": "United Kingdom recruitment website list hiring portal",
+      "first_seen": "2026-10-17"
     },
     {
       "name": "20 Best job sites in the UK [Find your perfect job today]",
