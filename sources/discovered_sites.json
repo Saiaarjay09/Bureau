@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-17T07:55:04.298872+00:00",
+  "updated_at": "2026-10-18T08:11:15.543717+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -280,6 +280,14 @@
       "type": "business",
       "found_via": "Canada business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "bids&tenders: Digital eProcurement Platform for USA & Canada",
+      "domain": "bidsandtenders.com",
+      "region": "Canada",
+      "type": "business",
+      "found_via": "Canada business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-18"
     },
     {
       "name": "Tender opportunities | CanadaBuys",
@@ -944,6 +952,14 @@
       "type": "business",
       "found_via": "Kenya business tenders and procurement opportunities portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Welcome to eGP Portal of Government of Kenya",
+      "domain": "preprod.egpkenya.go.ke",
+      "region": "Kenya",
+      "type": "business",
+      "found_via": "Kenya business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-18"
     },
     {
       "name": "Public Procurement Information Portal - tenders.go.ke",
@@ -2515,6 +2531,14 @@
     },
     {
       "name": "Best Job Search Sites in Canada for 2026, Ranked | CVMaple",
+      "domain": "cvmaple.ca",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "Canada recruitment website list hiring portal",
+      "first_seen": "2026-10-18"
+    },
+    {
+      "name": "Best Job Search Sites in Canada for 2026, Ranked | CVMaple",
       "domain": "cvmaple.com",
       "region": "Canada",
       "type": "job",
@@ -3602,6 +3626,14 @@
       "first_seen": "2026-10-10"
     },
     {
+      "name": "Jobs in Qatar | Latest Doha Careers & Vacancies | jobqatar.qa",
+      "domain": "jobqatar.qa",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "Qatar recruitment website list hiring portal",
+      "first_seen": "2026-10-18"
+    },
+    {
       "name": "Job Vacancies in Qatar | MzadQatar",
       "domain": "mzadqatar.com",
       "region": "Qatar",
@@ -4280,6 +4312,14 @@
       "type": "job",
       "found_via": "United Arab Emirates recruitment website list hiring portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Top 10 Job Search Websites in UAE | 2026 Guide",
+      "domain": "hrmantra.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-10-18"
     },
     {
       "name": "Now Hiring: 400 Uae Jobs - Indeed",
