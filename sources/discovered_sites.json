@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-19T09:05:26.959984+00:00",
+  "updated_at": "2026-10-20T08:43:09.556740+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -16,6 +16,14 @@
       "type": "business",
       "found_via": "Argentina startup funding news and company directory",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "COMPR.AR - Portal de Compras P\u00fablicas de la Rep\u00fablica Argentina",
+      "domain": "comprar.gob.ar",
+      "region": "Argentina",
+      "type": "business",
+      "found_via": "Argentina business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-20"
     },
     {
       "name": "Roadwork Procurement Public Portal for Vialidad Argentina",
@@ -2162,6 +2170,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "UK Tender \u2013 Government Tenders e Tendering Portal",
+      "domain": "uktender.com",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-20"
+    },
+    {
       "name": "Find UK tenders that fit your business | UK Tender Check",
       "domain": "uktendercheck.co.uk",
       "region": "United Kingdom",
@@ -2304,6 +2320,14 @@
       "type": "job",
       "found_via": "Argentina recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Mejores portales de empleo en Argentina (2026) | Pr\u00f3ximo Trabajo",
+      "domain": "proximotrabajo.com",
+      "region": "Argentina",
+      "type": "job",
+      "found_via": "Argentina recruitment website list hiring portal",
+      "first_seen": "2026-10-20"
     },
     {
       "name": "Top Recruitment Agencies in Argentina \u2013 Best Staffing ...",
@@ -2682,6 +2706,14 @@
       "first_seen": "2026-10-10"
     },
     {
+      "name": "Top Online Job Portals in Egypt Compared Jobs in Egypt",
+      "domain": "egyptjobsearch.com",
+      "region": "Egypt",
+      "type": "job",
+      "found_via": "best job boards in Egypt for professionals",
+      "first_seen": "2026-10-20"
+    },
+    {
       "name": "Unlocking Opportunities: The Best Job Boards in Egypt for ...",
       "domain": "findapropertyegypt.com",
       "region": "Egypt",
@@ -2752,6 +2784,14 @@
       "type": "job",
       "found_via": "Germany recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Sites in Germany (English Roles Included)",
+      "domain": "job200.com",
+      "region": "Germany",
+      "type": "job",
+      "found_via": "best job boards in Germany for professionals",
+      "first_seen": "2026-10-20"
     },
     {
       "name": "Best job sites in Germany: 18 platforms for hiring in 2026 - JOIN",
@@ -3522,6 +3562,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Best Job Search Platforms in Nigeria (2026) | JobPilot Africa",
+      "domain": "jobpilotafrica.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "best job boards in Nigeria for professionals",
+      "first_seen": "2026-10-20"
+    },
+    {
       "name": "Find Jobs in Nigeria \u2013 Verified Vacancies Across Every State",
       "domain": "jobpilotng.com",
       "region": "Nigeria",
@@ -3616,6 +3664,14 @@
       "type": "job",
       "found_via": "Nigeria recruitment website list hiring portal",
       "first_seen": "2026-10-07"
+    },
+    {
+      "name": "SabiHire \u2014 Find your next job in Nigeria",
+      "domain": "sabihire.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-10-20"
     },
     {
       "name": "10 Recruitment Sites in Nigeria Every Graduate Should Know",
@@ -4072,6 +4128,14 @@
       "type": "job",
       "found_via": "South Africa recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best job boards South Africa for employers \u2014 2026",
+      "domain": "capetownjobs.co.za",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "best job boards in South Africa for professionals",
+      "first_seen": "2026-10-20"
     },
     {
       "name": "Top 10 Job Boards in South Africa (2026): Where to Find Real ...",
