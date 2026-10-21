@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-20T08:43:09.556740+00:00",
+  "updated_at": "2026-10-21T08:44:11.379395+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -96,6 +96,14 @@
       "type": "business",
       "found_via": "Australia business tenders and procurement opportunities portal",
       "first_seen": "2026-10-19"
+    },
+    {
+      "name": "Free Government Tender Portals in Australia",
+      "domain": "australiatenderalerts.com",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-21"
     },
     {
       "name": "Find tenders and contracts - business.gov.au",
@@ -322,6 +330,14 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "Canadian Tender Portals: Where Contracts Are Posted (2026)",
+      "domain": "grantcompass.ca",
+      "region": "Canada",
+      "type": "business",
+      "found_via": "Canada business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-21"
+    },
+    {
       "name": "MERX : Find New Contracts, Bids & Tenders for Canadian Businesses",
       "domain": "merx.com",
       "region": "Canada",
@@ -384,6 +400,14 @@
       "type": "business",
       "found_via": "Egypt business tenders and procurement opportunities portal",
       "first_seen": "2026-10-04"
+    },
+    {
+      "name": "TRACE e-Gov Portal",
+      "domain": "egov.traceinternational.org",
+      "region": "Egypt",
+      "type": "business",
+      "found_via": "Egypt business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-21"
     },
     {
       "name": "Homepage | Egypt Business Gate",
@@ -1058,6 +1082,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Mexico Procurement - mail.govdirections.com",
+      "domain": "mail.govdirections.com",
+      "region": "Mexico",
+      "type": "business",
+      "found_via": "Mexico business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-21"
+    },
+    {
       "name": "Mexico Startup Directory - Mexican Startups",
       "domain": "mexicanstartups.com",
       "region": "Mexico",
@@ -1152,6 +1184,14 @@
       "type": "business",
       "found_via": "Nigeria business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Nigeria startup funding hits US$635M in 2026 - furtherafrica.com",
+      "domain": "furtherafrica.com",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria startup funding news and company directory",
+      "first_seen": "2026-10-21"
     },
     {
       "name": "Nigeria Tech Ecosystem 2026: Startups, Funding, Unicorns ...",
@@ -1530,12 +1570,28 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "MENA startup funding jumps to $1.65 billion in Q3, with Saudi ...",
+      "domain": "wamda.com",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia startup funding news and company directory",
+      "first_seen": "2026-10-21"
+    },
+    {
       "name": "Tenders & Procurement",
       "domain": "zatca.gov.sa",
       "region": "Saudi Arabia",
       "type": "business",
       "found_via": "Saudi Arabia business tenders and procurement opportunities portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Saudi startups lead Q3 2026 funding with $1bln raised - ZAWYA",
+      "domain": "zawya.com",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia startup funding news and company directory",
+      "first_seen": "2026-10-21"
     },
     {
       "name": "GeBIZ Singapore Tenders 2026 \u2014 Procurement Opportunities",
@@ -2506,6 +2562,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Best Job Search Engines in Brazil of 2026 - Reviews & Comparison",
+      "domain": "sourceforge.net",
+      "region": "Brazil",
+      "type": "job",
+      "found_via": "best job boards in Brazil for professionals",
+      "first_seen": "2026-10-21"
+    },
+    {
       "name": "Portuguese - Brazil Freelance Jobs: Work Remote & Earn Online",
       "domain": "upwork.com",
       "region": "Brazil",
@@ -2880,6 +2944,14 @@
       "type": "job",
       "found_via": "India recruitment website list hiring portal",
       "first_seen": "2026-10-07"
+    },
+    {
+      "name": "Best Job Boards in India for Tech Professionals (2026)",
+      "domain": "agentco.in",
+      "region": "India",
+      "type": "job",
+      "found_via": "best job boards in India for professionals",
+      "first_seen": "2026-10-21"
     },
     {
       "name": "15 Best Job Portals in India For Job Seekers in 2026 - AlmaBetter",
@@ -3882,6 +3954,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Find Jobs in Saudi Arabia | Best Jobs Site in Saudi Arabia",
+      "domain": "sa.mustakbil.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "Saudi Arabia recruitment website list hiring portal",
+      "first_seen": "2026-10-21"
+    },
+    {
       "name": "Jobs in Saudi Arabia 2026 | Apply Now with Sabbar",
       "domain": "sabbar.com",
       "region": "Saudi Arabia",
@@ -4288,6 +4368,14 @@
       "type": "job",
       "found_via": "South Korea recruitment website list hiring portal",
       "first_seen": "2026-10-01"
+    },
+    {
+      "name": "\ucf54\uc6cc\ud06c KOWORK | Jobs For Foreigners In Korea",
+      "domain": "kowork.kr",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "South Korea recruitment website list hiring portal",
+      "first_seen": "2026-10-21"
     },
     {
       "name": "[2026] Best Job Search Websites and Apps in Korea for ...",
