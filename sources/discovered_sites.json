@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-22T08:49:33.905753+00:00",
+  "updated_at": "2026-10-23T08:43:04.694030+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -1170,6 +1170,14 @@
       "first_seen": "2026-10-22"
     },
     {
+      "name": "Startup funding in Mexico: 11 rounds, \u20ac965M raised | Tech ...",
+      "domain": "techfundingmap.com",
+      "region": "Mexico",
+      "type": "business",
+      "found_via": "Mexico startup funding news and company directory",
+      "first_seen": "2026-10-23"
+    },
+    {
       "name": "Procurement in Mexico | Bidovate",
       "domain": "us.bidovate.co",
       "region": "Mexico",
@@ -1192,6 +1200,14 @@
       "type": "business",
       "found_via": "Nigeria business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Nigeria leads Africa startup funding race with $635m in nine ...",
+      "domain": "businessamlive.com",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria startup funding news and company directory",
+      "first_seen": "2026-10-23"
     },
     {
       "name": "Nigeria Startup Funding: 92 Credits, Grants & Accelerators",
@@ -1304,6 +1320,14 @@
       "type": "business",
       "found_via": "Nigeria startup funding news and company directory",
       "first_seen": "2026-10-22"
+    },
+    {
+      "name": "Nigeria Startup Funding Hits $635M, Tops Africa [2026]",
+      "domain": "shattered.io",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria startup funding news and company directory",
+      "first_seen": "2026-10-23"
     },
     {
       "name": "90 Nigeria Startups (2026) \u2013 Tech Companies Database",
@@ -2418,6 +2442,14 @@
       "first_seen": "2026-10-05"
     },
     {
+      "name": "The Top 13 Recruitment Agencies in Argentina - Gini Talent",
+      "domain": "ginitalent.com",
+      "region": "Argentina",
+      "type": "job",
+      "found_via": "Argentina recruitment website list hiring portal",
+      "first_seen": "2026-10-23"
+    },
+    {
       "name": "Jobs in Argentina \u2014 HirePortal",
       "domain": "hireportal.us.com",
       "region": "Argentina",
@@ -2768,6 +2800,14 @@
       "type": "job",
       "found_via": "Canada recruitment website list hiring portal",
       "first_seen": "2026-10-17"
+    },
+    {
+      "name": "Jobs in Canada - Find Jobs and Employers - Job Bank for Jobs ...",
+      "domain": "jobsincanada.com",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "Canada recruitment website list hiring portal",
+      "first_seen": "2026-10-23"
     },
     {
       "name": "Jobs In Canada \u2013 Best Job Opportunities & Job Search Portal",
@@ -3802,6 +3842,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "MyJobNigeria (MJN): Recruitment and Jobs in Nigeria",
+      "domain": "myjobnigeria.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-10-23"
+    },
+    {
       "name": "Latest Recruitment in Nigeria \u2014 10 Best Job Portals Ranked ...",
       "domain": "naijajobportal.com.ng",
       "region": "Nigeria",
@@ -4096,6 +4144,14 @@
       "type": "job",
       "found_via": "Saudi Arabia recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Sites in Saudi Arabia to Find Top Opportunities",
+      "domain": "ost.sa",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "best job boards in Saudi Arabia for professionals",
+      "first_seen": "2026-10-23"
     },
     {
       "name": "Find Jobs in Saudi Arabia | Best Jobs Site in Saudi Arabia",
@@ -4768,6 +4824,14 @@
       "type": "job",
       "found_via": "United Arab Emirates recruitment website list hiring portal",
       "first_seen": "2026-10-14"
+    },
+    {
+      "name": "Jobs in United Arab Emirates - Latest (Oct 2026)- Vacancies.ae",
+      "domain": "vacancies.ae",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-10-23"
     },
     {
       "name": "$120-$51/hr Uae Jobs (NOW HIRING) Jul 2026",
