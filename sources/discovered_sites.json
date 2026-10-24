@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-23T08:43:04.694030+00:00",
+  "updated_at": "2026-10-24T08:16:41.865171+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -658,6 +658,14 @@
       "first_seen": "2026-10-05"
     },
     {
+      "name": "StartupFeed | Startup News Funding And Technology Updates",
+      "domain": "startupfeed.in",
+      "region": "India",
+      "type": "business",
+      "found_via": "India startup funding news and company directory",
+      "first_seen": "2026-10-24"
+    },
+    {
       "name": "StartupFox \u2014 Indian Startup News, Funding Rounds & Analysis",
       "domain": "startupfox.in",
       "region": "India",
@@ -1112,6 +1120,14 @@
       "type": "business",
       "found_via": "Mexico business tenders and procurement opportunities portal",
       "first_seen": "2026-10-13"
+    },
+    {
+      "name": "Mexico Procurement - govdirections.com",
+      "domain": "govdirections.com",
+      "region": "Mexico",
+      "type": "business",
+      "found_via": "Mexico business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-24"
     },
     {
       "name": "New Directory of 250+ Latin American Startups With US$1m + ...",
@@ -2386,6 +2402,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Vietnam Tenders 2026 \u2014 20 open Government & Private ...",
+      "domain": "tenderhive.com",
+      "region": "Vietnam",
+      "type": "business",
+      "found_via": "Vietnam business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-24"
+    },
+    {
       "name": "Open Tenders in Vietnam (2026 Procurement Opportunities)",
       "domain": "tendersaccesshub.com",
       "region": "Vietnam",
@@ -2584,6 +2608,14 @@
       "type": "job",
       "found_via": "best job boards in Australia for professionals",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Best Job Search Websites in Australia (2026 Guide) \u00b7 Rolebee",
+      "domain": "rolebee.com.au",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "best job boards in Australia for professionals",
+      "first_seen": "2026-10-24"
     },
     {
       "name": "10 Best Job Sites in Australia: A Recruiter's Guide",
@@ -3850,6 +3882,14 @@
       "first_seen": "2026-10-23"
     },
     {
+      "name": "Jobs in Nigeria: Open Roles & Recruitment | MyNigeriaGuide",
+      "domain": "mynigeriaguide.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-10-24"
+    },
+    {
       "name": "Latest Recruitment in Nigeria \u2014 10 Best Job Portals Ranked ...",
       "domain": "naijajobportal.com.ng",
       "region": "Nigeria",
@@ -3888,6 +3928,14 @@
       "type": "job",
       "found_via": "best job boards in Nigeria for professionals",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Recruitment - Opportunities for Nigerians",
+      "domain": "nigeriaopportunities.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-10-24"
     },
     {
       "name": "Top Job Websites in Nigeria 2026: Best Platforms to Find Work",
