@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-24T08:16:41.865171+00:00",
+  "updated_at": "2026-10-25T08:37:51.236364+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -8,6 +8,14 @@
       "type": "business",
       "found_via": "Argentina business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Argentina Tenders by Sector | Industry-wise Listings",
+      "domain": "argentinatenders.com",
+      "region": "Argentina",
+      "type": "business",
+      "found_via": "Argentina business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-25"
     },
     {
       "name": "Startups in Argentina News | September, 2026 (STARTUP EDITION)",
@@ -362,6 +370,14 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "Canadian Recently Funded Startups | ProjectStartups",
+      "domain": "projectstartups.com",
+      "region": "Canada",
+      "type": "business",
+      "found_via": "Canada startup funding news and company directory",
+      "first_seen": "2026-10-25"
+    },
+    {
       "name": "Canada Tech News - Tech Funding News",
       "domain": "techfundingnews.com",
       "region": "Canada",
@@ -424,6 +440,14 @@
       "type": "business",
       "found_via": "Egypt startup funding news and company directory",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Latest Eprocurement Tenders From Egypt",
+      "domain": "egyptrfp.com",
+      "region": "Egypt",
+      "type": "business",
+      "found_via": "Egypt business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-25"
     },
     {
       "name": "Public e-Procurement System of Egypt",
@@ -1674,6 +1698,14 @@
       "first_seen": "2026-10-21"
     },
     {
+      "name": "Saudi Arabia Leads a Resurgent $1.65 Billion in MENA Startup ...",
+      "domain": "whattheai.tech",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia startup funding news and company directory",
+      "first_seen": "2026-10-25"
+    },
+    {
       "name": "Tenders & Procurement",
       "domain": "zatca.gov.sa",
       "region": "Saudi Arabia",
@@ -1760,6 +1792,14 @@
       "type": "business",
       "found_via": "Singapore business tenders and procurement opportunities portal",
       "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Singapore Tenders | RFP, Bids, eProcurement | Singapore ...",
+      "domain": "singaporetenders.com",
+      "region": "Singapore",
+      "type": "business",
+      "found_via": "Singapore business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-25"
     },
     {
       "name": "Singapore Ecosystem - Startup Genome",
@@ -3680,6 +3720,14 @@
       "type": "job",
       "found_via": "Kenya recruitment website list hiring portal",
       "first_seen": "2026-10-16"
+    },
+    {
+      "name": "TheKenyaJob | Latest Vacancies and Recruitment in Kenya",
+      "domain": "thekenyajob.online",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-10-25"
     },
     {
       "name": "Jobs in Kenya with official application links | work.ke",
