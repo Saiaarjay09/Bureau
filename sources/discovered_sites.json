@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-26T09:07:17.010806+00:00",
+  "updated_at": "2026-10-27T09:10:40.525559+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -466,6 +466,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Bids and tenders - Goeic",
+      "domain": "goeic.gov.eg",
+      "region": "Egypt",
+      "type": "business",
+      "found_via": "Egypt business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-27"
+    },
+    {
       "name": "Leadingo | B2B Opportunities Platform - Home",
       "domain": "leadingo.co",
       "region": "Egypt",
@@ -728,6 +736,14 @@
       "type": "business",
       "found_via": "India startup funding news and company directory",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "StartupSuperb: Indian Startup News, Funding and Founder Stories",
+      "domain": "startupsuperb.com",
+      "region": "India",
+      "type": "business",
+      "found_via": "India startup funding news and company directory",
+      "first_seen": "2026-10-27"
     },
     {
       "name": "India Startup Funding Tracker - Tech Innovators",
@@ -1640,6 +1656,14 @@
       "type": "business",
       "found_via": "Saudi Arabia business tenders and procurement opportunities portal",
       "first_seen": "2026-10-19"
+    },
+    {
+      "name": "Government Tenders and Procurements - Monsha'at",
+      "domain": "monshaat.gov.sa",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-27"
     },
     {
       "name": "Etimad Saudi Arabia: government tenders, - etimad | Motaded",
@@ -2650,6 +2674,14 @@
       "first_seen": "2026-10-04"
     },
     {
+      "name": "Best Job Listing Sites in Australia for Employers in 2026 ...",
+      "domain": "dealin.com.au",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "best job boards in Australia for professionals",
+      "first_seen": "2026-10-27"
+    },
+    {
       "name": "Best Job Boards in Australia 2026 | Compared, Plus Niche ...",
       "domain": "drivetube.ai",
       "region": "Australia",
@@ -3248,6 +3280,14 @@
       "type": "job",
       "found_via": "best job boards in India for professionals",
       "first_seen": "2026-10-13"
+    },
+    {
+      "name": "IndiaHirings",
+      "domain": "indiahirings.com",
+      "region": "India",
+      "type": "job",
+      "found_via": "India recruitment website list hiring portal",
+      "first_seen": "2026-10-27"
     },
     {
       "name": "Top 15 Job Portals in India (2026): Compare the Best Job Sites",
@@ -4298,6 +4338,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Best Job Portals in Saudi Arabia | Saudi-Steps",
+      "domain": "saudi-steps.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "best job boards in Saudi Arabia for professionals",
+      "first_seen": "2026-10-27"
+    },
+    {
       "name": "Saudi Jobs Website September 2026 | Tanqeeb KSA",
       "domain": "saudi.tanqeeb.com",
       "region": "Saudi Arabia",
@@ -4320,6 +4368,14 @@
       "type": "job",
       "found_via": "Saudi Arabia recruitment website list hiring portal",
       "first_seen": "2026-10-02"
+    },
+    {
+      "name": "Best Job Search Websites in Saudi Arabia | SERA Saudi",
+      "domain": "serasaudi.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "best job boards in Saudi Arabia for professionals",
+      "first_seen": "2026-10-27"
     },
     {
       "name": "Best Job Boards for Saudi Arabia Job Seekers - Sitojob",
