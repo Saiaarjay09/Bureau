@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-27T09:10:40.525559+00:00",
+  "updated_at": "2026-10-28T09:51:23.275554+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -992,6 +992,14 @@
       "type": "business",
       "found_via": "Kenya startup funding news and company directory",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "BidKazi \u2014 Kenya's Opportunity Intelligence Platform | Tenders ...",
+      "domain": "bidkazi.co.ke",
+      "region": "Kenya",
+      "type": "business",
+      "found_via": "Kenya business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-28"
     },
     {
       "name": "Tender Opportunities - Business Registration Service",
