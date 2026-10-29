@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-28T09:51:23.275554+00:00",
+  "updated_at": "2026-10-29T10:08:53.713578+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -88,6 +88,14 @@
       "type": "business",
       "found_via": "Argentina business tenders and procurement opportunities portal",
       "first_seen": "2026-10-13"
+    },
+    {
+      "name": "Government tenders Australia: your complete bidding guide",
+      "domain": "askhayley.com.au",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-29"
     },
     {
       "name": "Top Government Tender Portals Every Australian Business ...",
@@ -1994,6 +2002,14 @@
       "first_seen": "2026-10-03"
     },
     {
+      "name": "SA Tenders AI: South African Government and Private Tenders",
+      "domain": "satendersai.co.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-29"
+    },
+    {
       "name": "SimplyTenders \u2014 South African tender opportunities",
       "domain": "simplytenders.co.za",
       "region": "South Africa",
@@ -3226,6 +3242,14 @@
       "first_seen": "2026-10-13"
     },
     {
+      "name": "Best Job Portals in India (2026): 13 Sites Matched to Your ...",
+      "domain": "applycove.com",
+      "region": "India",
+      "type": "job",
+      "found_via": "best job boards in India for professionals",
+      "first_seen": "2026-10-29"
+    },
+    {
       "name": "The 50 Best Job Search Sites You Need to Know About",
       "domain": "biginterview.com",
       "region": "India",
@@ -3786,6 +3810,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "My Jobs | Kenya",
+      "domain": "myjobsinkenya.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-10-29"
+    },
+    {
       "name": "8 Job Hunting Websites in Kenya - Nairobi Online",
       "domain": "nairobionline.com",
       "region": "Kenya",
@@ -4032,6 +4064,14 @@
       "type": "job",
       "found_via": "Nigeria recruitment website list hiring portal",
       "first_seen": "2026-10-04"
+    },
+    {
+      "name": "Nigerian Jobs Board \u2014 Latest Vacancies | NGJobs",
+      "domain": "ngjobs.com.ng",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-10-29"
     },
     {
       "name": "Job Vacancies and Recruitment in Nigeria | Nigeriajob.com",
@@ -4592,6 +4632,14 @@
       "type": "job",
       "found_via": "Singapore recruitment website list hiring portal",
       "first_seen": "2026-10-12"
+    },
+    {
+      "name": "Best Job Sites for Singaporean Job Seekers: A Complete Guide",
+      "domain": "upgrad.com",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "Singapore recruitment website list hiring portal",
+      "first_seen": "2026-10-29"
     },
     {
       "name": "20 Best South African Jobs and Recruitment Websites of 2026The Complete Directory of Job Boards and Recruitment Sites in",
