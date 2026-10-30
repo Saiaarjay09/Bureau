@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-29T10:08:53.713578+00:00",
+  "updated_at": "2026-10-30T10:15:02.253997+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -176,6 +176,14 @@
       "type": "business",
       "found_via": "Australia business tenders and procurement opportunities portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Startups - SmartCompany",
+      "domain": "smartcompany.com.au",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia startup funding news and company directory",
+      "first_seen": "2026-10-30"
     },
     {
       "name": "Startup Daily - News from the Australian and New Zealand tech ...",
@@ -496,6 +504,14 @@
       "type": "business",
       "found_via": "Egypt business tenders and procurement opportunities portal",
       "first_seen": "2026-10-13"
+    },
+    {
+      "name": "Startups in Egypt: companies, funding rounds and investors ...",
+      "domain": "propel.africa",
+      "region": "Egypt",
+      "type": "business",
+      "found_via": "Egypt startup funding news and company directory",
+      "first_seen": "2026-10-30"
     },
     {
       "name": "Submitting Tenders on Egypt's Public Procurement Portal",
@@ -1962,6 +1978,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Entrepreneur Hub SA | Business News, Funding & Opportunities",
+      "domain": "entrepreneurhubsa.co.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa startup funding news and company directory",
+      "first_seen": "2026-10-30"
+    },
+    {
       "name": "Home Page - eTenders Portal",
       "domain": "etenders.gov.za",
       "region": "South Africa",
@@ -2080,6 +2104,14 @@
       "type": "business",
       "found_via": "South Africa business tenders and procurement opportunities portal",
       "first_seen": "2026-10-03"
+    },
+    {
+      "name": "Tenders & Business Opportunities - Thungela",
+      "domain": "thungela.com",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-30"
     },
     {
       "name": "VC4A \u2013 Fueling the builders of Africa's future",
@@ -2408,6 +2440,14 @@
       "type": "business",
       "found_via": "United Kingdom startup funding news and company directory",
       "first_seen": "2026-10-04"
+    },
+    {
+      "name": "e-procurement portal - Commonwealth Secretariat",
+      "domain": "supplier.in-tend.co.uk",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-30"
     },
     {
       "name": "Latest United Kingdom startup funding rounds \u00b7 Techropa",
@@ -4402,6 +4442,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Jobs in Saudi Arabia \u2014 New Vacancies Daily in Riyadh, Jeddah ...",
+      "domain": "saudiacareer.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "Saudi Arabia recruitment website list hiring portal",
+      "first_seen": "2026-10-30"
+    },
+    {
       "name": "Best IT Job Sites in Saudi Arabia to Find Tech Talent - SaviorHire",
       "domain": "saviorhire.com",
       "region": "Saudi Arabia",
@@ -4850,6 +4898,14 @@
       "first_seen": "2026-10-01"
     },
     {
+      "name": "3,000+ United Arab Emirates Jobs, Employment 29 ... - Indeed",
+      "domain": "ae.indeed.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-10-30"
+    },
+    {
       "name": "Bayt.com: The Middle East's Leading Job Site",
       "domain": "bayt.com",
       "region": "United Arab Emirates",
@@ -4888,6 +4944,14 @@
       "type": "job",
       "found_via": "United Arab Emirates recruitment website list hiring portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Latest Jobs in UAE 2026 - Dubai, Abu Dhabi, Sharjah | GetGulfJob",
+      "domain": "getgulfjob.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-10-30"
     },
     {
       "name": "Best Job boards in United Arab Emirates - gigexchange.com",
