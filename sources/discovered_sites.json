@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-30T10:15:02.253997+00:00",
+  "updated_at": "2026-10-31T09:49:31.579988+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -194,6 +194,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Supplier Guidance \u2013 Getting Started - suppliers.tenders.gov.au",
+      "domain": "suppliers.tenders.gov.au",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-31"
+    },
+    {
       "name": "Browse tender opportunities | TenderHub",
       "domain": "tenderhub.com.au",
       "region": "Australia",
@@ -264,6 +272,14 @@
       "type": "business",
       "found_via": "Brazil business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Portal Nacional de Contrata\u00e7\u00f5es P\u00fablicas - PNCP - gov",
+      "domain": "gov.br",
+      "region": "Brazil",
+      "type": "business",
+      "found_via": "Brazil business tenders and procurement opportunities portal",
+      "first_seen": "2026-10-31"
     },
     {
       "name": "Brazil Government Tenders \u2014 Open Procurement Data (PNCP)",
@@ -4232,6 +4248,14 @@
       "type": "job",
       "found_via": "best job boards in Qatar for professionals",
       "first_seen": "2026-10-10"
+    },
+    {
+      "name": "Jobs in Qatar 2025 | Find Jobs in Doha, Al Rayyan | HALAJOBS.QA",
+      "domain": "halajobsqa.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "Qatar recruitment website list hiring portal",
+      "first_seen": "2026-10-31"
     },
     {
       "name": "Jobs in Qatar | Latest Doha Careers & Vacancies | jobqatar.qa",
