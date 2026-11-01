@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-10-31T09:49:31.579988+00:00",
+  "updated_at": "2026-11-01T10:37:17.746916+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -274,6 +274,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Videos generation - Nastia",
+      "domain": "feedback.nastia.ai",
+      "region": "Brazil",
+      "type": "business",
+      "found_via": "Brazil business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "Portal Nacional de Contrata\u00e7\u00f5es P\u00fablicas - PNCP - gov",
       "domain": "gov.br",
       "region": "Brazil",
@@ -288,6 +296,14 @@
       "type": "business",
       "found_via": "Brazil business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "AI Girlfriend Chat App | Free, Unlimited, Uncensored | Nastia",
+      "domain": "nastia.ai",
+      "region": "Brazil",
+      "type": "business",
+      "found_via": "Brazil business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "Tenders in Brazil \u2014 Open Government & NGO Tenders | OpenTenderHub",
@@ -946,6 +962,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Indonesia Travel Advisory | Travel.State.gov",
+      "domain": "travel.state.gov",
+      "region": "Indonesia",
+      "type": "business",
+      "found_via": "Indonesia business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "Procurement information\uff5cDigital Agency",
       "domain": "digital.go.jp",
       "region": "Japan",
@@ -978,12 +1002,28 @@
       "first_seen": "2026-10-07"
     },
     {
+      "name": "japan-guide.com - Japan Travel and Living Guide",
+      "domain": "japan-guide.com",
+      "region": "Japan",
+      "type": "business",
+      "found_via": "Japan business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "Japan Tenders \u2014 Japanese Government Procurement, in English",
       "domain": "japan-tenders.loreatec.jp",
       "region": "Japan",
       "type": "business",
       "found_via": "Japan business tenders and procurement opportunities portal",
       "first_seen": "2026-10-04"
+    },
+    {
+      "name": "Travel Japan - Japan National Tourism Organization (Official...",
+      "domain": "japan.travel",
+      "region": "Japan",
+      "type": "business",
+      "found_via": "Japan business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "Japan Tenders | RFP, Bids, eProcurement | Japan Government ...",
@@ -1008,6 +1048,14 @@
       "type": "business",
       "found_via": "Japan business tenders and procurement opportunities portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "17 Best Places to Visit in Japan (And Why They\u2019re Worth...",
+      "domain": "thejapantravelblog.com",
+      "region": "Japan",
+      "type": "business",
+      "found_via": "Japan business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "Japan - Selling to the Public Sector",
@@ -1634,6 +1682,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Saudi Arabia Latest and Breaking News | Al Arabiya",
+      "domain": "english.alarabiya.net",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "Saudi Tenders, RFPs & Etimad Opportunities | Tender Insight",
       "domain": "etimad.win",
       "region": "Saudi Arabia",
@@ -1730,6 +1786,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Saudia | Book flights | Hotels | Holidays",
+      "domain": "saudia.com",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "Saudi Arabia - Startup Muslim \u2014 Founder Stories, Funding ...",
       "domain": "startupmuslim.com",
       "region": "Saudi Arabia",
@@ -1776,6 +1840,14 @@
       "type": "business",
       "found_via": "Saudi Arabia startup funding news and company directory",
       "first_seen": "2026-10-02"
+    },
+    {
+      "name": "Discover Saudi Arabia: Culture, Nature & More",
+      "domain": "visitsaudi.com",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "MENA startup funding jumps to $1.65 billion in Q3, with Saudi ...",
@@ -2642,6 +2714,14 @@
       "first_seen": "2026-10-14"
     },
     {
+      "name": "Metalpar v. Argentina | Investment Dispute Settlement Navigator...",
+      "domain": "investmentpolicy.unctad.org",
+      "region": "Argentina",
+      "type": "job",
+      "found_via": "Argentina recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "Jobs in Argentina - GoAbroad.com",
       "domain": "jobs.goabroad.com",
       "region": "Argentina",
@@ -2770,6 +2850,22 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "ecampaign.helenarubinstein.com",
+      "domain": "ecampaign.helenarubinstein.com",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "Australia recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
+    },
+    {
+      "name": "Helena Rubinstein International: Luxury Skincare & Cosmetics",
+      "domain": "helenarubinstein.com",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "Australia recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "Top Job Boards in Australia 2026 | Best websites for ...",
       "domain": "jobma.com",
       "region": "Australia",
@@ -2784,6 +2880,14 @@
       "type": "job",
       "found_via": "best job boards in Australia for professionals",
       "first_seen": "2026-10-24"
+    },
+    {
+      "name": "HELENA RUBINSTEIN",
+      "domain": "skincaretutorial.helenarubinstein.com",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "Australia recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "10 Best Job Sites in Australia: A Recruiter's Guide",
@@ -3898,12 +4002,28 @@
       "first_seen": "2026-10-25"
     },
     {
+      "name": "Visit Kenya - Where Safari Was Born",
+      "domain": "visitkenya.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "Jobs in Kenya with official application links | work.ke",
       "domain": "work.ke",
       "region": "Kenya",
       "type": "job",
       "found_via": "Kenya recruitment website list hiring portal",
       "first_seen": "2026-10-10"
+    },
+    {
+      "name": "Kenya Maps & Facts - World Atlas",
+      "domain": "worldatlas.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "Best Job Boards in Kenya 2026 \u2014 Compared | Zaajira",
@@ -3920,6 +4040,14 @@
       "type": "job",
       "found_via": "Mexico recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Mexico \u2014 Facts, Capital, Population, Flag & Profile ...",
+      "domain": "countryreports.org",
+      "region": "Mexico",
+      "type": "job",
+      "found_via": "Mexico recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "627 english speaking Jobs in Mexico, October 2026 | Glassdoor",
@@ -4162,6 +4290,14 @@
       "first_seen": "2026-10-24"
     },
     {
+      "name": "NigeriaWorld -- All About Nigeria",
+      "domain": "nigeriaworld.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "Top Job Websites in Nigeria 2026: Best Platforms to Find Work",
       "domain": "ogajob.com.ng",
       "region": "Nigeria",
@@ -4242,6 +4378,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "OnlyFans American Racing Team Returns for 2026 Moto2 Season",
+      "domain": "blog.onlyfans.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "Qatar recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "25 Best Recruitment Agencies in Qatar (2026) - Edarabia",
       "domain": "edarabia.com",
       "region": "Qatar",
@@ -4272,6 +4416,14 @@
       "type": "job",
       "found_via": "Qatar recruitment website list hiring portal",
       "first_seen": "2026-10-02"
+    },
+    {
+      "name": "Qatar - OnlyFans",
+      "domain": "onlyfans.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "Qatar recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "Jobs in Qatar 2026 | Qatar Hiring - Search Doha Vacancies ...",
@@ -4538,6 +4690,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Singapore | Facts, Geography, History, & Points of Interest |...",
+      "domain": "britannica.com",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "Singapore recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "FastJobs Singapore | Non-Executive Job Portal & Hiring Platform",
       "domain": "fastjobs.sg",
       "region": "Singapore",
@@ -4712,6 +4872,14 @@
       "type": "job",
       "found_via": "Singapore recruitment website list hiring portal",
       "first_seen": "2026-10-29"
+    },
+    {
+      "name": "Visit Singapore: Official Tourism Site for Travel, Food and...",
+      "domain": "visitsingapore.com",
+      "region": "Singapore",
+      "type": "job",
+      "found_via": "Singapore recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "20 Best South African Jobs and Recruitment Websites of 2026The Complete Directory of Job Boards and Recruitment Sites in",
@@ -4914,6 +5082,30 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Official Website for City of South Bend - South Bend, Indiana",
+      "domain": "southbendin.gov",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "South Korea recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
+    },
+    {
+      "name": "South Bend Tribune: Local News, Politics & Sports in South ...",
+      "domain": "southbendtribune.com",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "South Korea recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
+    },
+    {
+      "name": "Southwest Airlines | Airline Tickets and Low Fares",
+      "domain": "southwest.com",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "South Korea recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "Teaching Jobs in Korea 2026 | Teach English in Korea",
       "domain": "teachaway.com",
       "region": "South Korea",
@@ -4936,6 +5128,14 @@
       "type": "job",
       "found_via": "best job boards in United Arab Emirates for professionals",
       "first_seen": "2026-09-24"
+    },
+    {
+      "name": "Best Buy | Official Online Store | Shop Now & Save",
+      "domain": "bestbuy.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "best job boards in United Arab Emirates for professionals",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "Dubai Careers: Home",
@@ -5082,6 +5282,14 @@
       "first_seen": "2026-10-10"
     },
     {
+      "name": "BEST Definition & Meaning - Merriam-Webster",
+      "domain": "merriam-webster.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "best job boards in United Arab Emirates for professionals",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "Job Search | Michael Page",
       "domain": "michaelpage.ae",
       "region": "United Arab Emirates",
@@ -5106,12 +5314,28 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "13 Best Restaurants in Landrum, SC [2026 Updated]",
+      "domain": "restaurantobserver.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "best job boards in United Arab Emirates for professionals",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "#1 Job Portal in Middle East | Job Search | Job Vacancies - The Talent Point",
       "domain": "thetalentpoint.ae",
       "region": "United Arab Emirates",
       "type": "job",
       "found_via": "United Arab Emirates recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "THE 10 BEST Restaurants in Landrum (Updated November 2026) - ...",
+      "domain": "tripadvisor.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "best job boards in United Arab Emirates for professionals",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "Top 10 Job Boards in the UAE for 2025 - Mintly - trymintly.com",
@@ -5154,12 +5378,28 @@
       "first_seen": "2026-10-14"
     },
     {
+      "name": "United Airlines Reservations - Book a Flight on More Than 80...",
+      "domain": "united.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
+    },
+    {
       "name": "Jobs in United Arab Emirates - Latest (Oct 2026)- Vacancies.ae",
       "domain": "vacancies.ae",
       "region": "United Arab Emirates",
       "type": "job",
       "found_via": "United Arab Emirates recruitment website list hiring portal",
       "first_seen": "2026-10-23"
+    },
+    {
+      "name": "The Best 10 Restaurants near Landrum, SC 29356 - Yelp",
+      "domain": "yelp.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "best job boards in United Arab Emirates for professionals",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "$120-$51/hr Uae Jobs (NOW HIRING) Jul 2026",
@@ -5312,6 +5552,14 @@
       "type": "job",
       "found_via": "best job boards in Vietnam for professionals",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Visit Vietnam: The Official Tourism Website of Vietnam",
+      "domain": "vietnam.travel",
+      "region": "Vietnam",
+      "type": "job",
+      "found_via": "Vietnam recruitment website list hiring portal",
+      "first_seen": "2026-11-01"
     },
     {
       "name": "VietnamWorks - Recruitment, employment, salary lookup ...",
