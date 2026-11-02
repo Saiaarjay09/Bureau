@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-01T10:37:17.746916+00:00",
+  "updated_at": "2026-11-02T11:23:24.355931+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -1506,6 +1506,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Tender.NG | Tenders in Nigeria",
+      "domain": "tender.ng",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-02"
+    },
+    {
       "name": "Tenders Alpha | Tender & Procurement Platform Nigeria",
       "domain": "tendersalpha.com",
       "region": "Nigeria",
@@ -1656,6 +1664,14 @@
       "type": "business",
       "found_via": "Qatar business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Startup Funding in Qatar 2026: 120+ Investors from Pre-Seed ...",
+      "domain": "venturestreets.com",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar startup funding news and company directory",
+      "first_seen": "2026-11-02"
     },
     {
       "name": "Tenders And Procurements",
@@ -3754,6 +3770,14 @@
       "first_seen": "2026-10-07"
     },
     {
+      "name": "Job Sites and Job Boards for Foreigners in Japan (2026)",
+      "domain": "fukuyoshi-trading.com",
+      "region": "Japan",
+      "type": "job",
+      "found_via": "best job boards in Japan for professionals",
+      "first_seen": "2026-11-02"
+    },
+    {
       "name": "Top 5 Job Transfer Websites in Japan for Professionals",
       "domain": "igni7e.com",
       "region": "Japan",
@@ -3968,6 +3992,14 @@
       "type": "job",
       "found_via": "Kenya recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Jobs in Kenya | Find Verified Opportunities Across All Industries",
+      "domain": "kompeaa.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-02"
     },
     {
       "name": "My Jobs | Kenya",
@@ -4992,6 +5024,14 @@
       "type": "job",
       "found_via": "best job boards in South Africa for professionals",
       "first_seen": "2026-10-02"
+    },
+    {
+      "name": "The Best Job Sites In South Africa (For Jobs & Recruitment)",
+      "domain": "wikisouthafrica.co.za",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "South Africa recruitment website list hiring portal",
+      "first_seen": "2026-11-02"
     },
     {
       "name": "Top Job Boards | Best Job Board in South Korea - Academic J\u2026",
