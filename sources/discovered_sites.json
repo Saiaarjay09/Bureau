@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-02T11:23:24.355931+00:00",
+  "updated_at": "2026-11-04T11:05:33.769851+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -2530,6 +2530,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Polytender - Public Tenders, Matched to Your Business",
+      "domain": "polytender.com",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-04"
+    },
+    {
       "name": "UK Startups - Latest Funded Startups From The UK",
       "domain": "startupmag.co.uk",
       "region": "United Kingdom",
@@ -2696,6 +2704,14 @@
       "type": "job",
       "found_via": "Argentina recruitment website list hiring portal",
       "first_seen": "2026-10-04"
+    },
+    {
+      "name": "Jobs Argentina",
+      "domain": "argentina.mimusjobs.com",
+      "region": "Argentina",
+      "type": "job",
+      "found_via": "Argentina recruitment website list hiring portal",
+      "first_seen": "2026-11-04"
     },
     {
       "name": "Search Argentina Jobs at Unilever",
@@ -4992,6 +5008,14 @@
       "type": "job",
       "found_via": "South Africa recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "SA Recruiters \u2014 South African Recruitment Agencies Directory",
+      "domain": "sa-recruiters.co.za",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "South Africa recruitment website list hiring portal",
+      "first_seen": "2026-11-04"
     },
     {
       "name": "Recruitment Agencies in South Africa 2026 \u2013 Submit Your CV ...",
