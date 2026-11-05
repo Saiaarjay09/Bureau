@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-04T11:05:33.769851+00:00",
+  "updated_at": "2026-11-05T11:06:17.708884+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -178,6 +178,14 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "Tenders | Department of Infrastructure, Transport, Regional ...",
+      "domain": "infrastructure.gov.au",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-05"
+    },
+    {
       "name": "Startups - SmartCompany",
       "domain": "smartcompany.com.au",
       "region": "Australia",
@@ -274,6 +282,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Brazil Tenders | Government Bids & eProcurement | TendersGo ...",
+      "domain": "country.tendersgo.com",
+      "region": "Brazil",
+      "type": "business",
+      "found_via": "Brazil business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-05"
+    },
+    {
       "name": "Videos generation - Nastia",
       "domain": "feedback.nastia.ai",
       "region": "Brazil",
@@ -352,6 +368,14 @@
       "type": "business",
       "found_via": "Canada startup funding news and company directory",
       "first_seen": "2026-10-02"
+    },
+    {
+      "name": "How to find government tenders in Canada: every portal",
+      "domain": "bidfit.ca",
+      "region": "Canada",
+      "type": "business",
+      "found_via": "Canada business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-05"
     },
     {
       "name": "Bids and Tenders - BidsAndTenders",
@@ -1098,6 +1122,14 @@
       "first_seen": "2026-10-04"
     },
     {
+      "name": "Tenders in Kenya Today: All Open Government Tenders, Updated ...",
+      "domain": "businessradar.co.ke",
+      "region": "Kenya",
+      "type": "business",
+      "found_via": "Kenya business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-05"
+    },
+    {
       "name": "Kenya startup funding \u00b7 $385M across 17 rounds | Datapile",
       "domain": "datapile.co",
       "region": "Kenya",
@@ -1336,6 +1368,14 @@
       "type": "business",
       "found_via": "Mexico business tenders and procurement opportunities portal",
       "first_seen": "2026-10-22"
+    },
+    {
+      "name": "Top Startups in Mexico - Startupik",
+      "domain": "startupik.com",
+      "region": "Mexico",
+      "type": "business",
+      "found_via": "Mexico startup funding news and company directory",
+      "first_seen": "2026-11-05"
     },
     {
       "name": "Startup funding in Mexico: 11 rounds, \u20ac965M raised | Tech ...",
@@ -2866,6 +2906,14 @@
       "first_seen": "2026-10-04"
     },
     {
+      "name": "Best Job Search Websites in Australia (2026 Guide ...",
+      "domain": "cloudcolleague.com",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "Australia recruitment website list hiring portal",
+      "first_seen": "2026-11-05"
+    },
+    {
       "name": "Best Job Listing Sites in Australia for Employers in 2026 ...",
       "domain": "dealin.com.au",
       "region": "Australia",
@@ -3040,6 +3088,14 @@
       "type": "job",
       "found_via": "Canada recruitment website list hiring portal",
       "first_seen": "2026-10-14"
+    },
+    {
+      "name": "Job listing websites in Canada: 9 Free Places to Post a Job",
+      "domain": "broxer.com",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "Canada recruitment website list hiring portal",
+      "first_seen": "2026-11-05"
     },
     {
       "name": "Jobs - Canada.ca",
@@ -4034,6 +4090,14 @@
       "first_seen": "2026-10-26"
     },
     {
+      "name": "Home | Opened Career - Find Jobs In Kenya | Job Search ...",
+      "domain": "openedcareer.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-05"
+    },
+    {
       "name": "Talenzo | Find Jobs in Kenya \u2014 Free to Apply, Free to Post",
       "domain": "talenzo.co.ke",
       "region": "Kenya",
@@ -4994,6 +5058,14 @@
       "first_seen": "2026-10-10"
     },
     {
+      "name": "Top 10 Job Search Websites in South Africa Rated by Success",
+      "domain": "jobrato.co.za",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "South Africa recruitment website list hiring portal",
+      "first_seen": "2026-11-05"
+    },
+    {
       "name": "Jobs in South Africa | Job search | Pnet.co.za",
       "domain": "pnet.co.za",
       "region": "South Africa",
@@ -5506,6 +5578,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Top Recruitment Agencies in UK (2026) | NextInHR",
+      "domain": "nextinhr.com",
+      "region": "United Kingdom",
+      "type": "job",
+      "found_via": "United Kingdom recruitment website list hiring portal",
+      "first_seen": "2026-11-05"
+    },
+    {
       "name": "Find a job | Reed",
       "domain": "reed.com",
       "region": "United Kingdom",
@@ -5616,6 +5696,14 @@
       "type": "job",
       "found_via": "best job boards in Vietnam for professionals",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Jobs in Vietnam - Search 1,019 Jobs to Boost Your Career",
+      "domain": "vietjobs.vn",
+      "region": "Vietnam",
+      "type": "job",
+      "found_via": "Vietnam recruitment website list hiring portal",
+      "first_seen": "2026-11-05"
     },
     {
       "name": "Visit Vietnam: The Official Tourism Website of Vietnam",
