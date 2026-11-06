@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-05T11:06:17.708884+00:00",
+  "updated_at": "2026-11-06T11:03:50.294727+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -408,6 +408,14 @@
       "type": "business",
       "found_via": "Canada startup funding news and company directory",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Canada Startups - Small Business Funding & Startup Support",
+      "domain": "canadastartups.org",
+      "region": "Canada",
+      "type": "business",
+      "found_via": "Canada startup funding news and company directory",
+      "first_seen": "2026-11-06"
     },
     {
       "name": "Canadian Tender Portals: Where Contracts Are Posted (2026)",
@@ -3338,6 +3346,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Jobs in Egypt with official application links | workegypt.africa",
+      "domain": "workegypt.africa",
+      "region": "Egypt",
+      "type": "job",
+      "found_via": "Egypt recruitment website list hiring portal",
+      "first_seen": "2026-11-06"
+    },
+    {
       "name": "Job sites in Germany: The best portals in 2026 - Connexion-Emploi",
       "domain": "academie.connexion-emploi.com",
       "region": "Germany",
@@ -5528,6 +5544,14 @@
       "type": "job",
       "found_via": "United Arab Emirates recruitment website list hiring portal",
       "first_seen": "2026-10-23"
+    },
+    {
+      "name": "Discover 100% Verified Jobs from Best Job Portal in the GCC ...",
+      "domain": "verifiedjobs.ae",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-11-06"
     },
     {
       "name": "The Best 10 Restaurants near Landrum, SC 29356 - Yelp",
