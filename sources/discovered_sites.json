@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-06T11:03:50.294727+00:00",
+  "updated_at": "2026-11-07T10:24:42.272302+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -1840,6 +1840,14 @@
       "type": "business",
       "found_via": "Saudi Arabia business tenders and procurement opportunities portal",
       "first_seen": "2026-10-13"
+    },
+    {
+      "name": "Startup Funding in Saudi Arabia: VCs & Accelerators",
+      "domain": "rashadbayram.com",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia startup funding news and company directory",
+      "first_seen": "2026-11-07"
     },
     {
       "name": "Saudi Startup Funding Tracker: VC Deals, Sectors, Stages, and ...",
@@ -4376,6 +4384,14 @@
       "type": "job",
       "found_via": "Nigeria recruitment website list hiring portal",
       "first_seen": "2026-10-04"
+    },
+    {
+      "name": "Naija Recruitment Portal \u2014 Nigeria Police, Army, Civil ...",
+      "domain": "naijarecruitmentportal.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-11-07"
     },
     {
       "name": "Nigerian Jobs Board \u2014 Latest Vacancies | NGJobs",
