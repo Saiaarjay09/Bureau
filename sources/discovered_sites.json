@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-07T10:24:42.272302+00:00",
+  "updated_at": "2026-11-08T10:34:08.508087+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -970,6 +970,14 @@
       "first_seen": "2026-10-07"
     },
     {
+      "name": "Indonesia Startup Funding Tracker \u2014 Jan\u2013Oct 2026",
+      "domain": "news.dailysocial.id",
+      "region": "Indonesia",
+      "type": "business",
+      "found_via": "Indonesia startup funding news and company directory",
+      "first_seen": "2026-11-08"
+    },
+    {
       "name": "Startup.id by DailySocial - Indonesia's Digital Economy Hub",
       "domain": "startup.id",
       "region": "Indonesia",
@@ -1088,6 +1096,14 @@
       "type": "business",
       "found_via": "Japan business tenders and procurement opportunities portal",
       "first_seen": "2026-11-01"
+    },
+    {
+      "name": "The Raising Sun \u2014 Japanese startup funding, in English",
+      "domain": "theraisingsun.com",
+      "region": "Japan",
+      "type": "business",
+      "found_via": "Japan startup funding news and company directory",
+      "first_seen": "2026-11-08"
     },
     {
       "name": "Japan - Selling to the Public Sector",
@@ -1354,6 +1370,14 @@
       "first_seen": "2026-10-04"
     },
     {
+      "name": "Login - MexicoTenders",
+      "domain": "mexicotenders.com",
+      "region": "Mexico",
+      "type": "business",
+      "found_via": "Mexico business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-08"
+    },
+    {
       "name": "Venture Capital Program - New Mexico Finance Authority",
       "domain": "nmfinance.com",
       "region": "Mexico",
@@ -1504,6 +1528,14 @@
       "type": "business",
       "found_via": "Nigeria business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Tenders & Procurement Notices in Nigeria | OMNI360",
+      "domain": "omni360.ng",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-08"
     },
     {
       "name": "Venture Capital Firms in Nigeria | The PEL Directory",
@@ -2970,6 +3002,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Best job boards in Australia tier list 2026 - Karmik",
+      "domain": "karmik.ai",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "best job boards in Australia for professionals",
+      "first_seen": "2026-11-08"
+    },
+    {
       "name": "Best Job Search Websites in Australia (2026 Guide) \u00b7 Rolebee",
       "domain": "rolebee.com.au",
       "region": "Australia",
@@ -3536,6 +3576,14 @@
       "type": "job",
       "found_via": "best job boards in India for professionals",
       "first_seen": "2026-10-02"
+    },
+    {
+      "name": "Best Portals to Find Jobs in India: Complete 2026 Guide for ...",
+      "domain": "careergrowkaro.com",
+      "region": "India",
+      "type": "job",
+      "found_via": "India recruitment website list hiring portal",
+      "first_seen": "2026-11-08"
     },
     {
       "name": "Top 10 Job Portals in India for Freshers & Recruiters (2026 ...",
@@ -4402,6 +4450,14 @@
       "first_seen": "2026-10-29"
     },
     {
+      "name": "Where to Find High-Paying Nigerian Jobs in 2026",
+      "domain": "nigeriacareers.ng",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "best job boards in Nigeria for professionals",
+      "first_seen": "2026-11-08"
+    },
+    {
       "name": "Job Vacancies and Recruitment in Nigeria | Nigeriajob.com",
       "domain": "nigeriajob.com",
       "region": "Nigeria",
@@ -4592,6 +4648,14 @@
       "type": "job",
       "found_via": "best job boards in Qatar for professionals",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Qatar Jobs - Search Job Vacancies in Qatar",
+      "domain": "qatarjobseekers.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "Qatar recruitment website list hiring portal",
+      "first_seen": "2026-11-08"
     },
     {
       "name": "All Jobs | Qatar Jobs Portal",
@@ -5160,6 +5224,14 @@
       "type": "job",
       "found_via": "South Africa recruitment website list hiring portal",
       "first_seen": "2026-11-02"
+    },
+    {
+      "name": "Jobs in South Africa with official application links | work ...",
+      "domain": "work.net.za",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "South Africa recruitment website list hiring portal",
+      "first_seen": "2026-11-08"
     },
     {
       "name": "Top Job Boards | Best Job Board in South Korea - Academic J\u2026",
