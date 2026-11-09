@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-08T10:34:08.508087+00:00",
+  "updated_at": "2026-11-09T11:44:20.262503+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -466,6 +466,14 @@
       "first_seen": "2026-10-25"
     },
     {
+      "name": "Recently Funded Startups in Canada: 90 (Nov 2026)",
+      "domain": "rocketsdr.ai",
+      "region": "Canada",
+      "type": "business",
+      "found_via": "Canada startup funding news and company directory",
+      "first_seen": "2026-11-09"
+    },
+    {
       "name": "Canada Tech News - Tech Funding News",
       "domain": "techfundingnews.com",
       "region": "Canada",
@@ -536,6 +544,14 @@
       "type": "business",
       "found_via": "Egypt business tenders and procurement opportunities portal",
       "first_seen": "2026-10-25"
+    },
+    {
+      "name": "Login - EgyptTenders",
+      "domain": "egypttenders.com",
+      "region": "Egypt",
+      "type": "business",
+      "found_via": "Egypt business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-09"
     },
     {
       "name": "Public e-Procurement System of Egypt",
@@ -1082,6 +1098,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Japan Procurement: Real-time Japanese Government Tender Notices",
+      "domain": "mcpmarket.com",
+      "region": "Japan",
+      "type": "business",
+      "found_via": "Japan business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-09"
+    },
+    {
       "name": "\u8abf\u9054\u30dd\u30fc\u30bf\u30eb - p-portal.go.jp",
       "domain": "p-portal.go.jp",
       "region": "Japan",
@@ -1232,6 +1256,14 @@
       "type": "business",
       "found_via": "Kenya business tenders and procurement opportunities portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "TENDERS \u2013 Public Procurement Regulatory Authority",
+      "domain": "ppra.go.ke",
+      "region": "Kenya",
+      "type": "business",
+      "found_via": "Kenya business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-09"
     },
     {
       "name": "Welcome to eGP Portal of Government of Kenya",
@@ -2618,6 +2650,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "UK Tender Portal | Find & Track Tenders | My Projectz",
+      "domain": "myprojectz.co.uk",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-09"
+    },
+    {
       "name": "Polytender - Public Tenders, Matched to Your Business",
       "domain": "polytender.com",
       "region": "United Kingdom",
@@ -3264,6 +3304,14 @@
       "type": "job",
       "found_via": "Canada recruitment website list hiring portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Top 10 Free Job Posting Sites in CanadaBest Job Search Sites in Canada for 2026 Ranked and ComparedBest Job Sites in Can",
+      "domain": "mdccanada.ca",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "Canada recruitment website list hiring portal",
+      "first_seen": "2026-11-09"
     },
     {
       "name": "Best Job Search Websites in Canada for Newcomers (2026 Guide)",
