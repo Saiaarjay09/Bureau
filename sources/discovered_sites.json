@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-09T11:44:20.262503+00:00",
+  "updated_at": "2026-11-10T11:23:45.931222+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -1232,6 +1232,14 @@
       "type": "business",
       "found_via": "Kenya business tenders and procurement opportunities portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "E - Procurement - KRA",
+      "domain": "kra.go.ke",
+      "region": "Kenya",
+      "type": "business",
+      "found_via": "Kenya business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-10"
     },
     {
       "name": "[PDF] The Kenyan Startup Ecosystem Report 2022 - - Disrupt Africa",
