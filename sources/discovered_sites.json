@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-10T11:23:45.931222+00:00",
+  "updated_at": "2026-11-11T11:10:15.077887+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -144,6 +144,14 @@
       "type": "business",
       "found_via": "Australia startup funding news and company directory",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "AusTender | Business & Industry | Defence",
+      "domain": "defence.gov.au",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-11"
     },
     {
       "name": "Business opportunities - Australian Government Department of ...",
@@ -656,6 +664,14 @@
       "type": "business",
       "found_via": "Germany business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Tenders | GIZ",
+      "domain": "giz.de",
+      "region": "Germany",
+      "type": "business",
+      "found_via": "Germany business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-11"
     },
     {
       "name": "Germany Public Tenders | Procurement Notices Portal",
@@ -2330,6 +2346,14 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "South African Government Tenders - TendersPortal",
+      "domain": "tendersportal.co.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-11"
+    },
+    {
       "name": "Tendora | South African Procurement Portal",
       "domain": "tendora.co.za",
       "region": "South Africa",
@@ -2664,6 +2688,14 @@
       "type": "business",
       "found_via": "United Kingdom business tenders and procurement opportunities portal",
       "first_seen": "2026-11-09"
+    },
+    {
+      "name": "Search UK Government Contracts & Public Sector Tenders ...",
+      "domain": "opentenders.co.uk",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-11"
     },
     {
       "name": "Polytender - Public Tenders, Matched to Your Business",
@@ -3290,6 +3322,14 @@
       "first_seen": "2026-10-10"
     },
     {
+      "name": "12 Job Sites In Canada For Foreigners (With In-Demand Jobs)",
+      "domain": "in.indeed.com",
+      "region": "Canada",
+      "type": "job",
+      "found_via": "Canada recruitment website list hiring portal",
+      "first_seen": "2026-11-11"
+    },
+    {
       "name": "Foreign candidates from outside Canada - Job Bank",
       "domain": "jobbank.gc.ca",
       "region": "Canada",
@@ -3618,6 +3658,14 @@
       "first_seen": "2026-10-29"
     },
     {
+      "name": "Which Job Portal Is Best in India? Top 15 Job Sites 2026",
+      "domain": "bestkaam.com",
+      "region": "India",
+      "type": "job",
+      "found_via": "best job boards in India for professionals",
+      "first_seen": "2026-11-11"
+    },
+    {
       "name": "The 50 Best Job Search Sites You Need to Know About",
       "domain": "biginterview.com",
       "region": "India",
@@ -3704,6 +3752,14 @@
       "type": "job",
       "found_via": "India recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "All official government job portals in India \u2014 verified ...",
+      "domain": "jobjora.com",
+      "region": "India",
+      "type": "job",
+      "found_via": "India recruitment website list hiring portal",
+      "first_seen": "2026-11-11"
     },
     {
       "name": "Top Job Portals in India: 10 Websites for Job Search & Hiring",
@@ -4146,6 +4202,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Jobs in Kenya 2026 \u2014 New Vacancies | JobsInKenya.ke",
+      "domain": "jobsinkenya.ke",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-11"
+    },
+    {
       "name": "Jobs in Kenya Today | Kazi Connect",
       "domain": "kaziconnect-ke.work",
       "region": "Kenya",
@@ -4346,6 +4410,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Best Job Boards in Africa 2026 (Ranked by Recruiters)",
+      "domain": "blog.thecareerbuddy.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "best job boards in Nigeria for professionals",
+      "first_seen": "2026-11-11"
+    },
+    {
       "name": "Best Job Sites in Nigeria (2026) - Where to Find Verified ...",
       "domain": "brands.ng",
       "region": "Nigeria",
@@ -4376,6 +4448,14 @@
       "type": "job",
       "found_via": "Nigeria recruitment website list hiring portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Federal Agencies Recruitment 2026: Ongoing, Portal Link & How ...",
+      "domain": "currentaffairs.com.ng",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-11-11"
     },
     {
       "name": "10 best job sites in Africa to find work in 2026 - EdoMatch",
@@ -5290,6 +5370,14 @@
       "first_seen": "2026-11-08"
     },
     {
+      "name": "Job Vacancies and Recruitment in South Africa | Zajob.com",
+      "domain": "zajob.com",
+      "region": "South Africa",
+      "type": "job",
+      "found_via": "South Africa recruitment website list hiring portal",
+      "first_seen": "2026-11-11"
+    },
+    {
       "name": "Top Job Boards | Best Job Board in South Korea - Academic J\u2026",
       "domain": "academicjobs.com",
       "region": "South Korea",
@@ -5840,6 +5928,14 @@
       "type": "job",
       "found_via": "Vietnam recruitment website list hiring portal",
       "first_seen": "2026-10-13"
+    },
+    {
+      "name": "Jobs, Hiring in Vietnam - Nov 2026 | Jobstreet",
+      "domain": "ph.jobstreet.com",
+      "region": "Vietnam",
+      "type": "job",
+      "found_via": "Vietnam recruitment website list hiring portal",
+      "first_seen": "2026-11-11"
     },
     {
       "name": "Vietnam Recruitment Platforms 2024: HR Expert's - sailglobal",
