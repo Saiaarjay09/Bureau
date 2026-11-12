@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-11T11:10:15.077887+00:00",
+  "updated_at": "2026-11-12T11:27:40.362729+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -522,6 +522,14 @@
       "first_seen": "2026-10-04"
     },
     {
+      "name": "Egypt Startup News & Companies \u2014 Deeportal",
+      "domain": "deeportal.tech",
+      "region": "Egypt",
+      "type": "business",
+      "found_via": "Egypt startup funding news and company directory",
+      "first_seen": "2026-11-12"
+    },
+    {
       "name": "TRACE e-Gov Portal",
       "domain": "egov.traceinternational.org",
       "region": "Egypt",
@@ -848,6 +856,14 @@
       "type": "business",
       "found_via": "India startup funding news and company directory",
       "first_seen": "2026-10-02"
+    },
+    {
+      "name": "Startupory - Startup News, Funding Updates & Founder Stories",
+      "domain": "startupory.com",
+      "region": "India",
+      "type": "business",
+      "found_via": "India startup funding news and company directory",
+      "first_seen": "2026-11-12"
     },
     {
       "name": "Startup Spotlight India | Latest Startup News, Funding ...",
@@ -2826,6 +2842,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Vietnam Startup News & Companies \u2014 Deeportal",
+      "domain": "startup.deeportal.tech",
+      "region": "Vietnam",
+      "type": "business",
+      "found_via": "Vietnam startup funding news and company directory",
+      "first_seen": "2026-11-12"
+    },
+    {
       "name": "Vietnam Tenders 2026 \u2014 20 open Government & Private ...",
       "domain": "tenderhive.com",
       "region": "Vietnam",
@@ -3536,6 +3560,14 @@
       "type": "job",
       "found_via": "Germany recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "List of recruitment agencies and companies hiring expats in ...",
+      "domain": "iamexpat.de",
+      "region": "Germany",
+      "type": "job",
+      "found_via": "Germany recruitment website list hiring portal",
+      "first_seen": "2026-11-12"
     },
     {
       "name": "Best Job Sites in Germany (English Roles Included)",
@@ -5840,6 +5872,14 @@
       "type": "job",
       "found_via": "United Kingdom recruitment website list hiring portal",
       "first_seen": "2026-11-05"
+    },
+    {
+      "name": "UK Jobs and Recruitment at Recruit.co.uk - The UK's Best Job ...",
+      "domain": "recruit.co.uk",
+      "region": "United Kingdom",
+      "type": "job",
+      "found_via": "United Kingdom recruitment website list hiring portal",
+      "first_seen": "2026-11-12"
     },
     {
       "name": "Find a job | Reed",
