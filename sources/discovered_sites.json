@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-12T11:27:40.362729+00:00",
+  "updated_at": "2026-11-13T11:12:47.651577+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -1570,6 +1570,14 @@
       "first_seen": "2026-10-21"
     },
     {
+      "name": "Tenders & Procurement Notices in Nigeria | i360.ng",
+      "domain": "i360.ng",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-13"
+    },
+    {
       "name": "Nigeria Tech Ecosystem 2026: Startups, Funding, Unicorns ...",
       "domain": "liners.com",
       "region": "Nigeria",
@@ -2792,6 +2800,14 @@
       "type": "business",
       "found_via": "United Kingdom business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "UK Tenders | Search live UK tenders",
+      "domain": "uktenders.co.uk",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-13"
     },
     {
       "name": "Every UK Procurement Portal \u2014 Complete List",
@@ -4018,6 +4034,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Jobs in Japan - Online Job Listings. Register online for jobs.",
+      "domain": "asia.jobsonline.jp",
+      "region": "Japan",
+      "type": "job",
+      "found_via": "Japan recruitment website list hiring portal",
+      "first_seen": "2026-11-13"
+    },
+    {
       "name": "Best Japan Job Sites 2026: Top Platforms Compared",
       "domain": "careerboom.ai",
       "region": "Japan",
@@ -4138,6 +4162,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Get Work in Japan | WORK JAPAN",
+      "domain": "workjapan.jp",
+      "region": "Japan",
+      "type": "job",
+      "found_via": "Japan recruitment website list hiring portal",
+      "first_seen": "2026-11-13"
+    },
+    {
       "name": "Jobs in Japan | WorknetworkJapan \u5916\u56fd\u4eba\u96c7\u7528\u6c42\u4eba\u30b5\u30a4\u30c8",
       "domain": "worknetworkjapan.com",
       "region": "Japan",
@@ -4200,6 +4232,14 @@
       "type": "job",
       "found_via": "best job boards in Kenya for professionals",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Jobs in Kenya 2026 | Latest Vacancies",
+      "domain": "corporatestaffing.co.ke",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-13"
     },
     {
       "name": "10 Best Websites for Jobs in Kenya - Creative Kigen",
@@ -4762,6 +4802,14 @@
       "first_seen": "2026-10-10"
     },
     {
+      "name": "Jobs in Qatar \u2013 7,455+ Vacancies in Doha (Nov 2026 ...",
+      "domain": "getqatarjobs.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "Qatar recruitment website list hiring portal",
+      "first_seen": "2026-11-13"
+    },
+    {
       "name": "Jobs in Qatar 2025 | Find Jobs in Doha, Al Rayyan | HALAJOBS.QA",
       "domain": "halajobsqa.com",
       "region": "Qatar",
@@ -4840,6 +4888,14 @@
       "type": "job",
       "found_via": "best job boards in Qatar for professionals",
       "first_seen": "2026-10-16"
+    },
+    {
+      "name": "Best Job Sites in Qatar 2026: Compare 5 Platforms Safely",
+      "domain": "qatarvia.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "best job boards in Qatar for professionals",
+      "first_seen": "2026-11-13"
     },
     {
       "name": "Best Websites for Jobs in Qatar - Top Job Portals & Platforms 2026",
