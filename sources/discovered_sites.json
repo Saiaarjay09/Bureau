@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-13T11:12:47.651577+00:00",
+  "updated_at": "2026-11-14T10:37:28.687603+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -72,6 +72,14 @@
       "type": "business",
       "found_via": "Argentina business tenders and procurement opportunities portal",
       "first_seen": "2026-10-05"
+    },
+    {
+      "name": "Licitaciones Argentinas P\u00fablicas y Vigentes | LicitaFacil",
+      "domain": "licitafacil.com.ar",
+      "region": "Argentina",
+      "type": "business",
+      "found_via": "Argentina business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-14"
     },
     {
       "name": "Sell to State \u2014 Argentina Govt Contract Search",
@@ -1370,6 +1378,14 @@
       "first_seen": "2026-10-07"
     },
     {
+      "name": "Portal de Proveeedores",
+      "domain": "banxico.org.mx",
+      "region": "Mexico",
+      "type": "business",
+      "found_via": "Mexico business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-14"
+    },
+    {
       "name": "Investors looking to invest in Mexico - Capboard",
       "domain": "capboard.io",
       "region": "Mexico",
@@ -1696,6 +1712,14 @@
       "type": "business",
       "found_via": "Qatar startup funding news and company directory",
       "first_seen": "2026-10-01"
+    },
+    {
+      "name": "e-Tenders - ashghal.gov.qa",
+      "domain": "ashghal.gov.qa",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-14"
     },
     {
       "name": "Top Startups in Qatar, (Doha) - Arageek",
@@ -2234,6 +2258,14 @@
       "first_seen": "2026-10-22"
     },
     {
+      "name": "Tenders 2026-2027 - DIRCO",
+      "domain": "dirco.gov.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-14"
+    },
+    {
       "name": "EasyTenders - All Tenders in South Africa",
       "domain": "easytenders.co.za",
       "region": "South Africa",
@@ -2296,6 +2328,14 @@
       "type": "business",
       "found_via": "South Africa business tenders and procurement opportunities portal",
       "first_seen": "2026-10-03"
+    },
+    {
+      "name": "Published Tenders | South African Revenue Service - SARS",
+      "domain": "sars.gov.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-14"
     },
     {
       "name": "SA Tenders AI: South African Government and Private Tenders",
@@ -2730,6 +2770,14 @@
       "first_seen": "2026-11-04"
     },
     {
+      "name": "UK Public Sector Tenders by Region | Open Contracts | rTenders",
+      "domain": "rtenders.com",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-14"
+    },
+    {
       "name": "UK Startups - Latest Funded Startups From The UK",
       "domain": "startupmag.co.uk",
       "region": "United Kingdom",
@@ -3106,6 +3154,14 @@
       "first_seen": "2026-11-01"
     },
     {
+      "name": "Top 10 Job Sites in Australia (2026 Guide) | headspace",
+      "domain": "headspace.org.au",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "Australia recruitment website list hiring portal",
+      "first_seen": "2026-11-14"
+    },
+    {
       "name": "Helena Rubinstein International: Luxury Skincare & Cosmetics",
       "domain": "helenarubinstein.com",
       "region": "Australia",
@@ -3200,6 +3256,14 @@
       "type": "job",
       "found_via": "Brazil recruitment website list hiring portal",
       "first_seen": "2026-10-02"
+    },
+    {
+      "name": "Best Job Boards in Brazil (2026) | Job Board Doctor",
+      "domain": "jobboarddoctor.com",
+      "region": "Brazil",
+      "type": "job",
+      "found_via": "best job boards in Brazil for professionals",
+      "first_seen": "2026-11-14"
     },
     {
       "name": "Job Sites in Brazil - jobRank",
@@ -4440,6 +4504,14 @@
       "type": "job",
       "found_via": "Mexico recruitment website list hiring portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Las mejores plataformas para buscar trabajo en M\u00e9xico",
+      "domain": "mx.computrabajo.com",
+      "region": "Mexico",
+      "type": "job",
+      "found_via": "best job boards in Mexico for professionals",
+      "first_seen": "2026-11-14"
     },
     {
       "name": "Talent.com: Job Search | Find Jobs Hiring Near You",
