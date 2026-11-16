@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-15T11:07:06.000979+00:00",
+  "updated_at": "2026-11-16T11:36:11.623921+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -216,6 +216,14 @@
       "type": "business",
       "found_via": "Australia startup funding news and company directory",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Australian Startup Funding Database, 2016 to 2026 | Story ...",
+      "domain": "storyrecruitment.com.au",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia startup funding news and company directory",
+      "first_seen": "2026-11-16"
     },
     {
       "name": "Supplier Guidance \u2013 Getting Started - suppliers.tenders.gov.au",
@@ -496,6 +504,14 @@
       "type": "business",
       "found_via": "Canada startup funding news and company directory",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Government Procurement Portals in Canada | TenderScan",
+      "domain": "tenderscan.ca",
+      "region": "Canada",
+      "type": "business",
+      "found_via": "Canada business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-16"
     },
     {
       "name": "Latest Canadian Startup News & Funding Announcements",
@@ -1032,6 +1048,14 @@
       "type": "business",
       "found_via": "Indonesia startup funding news and company directory",
       "first_seen": "2026-11-08"
+    },
+    {
+      "name": "Tender and Procurement Information in Indonesia; Indonesian ...",
+      "domain": "petromindo.com",
+      "region": "Indonesia",
+      "type": "business",
+      "found_via": "Indonesia business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-16"
     },
     {
       "name": "Startup.id by DailySocial - Indonesia's Digital Economy Hub",
@@ -1720,6 +1744,14 @@
       "type": "business",
       "found_via": "Qatar business tenders and procurement opportunities portal",
       "first_seen": "2026-11-14"
+    },
+    {
+      "name": "Procurement - corp.qr.com.qa",
+      "domain": "corp.qr.com.qa",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-16"
     },
     {
       "name": "Top Startups in Qatar, (Doha) - Arageek",
@@ -2730,6 +2762,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Find tender opportunities | Government Commercial Agency",
+      "domain": "gca.gov.uk",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-16"
+    },
+    {
       "name": "UK Startup Funding News - globalstartupsinsights.com",
       "domain": "globalstartupsinsights.com",
       "region": "United Kingdom",
@@ -2880,6 +2920,14 @@
       "type": "business",
       "found_via": "United Kingdom startup funding news and company directory",
       "first_seen": "2026-10-10"
+    },
+    {
+      "name": "Recently Funded Startups in the United Kingdom: 12 (Nov 2026)",
+      "domain": "workinsiders.com",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom startup funding news and company directory",
+      "first_seen": "2026-11-16"
     },
     {
       "name": "Vietnam tenders | rfq in Vietnam | Vietnam government tenders",
@@ -4354,6 +4402,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Great Kenyan Jobs",
+      "domain": "greatkenyanjobs.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-16"
+    },
+    {
       "name": "Jobify Kenya \u2013 Jobs & Internships in Kenya | Career Portal",
       "domain": "jobifykenya.com",
       "region": "Kenya",
@@ -4784,6 +4840,14 @@
       "type": "job",
       "found_via": "Nigeria recruitment website list hiring portal",
       "first_seen": "2026-10-04"
+    },
+    {
+      "name": "Jobs in Nigeria - Post a Job for Free and Hire Candidates",
+      "domain": "nigeriajobsearch.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-11-16"
     },
     {
       "name": "10 Best Job Websites In Nigeria (2026) - Nigerian Informer",
@@ -5818,6 +5882,14 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "Hire Emirates Hub \u2014 Premium UAE Job Board | Find Jobs in ...",
+      "domain": "hireemirateshub.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-11-16"
+    },
+    {
       "name": "Find Your Dream Job in Gulf | Best Job Portal - Hires Gulf",
       "domain": "hiresgulf.com",
       "region": "United Arab Emirates",
@@ -5984,6 +6056,14 @@
       "type": "job",
       "found_via": "United Arab Emirates recruitment website list hiring portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Jobs in UAE \u2013 2,184 Vacancies | UAE Expatriates",
+      "domain": "uaeexpatriates.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-11-16"
     },
     {
       "name": "Best Job Sites & Portals in the UAE 2026: Bayt, LinkedIn",
