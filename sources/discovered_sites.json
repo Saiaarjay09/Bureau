@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-16T11:36:11.623921+00:00",
+  "updated_at": "2026-11-17T12:01:23.893031+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -1570,6 +1570,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Procurement \u2014 Ministry of Defence",
+      "domain": "defence.gov.ng",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-17"
+    },
+    {
       "name": "Delphi Atlas \u2014 Nigerian Startups, Investors & Funding Data",
       "domain": "delphiatlas.com",
       "region": "Nigeria",
@@ -1880,6 +1888,14 @@
       "type": "business",
       "found_via": "Qatar business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Ventures.qa \u2014 Invest in Qatar: Startups, Venture Capital ...",
+      "domain": "ventures.qa",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar startup funding news and company directory",
+      "first_seen": "2026-11-17"
     },
     {
       "name": "Startup Funding in Qatar 2026: 120+ Investors from Pre-Seed ...",
@@ -2336,6 +2352,14 @@
       "type": "business",
       "found_via": "South Africa business tenders and procurement opportunities portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Tenders - South African Government",
+      "domain": "gov.za",
+      "region": "South Africa",
+      "type": "business",
+      "found_via": "South Africa business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-17"
     },
     {
       "name": "National Strategic Opportunity Platform | South Africa",
@@ -3048,6 +3072,14 @@
       "type": "job",
       "found_via": "Argentina recruitment website list hiring portal",
       "first_seen": "2026-10-23"
+    },
+    {
+      "name": "Top Staffing Companies in Argentina - 2026 Reviews | Goodfirms",
+      "domain": "goodfirms.co",
+      "region": "Argentina",
+      "type": "job",
+      "found_via": "Argentina recruitment website list hiring portal",
+      "first_seen": "2026-11-17"
     },
     {
       "name": "Jobs in Argentina \u2014 HirePortal",
@@ -4778,6 +4810,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Jobs in Nigeria 2026 - Latest Job Vacancies in Nigeria | MyJobMag",
+      "domain": "myjobmag.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-11-17"
+    },
+    {
       "name": "MyJobNigeria (MJN): Recruitment and Jobs in Nigeria",
       "domain": "myjobnigeria.com",
       "region": "Nigeria",
@@ -5800,6 +5840,14 @@
       "type": "job",
       "found_via": "best job boards in United Arab Emirates for professionals",
       "first_seen": "2026-11-01"
+    },
+    {
+      "name": "Jobs in UAE - New Jobs for December 2026 - Ministry of Education",
+      "domain": "careers.moe.gov.ae",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-11-17"
     },
     {
       "name": "Dubai Careers: Home",
