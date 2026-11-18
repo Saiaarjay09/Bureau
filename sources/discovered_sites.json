@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-17T12:01:23.893031+00:00",
+  "updated_at": "2026-11-18T11:55:50.251251+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -714,6 +714,14 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "Deutsche Startups 2026: Liste & Finanzierungen | VCNews",
+      "domain": "vcnews.de",
+      "region": "Germany",
+      "type": "business",
+      "found_via": "Germany startup funding news and company directory",
+      "first_seen": "2026-11-18"
+    },
+    {
       "name": "Bundesportal | Procurement",
       "domain": "verwaltung.bund.de",
       "region": "Germany",
@@ -832,6 +840,14 @@
       "type": "business",
       "found_via": "India startup funding news and company directory",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Tenders - Invest India",
+      "domain": "investindia.gov.in",
+      "region": "India",
+      "type": "business",
+      "found_via": "India business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-18"
     },
     {
       "name": "35+ Recently Funded Startups in India (2026) - LeadMagic",
@@ -3146,6 +3162,14 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "Argentina Recruitment Agency | Executive Search - Headhunter ...",
+      "domain": "remotepeople.com",
+      "region": "Argentina",
+      "type": "job",
+      "found_via": "Argentina recruitment website list hiring portal",
+      "first_seen": "2026-11-18"
+    },
+    {
       "name": "Recruitment Agencies in Argentina for Foreigners 2026",
       "domain": "seasonalworkvisa.com",
       "region": "Argentina",
@@ -3232,6 +3256,14 @@
       "type": "job",
       "found_via": "best job boards in Australia for professionals",
       "first_seen": "2026-10-27"
+    },
+    {
+      "name": "16 Best Job Search Websites in Australia (2026) | DreamShift",
+      "domain": "dreamshift.net",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "Australia recruitment website list hiring portal",
+      "first_seen": "2026-11-18"
     },
     {
       "name": "Best Job Boards in Australia 2026 | Compared, Plus Niche ...",
@@ -4682,6 +4714,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Beta Job Portal - BetaJob Nigeria",
+      "domain": "betajob.ng",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-11-18"
+    },
+    {
       "name": "Best Job Boards in Africa 2026 (Ranked by Recruiters)",
       "domain": "blog.thecareerbuddy.com",
       "region": "Nigeria",
@@ -4928,6 +4968,14 @@
       "type": "job",
       "found_via": "Nigeria recruitment website list hiring portal",
       "first_seen": "2026-10-15"
+    },
+    {
+      "name": "Nigerian Government Recruitment Portal - Openings",
+      "domain": "openings.ng",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-11-18"
     },
     {
       "name": "The #1 Job Board for Nigerians Seeking International Remote ...",
@@ -6176,6 +6224,14 @@
       "type": "job",
       "found_via": "United Arab Emirates recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Adecco United Kingdom- Your Partner for Jobs and Recruitment",
+      "domain": "adecco.com",
+      "region": "United Kingdom",
+      "type": "job",
+      "found_via": "United Kingdom recruitment website list hiring portal",
+      "first_seen": "2026-11-18"
     },
     {
       "name": "Top UK Job Boards 2026 | Free & Paid Platforms - iSmartRecruit",
