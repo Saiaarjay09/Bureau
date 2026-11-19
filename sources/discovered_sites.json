@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-18T11:55:50.251251+00:00",
+  "updated_at": "2026-11-19T11:51:58.459142+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -674,6 +674,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "BSI - Public tendersHow to find public tenders in Germany (2026)Public tenders in Germany | Polytender",
+      "domain": "bsi.bund.de",
+      "region": "Germany",
+      "type": "business",
+      "found_via": "Germany business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-19"
+    },
+    {
       "name": "Deutsches Vergabeportal | DTVP | E-Vergabe-Plattform",
       "domain": "dtvp.de",
       "region": "Germany",
@@ -1160,6 +1168,14 @@
       "type": "business",
       "found_via": "Japan business tenders and procurement opportunities portal",
       "first_seen": "2026-11-01"
+    },
+    {
+      "name": "Directory \u2014 Japan Startup Resources",
+      "domain": "japanstartupresources.com",
+      "region": "Japan",
+      "type": "business",
+      "found_via": "Japan startup funding news and company directory",
+      "first_seen": "2026-11-19"
     },
     {
       "name": "Japan Tenders | RFP, Bids, eProcurement | Japan Government ...",
@@ -4554,6 +4570,14 @@
       "first_seen": "2026-11-02"
     },
     {
+      "name": "Jobs in Kenya 2026 - Latest Job Vacancies in Kenya | MyJobMag",
+      "domain": "myjobmag.co.ke",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-19"
+    },
+    {
       "name": "My Jobs | Kenya",
       "domain": "myjobsinkenya.com",
       "region": "Kenya",
@@ -4850,6 +4874,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "The Best Job Sites in Nigeria That Actually Work",
+      "domain": "montameucurriculo.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "best job boards in Nigeria for professionals",
+      "first_seen": "2026-11-19"
+    },
+    {
       "name": "Jobs in Nigeria 2026 - Latest Job Vacancies in Nigeria | MyJobMag",
       "domain": "myjobmag.com",
       "region": "Nigeria",
@@ -5104,6 +5136,14 @@
       "type": "job",
       "found_via": "Qatar recruitment website list hiring portal",
       "first_seen": "2026-11-01"
+    },
+    {
+      "name": "4,000+ Qatar Jobs, Employment 19 November 2026| Indeed",
+      "domain": "qa.indeed.com",
+      "region": "Qatar",
+      "type": "job",
+      "found_via": "Qatar recruitment website list hiring portal",
+      "first_seen": "2026-11-19"
     },
     {
       "name": "Book Flights with a World-class Airline | Qatar Airways",
@@ -6328,6 +6368,14 @@
       "type": "job",
       "found_via": "best job boards in United Kingdom for professionals",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "CareerLink Vietnam - Jobs & Job search, find jobs in Vietnam ...11 Best Job Boards in Vietnam To Find the Perfect Candid",
+      "domain": "careerlink.vn",
+      "region": "Vietnam",
+      "type": "job",
+      "found_via": "Vietnam recruitment website list hiring portal",
+      "first_seen": "2026-11-19"
     },
     {
       "name": "Fast Recruitment & Job Search at CareerViet.vn",
