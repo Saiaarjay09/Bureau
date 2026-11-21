@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-20T11:51:04.583675+00:00",
+  "updated_at": "2026-11-21T11:18:45.948542+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -632,6 +632,14 @@
       "type": "business",
       "found_via": "Egypt startup funding news and company directory",
       "first_seen": "2026-10-30"
+    },
+    {
+      "name": "Public tenders and procurement \u2014 Egypt \u00b7 Shipsen Market",
+      "domain": "shipsenmarket.com",
+      "region": "Egypt",
+      "type": "business",
+      "found_via": "Egypt business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-21"
     },
     {
       "name": "Submitting Tenders on Egypt's Public Procurement Portal",
@@ -1912,6 +1920,14 @@
       "type": "business",
       "found_via": "Qatar startup funding news and company directory",
       "first_seen": "2026-10-04"
+    },
+    {
+      "name": "Government and Private Tenders in Qatar | TenderQA",
+      "domain": "tenderqa.com",
+      "region": "Qatar",
+      "type": "business",
+      "found_via": "Qatar business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-21"
     },
     {
       "name": "Qatar Government Tenders, RFP, EOI and Qatar Public Procurement 2026",
@@ -3330,6 +3346,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Best Job Boards in Australia \u2014 Complete Guide for Job Seekers",
+      "domain": "jobtailoring.com",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "best job boards in Australia for professionals",
+      "first_seen": "2026-11-21"
+    },
+    {
       "name": "Best job boards in Australia tier list 2026 - Karmik",
       "domain": "karmik.ai",
       "region": "Australia",
@@ -4498,6 +4522,14 @@
       "first_seen": "2026-11-16"
     },
     {
+      "name": "JOB BASE (Kenya)",
+      "domain": "jobbasekenya.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-21"
+    },
+    {
       "name": "Jobify Kenya \u2013 Jobs & Internships in Kenya | Career Portal",
       "domain": "jobifykenya.com",
       "region": "Kenya",
@@ -4512,6 +4544,14 @@
       "type": "job",
       "found_via": "Kenya recruitment website list hiring portal",
       "first_seen": "2026-10-02"
+    },
+    {
+      "name": "Jobs Arena Kenya - Find Jobs, Hire Talent in Kenya",
+      "domain": "jobsarenakenya.co.ke",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-21"
     },
     {
       "name": "Jobs in Kenya 2026 \u2014 New Vacancies | JobsInKenya.ke",
@@ -4688,6 +4728,14 @@
       "type": "job",
       "found_via": "Mexico recruitment website list hiring portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Jobs, Employment in Mexico - Now Hiring in November 2026 - Jooble",
+      "domain": "jooble.org",
+      "region": "Mexico",
+      "type": "job",
+      "found_via": "Mexico recruitment website list hiring portal",
+      "first_seen": "2026-11-21"
     },
     {
       "name": "Las mejores plataformas para buscar trabajo en M\u00e9xico",
@@ -6352,6 +6400,14 @@
       "type": "job",
       "found_via": "United Kingdom recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "Jobs in United Kingdom - 325.000+ current vacancies - Jooble",
+      "domain": "uk.jooble.org",
+      "region": "United Kingdom",
+      "type": "job",
+      "found_via": "United Kingdom recruitment website list hiring portal",
+      "first_seen": "2026-11-21"
     },
     {
       "name": "Top 10 Job Websites in the UK for Foreigners (2025 Update)",
