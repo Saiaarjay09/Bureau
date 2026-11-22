@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-21T11:18:45.948542+00:00",
+  "updated_at": "2026-11-22T11:38:51.551516+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -176,6 +176,14 @@
       "type": "business",
       "found_via": "Australia startup funding news and company directory",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "GovMarket | The intelligence platform for government procurement",
+      "domain": "govmarket.com.au",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-22"
     },
     {
       "name": "Business Opportunities - help.tenders.gov.au",
@@ -4858,6 +4866,14 @@
       "first_seen": "2026-09-30"
     },
     {
+      "name": "Jobs in Nigeria - Latest Job Vacancies in Nigeria ...",
+      "domain": "employmentnigeria.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-11-22"
+    },
+    {
       "name": "18 Best Job Sites in Nigeria - GrabJobs",
       "domain": "grabjobs.co",
       "region": "Nigeria",
@@ -5970,6 +5986,14 @@
       "first_seen": "2026-10-30"
     },
     {
+      "name": "AE Hiring - UAE is Hiring",
+      "domain": "aehiring.com",
+      "region": "United Arab Emirates",
+      "type": "job",
+      "found_via": "United Arab Emirates recruitment website list hiring portal",
+      "first_seen": "2026-11-22"
+    },
+    {
       "name": "Bayt.com: The Middle East's Leading Job Site",
       "domain": "bayt.com",
       "region": "United Arab Emirates",
@@ -6330,6 +6354,14 @@
       "first_seen": "2026-11-18"
     },
     {
+      "name": "17 UK Job Boards Ranked: Where the Jobs Are in 2026 | Atlas Job",
+      "domain": "atlasjob.tech",
+      "region": "United Kingdom",
+      "type": "job",
+      "found_via": "best job boards in United Kingdom for professionals",
+      "first_seen": "2026-11-22"
+    },
+    {
       "name": "Top UK Job Boards 2026 | Free & Paid Platforms - iSmartRecruit",
       "domain": "ismartrecruit.com",
       "region": "United Kingdom",
@@ -6464,6 +6496,14 @@
       "type": "job",
       "found_via": "Vietnam recruitment website list hiring portal",
       "first_seen": "2026-10-04"
+    },
+    {
+      "name": "Jobs and Recruitment/Hiring in Vietnam | JAC Recruitment Vietnam",
+      "domain": "jac-recruitment.vn",
+      "region": "Vietnam",
+      "type": "job",
+      "found_via": "Vietnam recruitment website list hiring portal",
+      "first_seen": "2026-11-22"
     },
     {
       "name": "22 Job Boards in Vietnam | JobSiteDir",
