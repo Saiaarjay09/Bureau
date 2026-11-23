@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-22T11:38:51.551516+00:00",
+  "updated_at": "2026-11-23T13:03:33.122210+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -3402,6 +3402,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "The Best Job Search Websites - Recruitment Online",
+      "domain": "workskil.com.au",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "Australia recruitment website list hiring portal",
+      "first_seen": "2026-11-23"
+    },
+    {
       "name": "16 Best Job Search Websites in Australia (2026) | DreamShift",
       "domain": "wp.dreamshift.net",
       "region": "Australia",
@@ -4656,6 +4664,14 @@
       "type": "job",
       "found_via": "Kenya recruitment website list hiring portal",
       "first_seen": "2026-11-05"
+    },
+    {
+      "name": "Kenya Defence Forces Recruitment 2026",
+      "domain": "recruit.mod.go.ke",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-23"
     },
     {
       "name": "Talenzo | Find Jobs in Kenya \u2014 Free to Apply, Free to Post",
@@ -5968,6 +5984,14 @@
       "type": "job",
       "found_via": "South Korea recruitment website list hiring portal",
       "first_seen": "2026-11-01"
+    },
+    {
+      "name": "TalentLink | Hiring, jobs and visa information for foreign talent",
+      "domain": "talent-link.co.kr",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "South Korea recruitment website list hiring portal",
+      "first_seen": "2026-11-23"
     },
     {
       "name": "Teaching Jobs in Korea 2026 | Teach English in Korea",
