@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-23T13:03:33.122210+00:00",
+  "updated_at": "2026-11-24T13:54:37.754687+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -1658,6 +1658,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Nigeria Startup Funding And Investors - FasterCapital",
+      "domain": "fastercapital.com",
+      "region": "Nigeria",
+      "type": "business",
+      "found_via": "Nigeria startup funding news and company directory",
+      "first_seen": "2026-11-24"
+    },
+    {
       "name": "Nigeria startup funding hits US$635M in 2026 - furtherafrica.com",
       "domain": "furtherafrica.com",
       "region": "Nigeria",
@@ -2960,6 +2968,14 @@
       "type": "business",
       "found_via": "United Kingdom business tenders and procurement opportunities portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "Find a Tender + Contracts Finder, Free | TenderTracker UK",
+      "domain": "tendertracker.co.uk",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-24"
     },
     {
       "name": "UK Tender \u2013 Government Tenders e Tendering Portal",
@@ -4576,6 +4592,14 @@
       "type": "job",
       "found_via": "Kenya recruitment website list hiring portal",
       "first_seen": "2026-11-11"
+    },
+    {
+      "name": "Best Job Sites in Kenya (2026) | Kazicloud",
+      "domain": "kazicloud.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "best job boards in Kenya for professionals",
+      "first_seen": "2026-11-24"
     },
     {
       "name": "Jobs in Kenya Today | Kazi Connect",
@@ -6536,6 +6560,14 @@
       "type": "job",
       "found_via": "best job boards in Vietnam for professionals",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Jobs in Vietnam - Latest Job Vacancies - Job Search at ...",
+      "domain": "monster.com.vn",
+      "region": "Vietnam",
+      "type": "job",
+      "found_via": "Vietnam recruitment website list hiring portal",
+      "first_seen": "2026-11-24"
     },
     {
       "name": "Top 10 Most Trusted Job Recruitment Websites in Vietnam",
