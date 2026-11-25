@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-24T13:54:37.754687+00:00",
+  "updated_at": "2026-11-25T13:06:50.041627+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -80,6 +80,14 @@
       "type": "business",
       "found_via": "Argentina business tenders and procurement opportunities portal",
       "first_seen": "2026-11-14"
+    },
+    {
+      "name": "Where Argentina And Spain Are Scoring Startup Goals",
+      "domain": "news.crunchbase.com",
+      "region": "Argentina",
+      "type": "business",
+      "found_via": "Argentina startup funding news and company directory",
+      "first_seen": "2026-11-25"
     },
     {
       "name": "Sell to State \u2014 Argentina Govt Contract Search",
@@ -648,6 +656,14 @@
       "type": "business",
       "found_via": "Egypt business tenders and procurement opportunities portal",
       "first_seen": "2026-11-21"
+    },
+    {
+      "name": "Egyptian Startups in 2026: Funding Rounds, Regional Expansion ...",
+      "domain": "technotime.net",
+      "region": "Egypt",
+      "type": "business",
+      "found_via": "Egypt startup funding news and company directory",
+      "first_seen": "2026-11-25"
     },
     {
       "name": "Submitting Tenders on Egypt's Public Procurement Portal",
@@ -1336,6 +1352,14 @@
       "type": "business",
       "found_via": "Kenya business tenders and procurement opportunities portal",
       "first_seen": "2026-10-13"
+    },
+    {
+      "name": "E-Procurement | KPC",
+      "domain": "kpc.co.ke",
+      "region": "Kenya",
+      "type": "business",
+      "found_via": "Kenya business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-25"
     },
     {
       "name": "Procurement",
@@ -3418,6 +3442,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Find a job - Workforce Australia for individuals",
+      "domain": "workforceaustralia.gov.au",
+      "region": "Australia",
+      "type": "job",
+      "found_via": "Australia recruitment website list hiring portal",
+      "first_seen": "2026-11-25"
+    },
+    {
       "name": "The Best Job Search Websites - Recruitment Online",
       "domain": "workskil.com.au",
       "region": "Australia",
@@ -4570,6 +4602,14 @@
       "first_seen": "2026-09-28"
     },
     {
+      "name": "Jobs in Kenya: Employer-Posted Vacancies | jobooro",
+      "domain": "jobooro.com",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-25"
+    },
+    {
       "name": "Jobs by Workable",
       "domain": "jobs.workable.com",
       "region": "Kenya",
@@ -4696,6 +4736,14 @@
       "type": "job",
       "found_via": "Kenya recruitment website list hiring portal",
       "first_seen": "2026-11-23"
+    },
+    {
+      "name": "Kenya Jobs | ReliefWeb",
+      "domain": "reliefweb.int",
+      "region": "Kenya",
+      "type": "job",
+      "found_via": "Kenya recruitment website list hiring portal",
+      "first_seen": "2026-11-25"
     },
     {
       "name": "Talenzo | Find Jobs in Kenya \u2014 Free to Apply, Free to Post",
