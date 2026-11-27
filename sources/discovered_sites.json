@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-25T13:06:50.041627+00:00",
+  "updated_at": "2026-11-27T12:36:07.178669+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -2018,6 +2018,14 @@
       "first_seen": "2026-10-02"
     },
     {
+      "name": "Saudi Arabia Ecosystem Portal",
+      "domain": "ecosystemsaudi.com",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia startup funding news and company directory",
+      "first_seen": "2026-11-27"
+    },
+    {
       "name": "Saudi Arabia Latest and Breaking News | Al Arabiya",
       "domain": "english.alarabiya.net",
       "region": "Saudi Arabia",
@@ -2136,6 +2144,14 @@
       "type": "business",
       "found_via": "Saudi Arabia business tenders and procurement opportunities portal",
       "first_seen": "2026-11-01"
+    },
+    {
+      "name": "Saudiarabia Tenders - RFP, Bids, eProcurement",
+      "domain": "saudiarabiatenders.com",
+      "region": "Saudi Arabia",
+      "type": "business",
+      "found_via": "Saudi Arabia business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-27"
     },
     {
       "name": "Saudi Arabia - Startup Muslim \u2014 Founder Stories, Funding ...",
@@ -2848,6 +2864,14 @@
       "type": "business",
       "found_via": "United Kingdom business tenders and procurement opportunities portal",
       "first_seen": "2026-09-30"
+    },
+    {
+      "name": "UK Startup Funding Data 2026: Every Round, Updated Daily",
+      "domain": "bizztor.com",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom startup funding news and company directory",
+      "first_seen": "2026-11-27"
     },
     {
       "name": "D3 Tenders",
@@ -5066,6 +5090,14 @@
       "first_seen": "2026-10-24"
     },
     {
+      "name": "Recruitment in Nigeria: Official Portals and Current Status",
+      "domain": "myscholarshipbaze.com",
+      "region": "Nigeria",
+      "type": "job",
+      "found_via": "Nigeria recruitment website list hiring portal",
+      "first_seen": "2026-11-27"
+    },
+    {
       "name": "Latest Recruitment in Nigeria \u2014 10 Best Job Portals Ranked ...",
       "domain": "naijajobportal.com.ng",
       "region": "Nigeria",
@@ -6010,6 +6042,14 @@
       "first_seen": "2026-09-29"
     },
     {
+      "name": "Jobs for Foreigners in Korea | Jobs for foreigners, overseas ...",
+      "domain": "lacha.co.kr",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "South Korea recruitment website list hiring portal",
+      "first_seen": "2026-11-27"
+    },
+    {
       "name": "Prospective Employees | Loudoun County, VA - Official Website",
       "domain": "loudoun.gov",
       "region": "South Korea",
@@ -6072,6 +6112,14 @@
       "type": "job",
       "found_via": "South Korea recruitment website list hiring portal",
       "first_seen": "2026-10-01"
+    },
+    {
+      "name": "UNIJOBS - University Jobs in South Korea",
+      "domain": "unijobs.kr",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "South Korea recruitment website list hiring portal",
+      "first_seen": "2026-11-27"
     },
     {
       "name": "3,000+ United Arab Emirates Jobs, Employment 29 ... - Indeed",
