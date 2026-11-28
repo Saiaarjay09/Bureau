@@ -1,5 +1,5 @@
 {
-  "updated_at": "2026-11-27T12:36:07.178669+00:00",
+  "updated_at": "2026-11-28T12:01:28.838268+00:00",
   "sites": [
     {
       "name": "Comprar | Argentina.gob.ar",
@@ -216,6 +216,14 @@
       "type": "business",
       "found_via": "Australia business tenders and procurement opportunities portal",
       "first_seen": "2026-11-05"
+    },
+    {
+      "name": "Procurement Australia: Smarter procurement. Better value.",
+      "domain": "paltd.com.au",
+      "region": "Australia",
+      "type": "business",
+      "found_via": "Australia business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-28"
     },
     {
       "name": "Startups - SmartCompany",
@@ -728,6 +736,14 @@
       "type": "business",
       "found_via": "Germany business tenders and procurement opportunities portal",
       "first_seen": "2026-09-29"
+    },
+    {
+      "name": "Germany startup funding & investors \u00b7 Tech.eu Funding",
+      "domain": "funding.tech.eu",
+      "region": "Germany",
+      "type": "business",
+      "found_via": "Germany startup funding news and company directory",
+      "first_seen": "2026-11-28"
     },
     {
       "name": "Germany Tenders | RFP, Bids, eProcurement | Online Tender Portal",
@@ -2882,6 +2898,14 @@
       "first_seen": "2026-10-13"
     },
     {
+      "name": "Daily Tenders \u2014 UK Tender Alerts & Live Tender Search",
+      "domain": "dailytenders.co.uk",
+      "region": "United Kingdom",
+      "type": "business",
+      "found_via": "United Kingdom business tenders and procurement opportunities portal",
+      "first_seen": "2026-11-28"
+    },
+    {
       "name": "Find a Tender",
       "domain": "find-tender.service.gov.uk",
       "region": "United Kingdom",
@@ -4386,6 +4410,14 @@
       "first_seen": "2026-11-13"
     },
     {
+      "name": "Working in Japan (2026): Best Visa-Sponsoring Job Boards ...",
+      "domain": "brusjapan.com",
+      "region": "Japan",
+      "type": "job",
+      "found_via": "best job boards in Japan for professionals",
+      "first_seen": "2026-11-28"
+    },
+    {
       "name": "Best Japan Job Sites 2026: Top Platforms Compared",
       "domain": "careerboom.ai",
       "region": "Japan",
@@ -4880,6 +4912,14 @@
       "type": "job",
       "found_via": "Mexico recruitment website list hiring portal",
       "first_seen": "2026-09-28"
+    },
+    {
+      "name": "10 Portales de empleo para buscar empleo en M\u00e9xico",
+      "domain": "trabajarporelmundo.org",
+      "region": "Mexico",
+      "type": "job",
+      "found_via": "Mexico recruitment website list hiring portal",
+      "first_seen": "2026-11-28"
     },
     {
       "name": "Visit Mexico",
@@ -5562,6 +5602,14 @@
       "first_seen": "2026-10-30"
     },
     {
+      "name": "Best job search websites in Saudi Arabia (and how to use each)",
+      "domain": "saudicareerguide.com",
+      "region": "Saudi Arabia",
+      "type": "job",
+      "found_via": "best job boards in Saudi Arabia for professionals",
+      "first_seen": "2026-11-28"
+    },
+    {
       "name": "Best IT Job Sites in Saudi Arabia to Find Tech Talent - SaviorHire",
       "domain": "saviorhire.com",
       "region": "Saudi Arabia",
@@ -6000,6 +6048,14 @@
       "type": "job",
       "found_via": "South Korea recruitment website list hiring portal",
       "first_seen": "2026-10-01"
+    },
+    {
+      "name": "Jobs and Recruitment/Hiring in Korea | JAC Recruitment Korea",
+      "domain": "jac-recruitment.kr",
+      "region": "South Korea",
+      "type": "job",
+      "found_via": "South Korea recruitment website list hiring portal",
+      "first_seen": "2026-11-28"
     },
     {
       "name": "Jobs - JobKoreaUSA",
